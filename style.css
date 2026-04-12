@@ -2,7 +2,10 @@
 
 .background{
     /* background-image: linear-gradient(to left, rgb(50, 50, 223, .450), rgb(45, 42, 42, .550)); */
-    background-image: linear-gradient(to left, rgba(14, 14, 105, 0.65), rgba(22, 18, 18, 0.85));
+    /* background-image: linear-gradient(to left, rgba(14, 14, 105, 0.65), rgba(22, 18, 18, 0.85)); */
+    background-image: linear-gradient(to left, rgba(14, 14, 105, 0.65), rgba(14, 14, 105, 0.65)), url("images/bourse-building-philadelphia.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
 .form-group{
@@ -10,10 +13,16 @@ position: relative;
 padding-bottom: 3px;
 }
 
+.form-group-2{
+position: relative;
+padding-bottom: 3px;
+}
 .swap-reason{
     position: relative;
 padding-bottom: 3px;
 }
+
+
 
 .form-group label{
     position: absolute;
@@ -26,7 +35,21 @@ padding-bottom: 3px;
   /* padding-bottom: px; */
   text-transform: uppercase;
   font-size: 15px;
-  background-color: black;
+  background-color: white;
+}
+
+.form-group-2 label{
+    position: absolute;
+  left:10px;
+  top: 11px;
+  font-weight: 400;
+  transition: 0.2s ease;
+  pointer-events: none;
+  padding: 0px 5px;
+  /* padding-bottom: px; */
+  text-transform: uppercase;
+  font-size: 15px;
+  /* background-color: white; */
 }
 
 .swap-reason label{
@@ -47,12 +70,18 @@ padding-bottom: 3px;
 .swap-reason input:valid
 .swap-reason select:focus,
 .swap-reason select:valid,
+
 .form-group input:focus,
 .form-group input:valid{
     border-color: #0000ff;
     color: blue;
 }
 
+.form-group-2 input:focus,
+.form-group-2 input:valid{
+     border-color: white;
+    color: white;
+}
 
 .swap-reason input:focus + label,
 .swap-reason input:valid + label,
@@ -60,7 +89,7 @@ padding-bottom: 3px;
 .swap-reason select:valid + label,
 .form-group input:focus + label,
 .form-group input:valid + label{
-    top: 5x;
+    top: 5px;
     transform: translate(5px, -20px);
     color: blue;
     font-weight: bold;
@@ -69,7 +98,16 @@ padding-bottom: 3px;
     font-size: 13px;
 }
 
-
+.form-group-2 input:focus + label,
+.form-group-2 input:valid + label{
+    top: 5x;
+    transform: translate(-5px, -40px);
+    color: white;
+    font-weight: bold;
+    font-size: 10px;
+    z-index: 1111;
+    font-size: 13px;
+}
 
 .swap-input option{
     background-color: rgb(0, 0, 255, .54);
