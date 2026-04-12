@@ -1,0 +1,387 @@
+
+
+.background{
+    /* background-image: linear-gradient(to left, rgb(50, 50, 223, .450), rgb(45, 42, 42, .550)); */
+    background-image: linear-gradient(to left, rgba(14, 14, 105, 0.65), rgba(22, 18, 18, 0.85));
+}
+
+.form-group{
+position: relative;
+padding-bottom: 3px;
+}
+
+.swap-reason{
+    position: relative;
+padding-bottom: 3px;
+}
+
+.form-group label{
+    position: absolute;
+  left:10px;
+  top: 11px;
+  font-weight: 400;
+  transition: 0.2s ease;
+  pointer-events: none;
+  padding: 0px 5px;
+  /* padding-bottom: px; */
+  text-transform: uppercase;
+  font-size: 15px;
+  background-color: black;
+}
+
+.swap-reason label{
+  position: absolute;
+  left:10px;
+  top: 11px;
+  font-weight: 400;
+  transition: 0.2s ease;
+  pointer-events: none;
+  padding: 0px 5px;
+  /* padding-bottom: px; */
+  text-transform: uppercase;
+  font-size: 15px;
+  background-color: white;
+}
+
+.swap-reason input:focus,
+.swap-reason input:valid
+.swap-reason select:focus,
+.swap-reason select:valid,
+.form-group input:focus,
+.form-group input:valid{
+    border-color: #0000ff;
+    color: blue;
+}
+
+
+.swap-reason input:focus + label,
+.swap-reason input:valid + label,
+.swap-reason select:focus + label,
+.swap-reason select:valid + label,
+.form-group input:focus + label,
+.form-group input:valid + label{
+    top: 5x;
+    transform: translate(5px, -20px);
+    color: blue;
+    font-weight: bold;
+    font-size: 10px;
+    z-index: 1111;
+    font-size: 13px;
+}
+
+
+
+.swap-input option{
+    background-color: rgb(0, 0, 255, .54);
+    color: white;
+    font-weight: 600;
+    outline: none;
+}
+
+.swap-input:focus{
+  border-color: blue;
+}
+
+.hide{
+    display: none;
+}
+
+.fade{
+    opacity: .4;
+    background-image: linear-gradient(to right, rgb(0, 0, 255, .32), rgb(0, 0, 255, .32));
+}
+
+.blur-background{
+    background-image: linear-gradient(to right, rgb(0, 0, 255, .32), rgb(0, 0, 255, .32));
+    opacity: .7;
+}
+
+.reason{
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    background-image: linear-gradient(to right, rgb(0, 0, 255, .32), rgb(0, 0, 255, .32));
+}
+
+.cancel{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+
+
+.header{
+    position: fixed;
+    top: 13px;
+    left: 47%;
+}
+
+.sort-btn{
+    position: absolute;
+    right: 50px;
+    top:80px;
+}
+
+.list{
+    position: absolute;
+    left: 20px;
+    right: 0;
+}
+
+.portal {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.edit{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: linear-gradient(to right, rgb(0, 0, 255, .32), rgb(0, 0, 255, .32));
+}
+
+.edit label{
+position: absolute;
+  left:10px;
+  top: 11px;
+  font-weight: 400;
+  transition: 0.2s ease;
+  pointer-events: none;
+  padding: 0px 5px;
+  /* padding-bottom: px; */
+  text-transform: uppercase;
+  font-size: 13px;
+  /* background-image: linear-gradient(to right, rgb(0, 0, 255, .32), rgb(0, 0, 255, .32)); */
+  background-color: white;
+}
+
+.edit-group{
+ position: relative;
+}
+
+.edit-group textarea:focus + label,
+.edit-group textarea:valid + label,
+.edit-group input:focus + label,
+.edit-group input:valid + label{
+    top: 5x;
+    transform: translate(5px, -20px);
+    color: blue;
+    font-weight: bold;
+    font-size: 10px;
+    z-index: 1111;
+    font-size: 10px;
+}
+
+.edit-group textarea:focus,
+.edit-group textarea:valid
+.edit-group input:focus,
+.edit-group input:valid{
+    border-color: blue;
+}
+
+.add-img{
+    position: absolute;
+    right: 77px;
+    top: -29px;
+}
+
+.plus-image{
+    position: absolute;
+    right: 0;
+    left:15px;
+    top: -30px;
+    bottom: 0;
+}
+
+.information{
+    position: absolute;
+    top:0;
+    bottom: 0%;
+    right:0;
+    left: 0;
+    text-align: center;
+    background-color: rgb(0, 0, 255, .14); 
+    border-radius: 30px;
+    padding-top: 30%;
+    transition: .3s ease-in-out;
+}
+
+.image_shake{
+    /* animation: image_shaker .8s ease-in-out  ; */
+    transform: scale(1.05);
+    transition: .8s ease;
+    /* transition: .8s ease-out; */
+    
+}
+
+.hostel-details{
+    position: fixed;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 255, .14); 
+    /* padding: 20% 0; */
+}
+
+.supervisor-header{
+    position: sticky;
+    z-index: 11111;
+    top: 0;
+    right: 0;
+    left: 0;
+    background: #f1f1f1;
+}
+
+.filler-image{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    opacity: .8;
+}
+
+.notification{
+    position: absolute;
+    top: -4px;
+    right: -8px;
+}
+
+.notification-container{
+    position: fixed;
+    top: 70px;
+    width: 40%;
+    right: 10px;
+    bottom: 10px;
+    /* background-color: blue;  */
+    border-radius: 10px;
+    z-index: 111111;
+}
+
+.notification-container::-webkit-scrollbar{
+    display: none;
+}
+
+.date-container{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.table-container::-webkit-scrollbar{
+  display: none;
+}
+
+.container-header{
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: white;
+}
+
+.notification-header{
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+    /* background-color: white; */
+}
+
+.container-header-2{
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 111;
+    /* background-color: white; */
+}
+
+.info-container{
+    position: absolute;
+    right: 0;
+    top:0;
+    bottom: 0;
+    left: 0;
+    background-color:  rgb(0, 0, 255, .14) ;
+}
+
+.room-number{
+    position: absolute;
+    top: 70px;
+    bottom: 20px;
+    left: 60px;
+    right:20px;
+}
+
+.room-container{
+    position: fixed;
+    top: 0;
+    width: 40%;
+    margin: 0 auto;
+    right: 10px;
+    bottom: 10px;
+    background-color: white; 
+    border-radius: 10px;
+    z-index: 111111;
+}
+
+.edit-room{
+    margin-top:30px;
+    position: fixed;
+    top:0;
+    right:0;
+    left: 60%;
+    bottom: 0;
+    background: white;
+    padding:0 20px;
+}
+
+.edit-room label{
+    position: absolute;
+  left:10px;
+  top: 11px;
+  font-weight: 400;
+  transition: 0.2s ease;
+  pointer-events: none;
+  padding: 0px 5px;
+  /* padding-bottom: px; */
+  text-transform: uppercase;
+  font-size: 13px;
+  /* background-image: linear-gradient(to right, rgb(0, 0, 255, .32), rgb(0, 0, 255, .32)); */
+  background-color: white;
+}
+
+
+.caution{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding-top: 200px;
+    background-color:  rgb(0, 0, 255, .14) ;
+    z-index: 1111111;
+}
+
+
+.delete-function{
+ animation: spin 2s ease  infinite;
+}
+
+
+@keyframes spin{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}

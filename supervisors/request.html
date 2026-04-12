@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../tailwindcss.min.js"></script>
+</head>
+<body>
+     <div id="main-container" class="flex items-center justify-between ">
+        <div class="bg-blue-600 w-[25%] mx-auto">
+            <ul class="w-full h-[100vh] mt-15 px-4  ">
+                <a href="dashboard.html">
+                    <div class="flex items-center gap-4  p-3  mb-5">
+                        <img src="../images/layout.png" alt="" class="w-7 h-7">
+                        <li class="font-bold text-sm uppercase text-white ">Dashboard</li>
+                    </div>
+                </a>
+                <a href="student.html">
+                    <div class="flex items-center gap-4 p-3 mb-5 bg-white rounded-[10px]">
+                        <img src="../images/students (1).png" alt="" class="w-7 h-7">
+                        <li class="font-bold text-sm uppercase text-blue-600 ">Students</li>
+                    </div>
+                </a>
+                <a href="room.html">
+                    <div class="flex items-center gap-4 p-3 mb-5">
+                        <img src="../images/door.png" alt="" class="w-7 h-7">
+                        <li class="font-bold text-sm uppercase text-white ">Rooms</li>
+                    </div>
+                </a>
+                <a href="request.html">
+                    <div class="flex items-center gap-4 p-3 mb-5">
+                        <img src="../images/interview.png" alt="" class="w-7 h-7">
+                        <li class="font-bold text-sm uppercase text-white ">Request</li>
+                    </div>
+                </a>
+                <a href="complaint.html">
+                    <div class="flex items-center gap-4 p-3 mb-45">
+                        <img src="../images/complain.png" alt="" class="w-7 h-7">
+                        <li class="font-bold text-sm uppercase text-white">Complaints</li>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div class="bg-red-500 p-3 rounded-[10px]">
+                        <li class="font-bold text-white uppercase text-xs text-center">log out</li>
+                    </div>
+
+                </a>
+            </ul>
+        </div>
+        <div class="w-[75%] mx-auto h-[100vh] ">
+            <div class="w-[95%] mx-auto" >
+                <h1 class="text-xl uppercase font-bold text-blue-800">Requests</h1>
+                <table class="w-full mt-5">
+                    <thead>
+                        <tr class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase font-bold">
+                        <th class="py-1">Student Id</td>
+                            <th class="py-1">room</td>
+                        <th class="py-1">type</td>
+                        <th class="py-1"></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase">
+                            <td class="py-1">242120111</td>
+                            <td class="py-1">008</td>
+                            <td class="py-1">room change</td>
+                            <td class="py-2">
+                                <div class="flex  items-center gap-3 ">
+                                    <button class="text-sm bg-blue-500 text-white px-5 py-2 rounded-[5px]">View</button>
+                                    <button class="text-sm bg-green-500 text-white px-5 py-2 rounded-[5px]">Accept</button>
+                                    <button class="bg-red-500 text-white text-sm px-5 py-2 rounded-[5px]">Reject</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

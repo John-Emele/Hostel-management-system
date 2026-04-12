@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="tailwindcss.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-blue-500">
+    <div class="flex  gap-10 justify-between align-center">
+        <div class="w-[25%] h-[100vh] mx-auto shadow-lg bg-[#f4f4f4]">
+               <div>
+                <div class="profile w-[40%] mx-auto mt-3 mb-2">
+                   <img src="images/Screenshot_20220806-182335.png" alt="" class="w-30 h-30 rounded-full object-cover">
+               </div>
+               <p class="text-xs uppercase font-bold text-center">Ebube Ugwu</p>
+               <p class="text-xs uppercase font-bold text-center">200l</p>
+               <p class="text-xs uppercase font-bold text-center">Medecine</p>
+               </div>
+
+               <div>
+                <ul class="w-[80%] mx-auto mt-20">
+                    <li class="text-sm bg-blue-500 px-5 hover:bg-blue-600 py-2 rounded-[5px] w-full uppercase font-bold text-center">pay</li>
+                    <li class="text-sm bg-blue-500 px-5 hover:bg-blue-600 py-2 rounded-[5px] w-full uppercase font-bold text-center mt-5">Transaction History</li>
+                </ul>
+               </div>
+        </div>
+        <div class="w-[75%] mx-auto pt-50">
+            <div class="details w-[80%] mx-auto">
+                <h1 class="font-bold text-5xl uppercase text-white text-center mb-5">Your Balance</h1>
+                <p class="font-bold text-xl text-center ">₦ <span
+                        class="text-white font-bold text-3xl">1,000,000</span></p>
+                <p class="h-10 mt-5 px-5 text-2xl w-[50%] mx-auto text-black text-center uppercase bg-white font-bold  rounded-[6px] hover:bg-black hover:text-white">ADD</p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+</html>

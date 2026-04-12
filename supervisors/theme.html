@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../tailwindcss.min.js"></script>
+</head>
+<body>
+    <div class="bg-white p-6 rounded-xl shadow">
+  <div class="flex justify-between mb-4">
+    <h2 class="text-xl font-semibold">Rooms</h2>
+    <button class="bg-green-500 text-white px-4 py-2 rounded">
+      + Add Room
+    </button>
+  </div>
+
+  <table class="w-full text-left">
+    <thead>
+      <tr class="border-b">
+        <th class="py-2">Room</th>
+        <th>Capacity</th>
+        <th>Occupied</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr class="border-b">
+        <td class="py-2">Room 101</td>
+        <td>2</td>
+        <td>1 / 2</td>
+        <td>
+          <button class="bg-blue-500 text-white px-3 py-1 rounded">
+            Edit
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</body>
+</html>

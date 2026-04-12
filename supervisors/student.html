@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../tailwindcss.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div id="main-container" class="flex items-center justify-between ">
+        <div class="bg-blue-600 w-[25%] mx-auto">
+            <ul class="w-full h-[100vh] mt-15 px-4  ">
+                <a href="dashboard.html">
+                    <div class="flex items-center gap-4  p-3  mb-5">
+                        <img src="../images/layout.png" alt="" class="w-7 h-7">
+                        <li class="font-bold text-sm uppercase text-white ">Dashboard</li>
+                    </div>
+                </a>
+                <a href="student.html">
+                    <div class="flex items-center gap-4 p-3 mb-5 bg-white rounded-[10px]">
+                        <img src="../images/students (1).png" alt="" class="w-7 h-7">
+                        <li class="font-bold text-sm uppercase text-blue-600 ">Students</li>
+                    </div>
+                </a>
+                <a href="room.html">
+                    <div class="flex items-center gap-4 p-3 mb-5">
+                        <img src="../images/door.png" alt="" class="w-7 h-7">
+                        <li class="font-bold text-sm uppercase text-white ">Rooms</li>
+                    </div>
+                </a>
+                <a href="request.html">
+                    <div class="flex items-center gap-4 p-3 mb-5">
+                        <img src="../images/interview.png" alt="" class="w-7 h-7">
+                        <li class="font-bold text-sm uppercase text-white ">Request</li>
+                    </div>
+                </a>
+                <a href="complaint.html">
+                    <div class="flex items-center gap-4 p-3 mb-45">
+                        <img src="../images/complain.png" alt="" class="w-7 h-7">
+                        <li class="font-bold text-sm uppercase text-white">Complaints</li>
+                    </div>
+                </a>
+
+                <a href="">
+                    <div class="bg-red-500 p-3 rounded-[10px]">
+                        <li class="font-bold text-white uppercase text-xs text-center">log out</li>
+                    </div>
+
+                </a>
+            </ul>
+        </div>
+        <div class="w-[75%] mx-auto h-[100vh] ">
+            <div class="w-[95%] mx-auto" >
+                <h1 class="text-xl uppercase font-bold text-blue-800">students</h1>
+                <div class="border-2 border-solid border-blue-800  text-blue-800 ps-5  rounded-[10px] my-5">
+                    <input type="search" placeholder="search student..." class="w-full outline-none placeholder:text-blue-800 placeholder:text-xl h-10" >
+                </div>
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase font-bold">
+                        <th class="py-1">Student Id</td>
+                        <th class="py-1">Name</td>
+                        <th class="py-1">room</td>
+                        <th class="py-1"></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase">
+                            <td class="py-1">242120111</td>
+                            <td class="py-1">john Emele</td>
+                            <td class="py-1">008</td>
+                            <td class="py-2">
+                                <div class="flex  items-center gap-3 ">
+                                    <button id="view-btn" class="text-sm bg-blue-500 text-white px-5 py-2 rounded-[5px]">View</button>
+                                    <button class="bg-red-500 text-white text-sm px-5 py-2 rounded-[5px]">remove</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+      <div id="info-container" class="info-container hide">
+        <img id="cancel-btn" src="../images/cancel.png" alt="" class="w-7 h-7 cancel">
+        <div class="w-[90%] mx-auto mt-15">
+            <div class="flex align-center gap-5 justify-between">
+                <div class="shadow-lg w-[50%] mx-auto p-4 rounded-[10px] bg-white">
+                    <h1 class="text-center text-2xl uppercase mb-10 font-bold text-blue-600">Student information</h1>
+                    <p class="font-bold uppercase text-sm mb-10">FirstName: <span
+                        id="student-firstname"    class="text-sm font-light"></span></p>
+                    <p class="font-bold uppercase text-sm mb-10">LastName: <span class="
+                        text-sm font-light" id="student-lastname"></span>
+                    </p>
+                    <p class="font-bold uppercase text-sm mb-10">Email: <span
+                         id="student-email"   class="text-sm font-light"></span></p>
+                    <p class="font-bold uppercase text-sm mb-10">Phone: <span
+                         id="student-phone"   class="text-sm font-light"></span></p>
+                    <p class="font-bold uppercase text-sm mb-10">Student ID: <span
+                         id="student-id"   class="text-sm font-bold text-blue-500"></span></p>
+                    <p class="font-bold uppercase text-sm mb-10">Address: <span class="text-sm font-light" id="student-address"></span></p>
+                </div>
+                <!-- guardian -->
+                <div class="shadow-lg w-[50%] mx-auto p-4 rounded-[10px] bg-white">
+                    <h1 class="text-center text-2xl uppercase mb-10 font-bold text-blue-500">Guardian information</h1>
+                    <p class="font-bold uppercase text-sm mb-10">FirstName: <span
+                        id="guardian-firstname"    class="text-sm font-light "></span></p>
+                    <p class="font-bold uppercase text-sm mb-10">LastName: <span class="text-sm font-light" id="guardian-lastname"></span>
+                    </p>
+                    <p class="font-bold uppercase text-sm mb-10">Email: <span
+                            class="text-sm font-light" id="guardian-email"></span></p>
+                    <p class="font-bold uppercase text-sm mb-10">Phone: <span
+                            class="text-sm font-light" id="guardian-phone"></span></p>
+                    <p class="font-bold uppercase text-sm mb-10">Address: <span class="text-sm font-light" id="guardian-address"></span></p>
+                </div>
+                
+            </div>
+        </div>
+      </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../supabase.js"></script>
+<script src="student.js"></script>
+</html>

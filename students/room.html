@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../tailwindcss.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="flex justify-between align-center">
+        <div class="w-[15%]">
+            <div class="w-full bg-blue-600 rounded-e-[20px] px-3">
+                <ul class="w mx-auto mt-25 py-10 ">
+                    <a href="profile.html" class="">
+                        <div class="flex gap-4 mb-6 ">
+                            <img src="../images/user.png" alt="" class="w-7 h-7">
+                            <p class="text-white font-bold text-sm uppercase mt-1">profile</p>
+                        </div>
+                    </a>
+                    <a href="Account.html" class="">
+                        <div class="flex gap-4 mb-6 ">
+                            <img src="../images/info.png" alt="" class="w-7 h-7">
+                            <p class="text-white font-bold text-sm uppercase mt-1">info</p>
+                        </div>
+                    </a>
+                    <a href="room.html" class="">
+                        <div class="flex gap-4 mb-6 bg-blue-400 rounded-[20px] text-center py-1 ps-3">
+                            <img src="../images/bed.png" alt="" class="w-7 h-7">
+                            <p class="text-white font-bold text-sm uppercase mt-1">room</p>
+                        </div>
+                    </a>
+                    <a href="book.html">
+                        <div class="flex gap-4 mb-6 ">
+                            <img src="../images/booking.png" alt="" class="w-7 h-7">
+                            <p class="text-white font-bold text-sm uppercase">book</p>
+                        </div>
+                    </a>
+                    <a href="pay.html">
+                        <div class="flex gap-4 mb-6 ">
+                            <img src="../images/dollars.png" alt="" class="w-7 h-7">
+                            <p class="text-white font-bold text-sm uppercase">top up</p>
+                        </div>
+                    </a>
+                    <a href="" class="">
+                        <div class="flex gap-4 ">
+                            <img src="../images/do-not-disturb.png" alt="" class="w-7 h-7">
+                            <p class="text-white font-bold text-sm uppercase">Theme</p>
+                        </div>
+                    </a>
+                </ul>
+            </div>
+            <!-- <div class=""></div> -->
+        </div>
+        <div class="w-[70%] mx-auto mt-5">
+            <div>
+                <div class="shadow-lg w-[95%] mx-auto p-4 rounded-[10px]">
+                    <h1 class="text-center text-2xl uppercase mb-10 font-bold text-blue-500">Hostel: <span class="font-light">Lake Chad</span></h1>
+                    <p class="font-bold uppercase text-sm mb-10">Room Number: <span
+                            class="text-sm font-light">008</span></p>
+                    <p class="font-bold uppercase text-sm mb-10">Bed Space: <span class="text-sm font-light">03</span>
+                    </p>
+                    <p class="font-bold uppercase text-sm mb-10">Supervisor: <span
+                            class="text-sm font-light">Danjuma</span></p>
+                    <p class="font-bold uppercase text-sm mb-10">Session: <span
+                            class="text-sm font-bold text-blue-500">2025/2026</span></p>
+                    <p class="font-bold uppercase text-sm mb-10">Status: <span
+                            class="text-sm font-bold text-green-500">present</span></p>
+                    <div class="flex align-center gap-10">
+                        <p id="swap-btn"
+                            class="p-3 bg-blue-600 uppercase text-white hover:bg-blue-700 text-center rounded-[10px] mt-5 font-bold w-[50%]">
+                            swap</p>
+                        <p id="checkout-btn"
+                            class="p-3 bg-blue-600 uppercase text-white hover:bg-blue-700 text-center rounded-[10px] mt-5 font-bold w-[50%]">
+                            checkout</p>
+                    </div>
+                </div>
+                <div>
+                    <div id="checkout" class="reason pt-50 hide">
+                        <p id="cancel-checkout" class="cancel">❌</p>
+                        <div class="reason-selection bg-white shadow-lg p-5 w-[30%] mx-auto rounded-[10px]">
+                            <div class="flex gap-5  items-center mb-3">
+                                <input type="checkbox" class="w-4 h-4">
+                                <p class="font-bold text-lg">Home</p>
+                            </div>
+                            <div class="flex items-center gap-5 h-5">
+                                <input type="checkbox" class=" w-4 h-4 bg-blue-500">
+                                <p class="font-bold text-lg ">End of semester/break</p>
+                            </div>
+                            
+                        </div>
+                        <p class="p-3 bg-blue-600 uppercase text-white hover:bg-blue-700 text-center rounded-[10px] mt-5 font-bold w-[20%] mx-auto">
+                            confirm</p>
+
+                    </div>
+                    
+                     <div id="swap" class="reason pt-25 hide ">
+                        <p id="cancel-swap" class="cancel">❌</p>
+                        <div class="reason-swap bg-white shadow-lg p-5 w-[40%] mx-auto rounded-[10px] py-10">
+                            <div class="swap-reason mb-5 w-full mx-auto">
+                                <select name="" id="" class="swap-input ps-2  w-full mx-auto border-2 border-solid border-blue-400 h-10 rounded-[10px]" required>
+                                    <option value=""></option>
+                                    <option value="">001</option>
+                                    <option value="">002</option>
+                                    <option value="">003</option>
+                                    <option value="">004</option>
+                                    <option value="">005</option>
+                                </select>
+                                <label  class="font-bold text-blue-600 uppercase text-sm ms-1">Current Room</label>
+                            </div>
+                             <div class="swap-reason mb-8 w-full mx-auto ">
+                                <select name="" id="" class="swap-input ps-2 text-blue-600 w-full mx-auto border-2 border-solid border-blue-400 h-10 rounded-[10px]" required>
+                                    <option value=""></option>
+                                    <option value="">001</option>
+                                    <option value="">002</option>
+                                    <option value="">003</option>
+                                    <option value="">004</option>
+                                    <option value="">005</option>
+                                </select>
+                                <label  class="font-bold text-blue-600 uppercase text-sm ms-1">desired room</label>
+                            </div>
+                            <div class="swap-reason  gap-5 h-5">
+                                <input type="text" class="outline-none ps-2 border-2 border-solid border-blue-400 h-10 rounded-[10px] w-full mx-auto" required>
+                                <label class="text-blue-600">Reason</label>
+                            </div>
+                            <p class="p-3 bg-blue-600 uppercase text-white hover:bg-blue-700 text-center rounded-[10px] mt-5 font-bold mt-10 w-[90%] mx-auto">
+                            confirm</p>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="room.js"></script>
+</html>

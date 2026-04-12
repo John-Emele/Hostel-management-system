@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../tailwindcss.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+<body class="background">
+    <div class="shadow-lg w-[60%] mx-auto h-100 pt-5  mt-20 bg-[#000000] rounded-[10px]">
+        <p class="text-center text-2xl text-blue-500 uppercase">sign in</p>
+        <form action="" class="w-[90%] mx-auto py-10 ">
+            <div class="form-group mb-20">
+                <input id="sign-email" type="email" class="outline-none border-2 border-solid ps-3 border-blue-800 w-full h-10 rounded-[10px]" required>
+                <label class="text-blue-800">Student Email</label>
+                <p id="email-error" class="error text-light text-xs text-red-400 ms-3"></p>
+            </div>
+            <div class="form-group">
+                <input id="sign-password" type="password" class="outline-none border-2 border-solid border-blue-800 w-full h-10 ps-3 rounded-[10px]" required>
+                <label class="text-blue-800">password</label>
+                <p id="password-error" class="error text-light text-xs text-red-400 ms-3"></p>
+            </div>
+            <div class="w-[50%] mx-auto mt-10 h-10">
+                <button id="sign-btn" type="button" class="w-full text-xl font-bold text-white bg-blue-900 h-full rounded-[10px] uppercase hover:bg-blue-700">sign in</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../supabase.js"></script>
+<script src="sign.js"></script>
+</html>
