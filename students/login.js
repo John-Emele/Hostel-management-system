@@ -6,57 +6,13 @@ const login_btn = document.getElementById("login-btn");
 let form_check = false;
 
 async function login() {
-    // try {
-    // if (login_email.value == "") {
-    //     email_error.innerHTML = "Field must not be empty";
-    //     form_check = true;
-    // }
-    // else {
-    //     email_error.innerHTML = "";
-    //     form_check = false;
-    // }
-    // if (login_password.value == "") {
-    //     password_error.innerHTML = "Field must not be empty";
-    //     form_check = true;
-    // }
-    // else {
-    //     password_error.innerHTML = "";
-    //     form_check = false;
-    // }
-
+    
     if (login_email.value === "" || login_password.value === "") {
         form_check = true;
         alert("Please fill all fields");
         return;
     }
 
-    // if (form_check) {
-        
-    // }
-
-    // if (form_check == false) {
-
-    //     login_btn.disabled = true;
-    //     login_btn.textContent = "Logging in...";
-
-    //     const email = login_email.value;
-    //     const password = login_password.value;
-
-    //     const { data, error } = await supabaseClient.auth.signInWithPassword({
-    //         email,
-    //         password
-    //     });
-    //     console.log(data);
-
-    //     if (error) {
-    //         console.error(error); // 👈 VERY IMPORTANT
-    //         alert(error.message);
-    //         sign_btn.disabled = false;
-    //         sign_btn.textContent = "login";
-    //         return;
-    //     }
-    // }
-    // alert("login successful!");
 
     login_btn.disabled = true;
     login_btn.textContent = "login in...";
