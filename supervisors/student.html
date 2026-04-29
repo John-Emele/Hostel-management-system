@@ -8,37 +8,78 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <!-- side menu -->
+    <div id="side-menu" class="hide w-[70%]  bg-blue-600 rounded-e-[20px] lg:px-3 md:px-0  h-[100vh] side-menu z-100">
+                <ul class="w mx-auto  py-10 ">
+                    <a href="dashboard.html" class="">
+                        <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:py-1 hover:ps-3">
+                            <img src="../images/layout.png" alt="" class="w-6 h-6">
+                            <p class=" text-white font-bold text-sm uppercase mt-1">dashboard</p>
+                        </div>
+                    </a>
+                    <a href="student.html" class="">
+                        <div class="flex gap-3 items-center mb-6 px-3 bg-blue-400   py-1 ps-3 ">
+                            <img src="../images/students (1).png" alt="" class="w-7 h-7">
+                            <p class=" text-white font-bold text-sm uppercase mt-1">student</p>
+                        </div>
+                    </a>
+                    <a href="room.html" class="">
+                        <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
+                            <img src="../images/bed.png" alt="" class="w-7 h-7">
+                            <p class="text-white font-bold text-sm uppercase mt-1">room</p>
+                        </div>
+                    </a>
+                    <a href="request.html">
+                        <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
+                            <img src="../images/interview.png" alt="" class="w-7 h-7">
+                            <p class="text-white font-bold text-sm uppercase">request</p>
+                        </div>
+                    </a>
+                    <a href="complaint.html">
+                        <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
+                            <img src="../images/complain.png" alt="" class="w-7 h-7">
+                            <p class="text-white font-bold text-sm uppercase">complaint</p>
+                        </div>
+                    </a>
+                    <a href="" class="">
+                        <div class="flex gap-3 items-center px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
+                            <img src="../images/do-not-disturb.png" alt="" class="w-7 h-7">
+                            <p class=" text-white font-bold text-sm uppercase">Theme</p>
+                        </div>
+                    </a>
+                </ul>
+    </div>
     <div id="main-container" class="flex items-center justify-between ">
-        <div class="bg-blue-600 w-[25%] mx-auto">
-            <ul class="w-full h-[100vh] mt-15 px-4  ">
+       <div class="bg-blue-600 lg:w-[25%] md:w-[7%] mx-auto hidden md:block">
+            <ul class="w-full h-[100vh] mt-15 lg:px-4  ">
                 <a href="dashboard.html">
-                    <div class="flex items-center gap-4  p-3  mb-5">
-                        <img src="../images/layout.png" alt="" class="w-7 h-7">
-                        <li class="font-bold text-sm uppercase text-white ">Dashboard</li>
+                    <div class="lg:flex items-center gap-4 hover:bg-blue-300 p-3 lg:hover:rounded-[10px] mb-5 md:ps-4 lg:ps-2">
+                        <img src="../images/layout.png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+                        <li class="font-bold text-sm uppercase text-blue-600  md:hidden lg:block">Dashboard</li>
                     </div>
                 </a>
                 <a href="student.html">
-                    <div class="flex items-center gap-4 p-3 mb-5 bg-white rounded-[10px]">
-                        <img src="../images/students (1).png" alt="" class="w-7 h-7">
-                        <li class="font-bold text-sm uppercase text-blue-600 ">Students</li>
+                    <div class="lg:flex items-center gap-4 p-3 mb-5 bg-white lg:rounded-[10px] md:ps-4  lg:ps-2">
+                        <img src="../images/students (1).png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+                        <li class="font-bold text-sm uppercase text-white md:hidden lg:block">Students</li>
                     </div>
                 </a>
                 <a href="room.html">
-                    <div class="flex items-center gap-4 p-3 mb-5">
-                        <img src="../images/door.png" alt="" class="w-7 h-7">
-                        <li class="font-bold text-sm uppercase text-white ">Rooms</li>
+                    <div class="lg:flex items-center gap-4 p-3 mb-5 hover:bg-blue-300 lg:hover:rounded-[10px] md:ps-4  lg:ps-2">
+                        <img src="../images/door.png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+                        <li class="font-bold text-sm uppercase text-white md:hidden lg:block">Rooms</li>
                     </div>
                 </a>
                 <a href="request.html">
-                    <div class="flex items-center gap-4 p-3 mb-5">
-                        <img src="../images/interview.png" alt="" class="w-7 h-7">
-                        <li class="font-bold text-sm uppercase text-white ">Request</li>
+                    <div class="lg:flex items-center gap-4 p-3 mb-5 hover:bg-blue-300 lg:hover:rounded-[10px] md:ps-4  lg:ps-2">
+                        <img src="../images/interview.png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+                        <li class="font-bold text-sm uppercase text-white md:hidden lg:block">Request</li>
                     </div>
                 </a>
                 <a href="complaint.html">
-                    <div class="flex items-center gap-4 p-3 mb-45">
-                        <img src="../images/complain.png" alt="" class="w-7 h-7">
-                        <li class="font-bold text-sm uppercase text-white">Complaints</li>
+                    <div class="lg:flex items-center gap-4 p-3 mb-5 hover:bg-blue-300 lg:hover:rounded-[10px] md:ps-4  lg:ps-2">
+                        <img src="../images/complain.png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+                        <li class="font-bold text-sm uppercase text-white md:hidden lg:block">Complaints</li>
                     </div>
                 </a>
 
@@ -50,15 +91,18 @@
                 </a>
             </ul>
         </div>
-        <div class="w-[75%] mx-auto h-[100vh] ">
-            <div class="w-[95%] mx-auto" >
-                <h1 class="text-xl uppercase font-bold text-blue-800">students</h1>
+        <div class="lg:w-[75%] md:w-[93%] w-full mx-auto h-[100vh] md:pt-5 pt-10">
+            <div class="w-[95%] mx-auto " >
+                <div class="flex justify-between items-center top-menu-2 w-[95%] mx-auto">
+                    <h1 class="text-xl uppercase font-bold text-blue-800">students</h1>
+                   <img id="side-menu-btn" src="../images/widget.png" alt="" class="md:hidden w-8 h-8">
+                </div>
                 <div class="border-2 border-solid border-blue-800  text-blue-800 ps-5  rounded-[10px] my-5">
-                    <input type="search" placeholder="search student..." class="w-full outline-none placeholder:text-blue-800 placeholder:text-xl h-10" >
+                    <input type="search" placeholder="search student..." class="md:w-full w-[90%] mx-auto outline-none placeholder:text-blue-800 md:placeholder:text-xl placeholder:text-lg h-10" >
                 </div>
                 <table class="w-full">
                     <thead>
-                        <tr class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase font-bold">
+                        <tr class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase font-bold md:text-lg text-xs">
                         <th class="py-1">Student Id</td>
                         <th class="py-1">Name</td>
                         <th class="py-1">room</td>
@@ -66,14 +110,14 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase">
-                            <td class="py-1">242120111</td>
-                            <td class="py-1">john Emele</td>
+                        <tr class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center text-sm md:text-lg">
+                            <td class="py-1 text-blue-600 font-bold">242120111</td>
+                            <td class="py-1">John Emele</td>
                             <td class="py-1">008</td>
                             <td class="py-2">
                                 <div class="flex  items-center gap-3 ">
-                                    <button id="view-btn" class="text-sm bg-blue-500 text-white px-5 py-2 rounded-[5px]">View</button>
-                                    <button class="bg-red-500 text-white text-sm px-5 py-2 rounded-[5px]">remove</button>
+                                    <button id="view-btn" class="md:text-sm text-xs bg-blue-500 text-white md:px-5 md:py-2  px-3 py-1 rounded-[5px]">View</button>
+                                    <button class="bg-red-500 text-white md:text-sm text-xs md:px-5 md:py-2  px-3 py-1 rounded-[5px]">Remove</button>
                                 </div>
                             </td>
                         </tr>

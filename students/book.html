@@ -7,154 +7,243 @@
     <script src="../tailwindcss.min.js"></script>
     <link rel="stylesheet" href="../style.css">
 </head>
-<body>
-    
-    <div class="flex justify-between align-center">
-        <div class="w-[15%]">
-            <h1 class="portal text-blue-400 font-bold text-xl uppercase ms-3">student profile</h1>
-            <div class="w-full bg-blue-600 rounded-e-[20px] px-3">
-                <ul class="w mx-auto mt-25 py-10 ">
+<body class="relative">
+    <!-- side menu -->
+    <div id="side-menu" class="hide w-[70%]  bg-blue-600 rounded-e-[20px] lg:px-3 md:px-0  h-[100vh] side-menu z-1000">
+                <ul class="w mx-auto  py-10 ">
                     <a href="profile.html" class="">
-                        <div class="flex gap-4 mb-6 ">
-                            <img src="../images/user.png" alt="" class="w-7 h-7">
-                            <p class="text-white font-bold text-sm uppercase mt-1">profile</p>
+                        <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:py-1 hover:ps-3">
+                            <img src="../images/user.png" alt="" class="w-6 h-6">
+                            <p class=" text-white font-bold text-sm uppercase mt-1">profile</p>
                         </div>
                     </a>
                     <a href="Account.html" class="">
-                        <div class="flex gap-4 mb-6 ">
+                        <div class="flex gap-3 items-center mb-6 px-3 bg-blue-400   py-1 ps-3 ">
                             <img src="../images/info.png" alt="" class="w-7 h-7">
-                            <p class="text-white font-bold text-sm uppercase mt-1">info</p>
+                            <p class=" text-white font-bold text-sm uppercase mt-1">info</p>
                         </div>
                     </a>
                     <a href="room.html" class="">
-                        <div class="flex gap-4 mb-6 ">
+                        <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
                             <img src="../images/bed.png" alt="" class="w-7 h-7">
                             <p class="text-white font-bold text-sm uppercase mt-1">room</p>
                         </div>
                     </a>
                     <a href="pay.html">
-                        <div class="flex gap-4 mb-6 bg-blue-400 rounded-[20px] text-center py-1 ps-3 ">
+                        <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
                             <img src="../images/booking.png" alt="" class="w-7 h-7">
                             <p class="text-white font-bold text-sm uppercase">book</p>
                         </div>
                     </a>
                     <a href="pay.html">
-                        <div class="flex gap-4 mb-6 ">
+                        <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
                             <img src="../images/dollars.png" alt="" class="w-7 h-7">
                             <p class="text-white font-bold text-sm uppercase">top up</p>
                         </div>
                     </a>
                     <a href="" class="">
-                        <div class="flex gap-4 ">
+                        <div class="flex gap-3 items-center px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
                             <img src="../images/do-not-disturb.png" alt="" class="w-7 h-7">
-                            <p class="text-white font-bold text-sm uppercase">Theme</p>
+                            <p class=" text-white font-bold text-sm uppercase">Theme</p>
+                        </div>
+                    </a>
+                </ul>
+    </div>
+    <div class="flex justify-between align-center">
+        <div class="md:w-[8%] lg:w-[15%]  mx-auto hidden md:block ">
+            <div class="w-full bg-blue-600 rounded-e-[20px] lg:px-3 md:px-0 ">
+                <ul class="w mx-auto mt-25 py-10 ">
+                    <a href="profile.html" class="">
+                        <div class="flex gap-4 mb-6 px-3 hover:bg-blue-400 lg:hover:rounded-[20px] md:hover:text-center hover:py-1 hover:ps-3">
+                            <img src="../images/user.png" alt="" class="w-7 h-7">
+                            <p class="md:hidden lg:block text-white font-bold text-sm uppercase mt-1">profile</p>
+                        </div>
+                    </a>
+                    <a href="Account.html" class="">
+                        <div class="flex gap-4 mb-6 px-3 hover:bg-blue-400 lg:hover:rounded-[20px] md:hover:text-center hover:py-1 hover:ps-3">
+                            <img src="../images/info.png" alt="" class="w-7 h-7">
+                            <p class="md:hidden lg:block text-white font-bold text-sm uppercase mt-1">info</p>
+                        </div>
+                    </a>
+                    <a href="room.html" class="">
+                        <div class="flex gap-4 mb-6 px-3 hover:bg-blue-400 lg:hover:rounded-[20px] md:hover:text-center hover:py-1 hover:ps-3">
+                            <img src="../images/bed.png" alt="" class="w-7 h-7">
+                            <p class="md:hidden lg:block text-white font-bold text-sm uppercase mt-1">room</p>
+                        </div>
+                    </a>
+                    <a href="pay.html">
+                        <div class="flex gap-4 mb-6 px-3 bg-blue-400 lg:rounded-[20px] md:text-center py-1 ps-3">
+                            <img src="../images/booking.png" alt="" class="w-7 h-7">
+                            <p class="md:hidden lg:block text-white font-bold text-sm uppercase">book</p>
+                        </div>
+                    </a>
+                    <a href="pay.html">
+                        <div class="flex gap-4 mb-6 px-3 hover:bg-blue-400 lg:hover:rounded-[20px] md:hover:text-center hover:py-1 hover:ps-3">
+                            <img src="../images/dollars.png" alt="" class="w-7 h-7">
+                            <p class="md:hidden lg:block text-white font-bold text-sm uppercase">top up</p>
+                        </div>
+                    </a>
+                    <a href="" class="">
+                        <div class="flex gap-4 px-3 hover:bg-blue-400 lg:hover:rounded-[20px] md:hover:text-center hover:py-1 hover:ps-3">
+                            <img src="../images/do-not-disturb.png" alt="" class="w-7 h-7">
+                            <p class="md:hidden lg:block text-white font-bold text-sm uppercase">Theme</p>
                         </div>
                     </a>
                 </ul>
             </div>
             <!-- <div class=""></div> -->
         </div>
-        <!-- <div class="w-[80%] mx-auto mt-10 h-100 truncate overflow-auto ">
-          <div>
-            <div id="sort_btn" class="sort-btn flex gap-3 ">
-                <div id="sort-menu"  class="shadow-lg  bg-white  text-center border-1 border-solid border-blue-600 w-40 hide" >
-                    <div class=" gap-2  w-full border-b border-b-solid border-b-blue-600 text-center relative">
-                        <p id="hostels" class="font-bold uppercase text-blue-600 ms-5 h-8">Hostels</p>
-                        <ul id="hostel-list" class="bg-blue-300  w-full hide">
-                            <li class="font-light text-sm px-4 border-b border-b-1 border-b-solid border-b-white h-5 hover:bg-blue-500 hover:text-white">Lake Chad</li>
-                            <li class="font-light text-sm px-4 border-b border-b-1 border-b-solid border-b-white h-5 hover:bg-blue-500 hover:text-white">black volta</li>
-                            <li class="font-light text-sm px-4 h-5">Blue Nile</li>
-                        </ul>
-                    </div>
-                    <div class="gap-2 border-b w-full border-b-solid border-b-blue-600 text-center ">
-                        <p id="rooms" class="font-bold uppercase text-blue-600 ms-5 h-8">room type</p>
-                        <ul id="room-list" class="bg-blue-300  w-full hide">
-                            <li class="font-light text-sm px-4 border-b border-b-1 border-b-solid border-b-white h-5 hover:bg-blue-500 hover:text-white">2 beds</li>
-                            <li class="font-light text-sm px-4 border-b border-b-1 border-b-solid border-b-white h-5 hover:bg-blue-500 hover:text-white">3 beds</li>
-                            <li class="font-light text-sm px-4 border-b border-b-1 border-b-solid border-b-white h-5 hover:bg-blue-500 hover:text-white">4beds</li>
-                            <li class="font-light text-sm px-4 border-b border-b-1 border-b-solid border-b-white h-5 hover:bg-blue-500 hover:text-white">6 beds</li>
-                        </ul>
-                    </div>
-                </div>
-               <img id="filter-btn" src="../images/sort.png" alt="" class="w-7 h-7">
+         <div class="md:w-[92%] lg:w-[85%] w-full mx-auto md:pt-15  lg:max-h-200 md:h-225 ">
+            <div class="top-menu-hostel flex justify-between w-[95%] mx-auto z-100 h-20 pt-5">
+            <h1 class="text-blue-600 text-xl font-bold md:hidden  mx-auto ">Hostels</h1>
+            <img id="side-menu-btn" src="../images/widget.png" alt="" class="md:hidden w-8 h-8 ">
             </div>
-            <table class="border-2 w-[95%] mt-15">
-                <thead>
-                    <tr class="border">
-                        <th class="font-bold uppercase">S/N</th>
-                        <th class="font-bold uppercase">Hostel</th>
-                        <th class="font-bold uppercase">room type</th>
-                        <th class="font-bold uppercase">Price</th>
-                        <th class="font-bold uppercase"></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="border-2 text-center h-10">
-                        <td class="font-light">1</td>
-                        <td class="font-bold uppercase text-xs text-blue-600">Lake Cahd</td>
-                        <td class="font-bold uppercase text-xs">3 beds</td>
-                        <td class="font-bold uppercase text-xs ">₦<span>1,000,000</span></td>
-                        <td class="font-light uppercase text-green-600 text-xs">Available</td>
-                    </tr>
-                    <tr class="border-2 text-center h-10">
-                        <td class="font-light">2</td>
-                        <td class="font-bold uppercase text-xs text-blue-600">Lake Cahd</td>
-                        <td class="font-bold uppercase text-xs">4 beds</td>
-                        <td class="font-bold uppercase text-xs ">₦<span>1,000,000</span></td>
-                        <td class="font-light uppercase text-green-600 text-xs">Available</td>
-                    </tr>
-                    <tr class="border-2 text-center h-10">
-                        <td class="font-light">3</td>
-                        <td class="font-bold uppercase text-xs text-blue-600">Lake Cahd</td>
-                        <td class="font-bold uppercase text-xs">6 beds</td>
-                        <td class="font-bold uppercase text-xs ">₦<span>1,000,000</span></td>
-                        <td class="font-light uppercase text-green-600 text-xs">Available</td>
-                    </tr>
-                    <tr class="border-2 text-center h-10">
-                        <td class="font-light">4</td>
-                        <td class="font-bold uppercase text-xs text-blue-600">Lake Cahd</td>
-                        <td class="font-bold uppercase text-xs">3 beds</td>
-                        <td class="font-bold uppercase text-xs ">₦<span>1,000,000</span></td>
-                        <td class="font-light uppercase text-green-600 text-xs">Available</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div></div>
-          </div>
-        </div> -->
-         
+          <div class="w-[90%] md:w-[95%] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 pt-10 md:pt-0 truncate overflow-auto hostel-display ">
+           <div  class="w-full mx-auto relative overflow-hidden truncate rounded-[5px] dash-list-2">
+                <img src="../images/bourse-building-philadelphia.jpg" class="image h-full rounded-[5px] w-full" data-id="${hostel.id}">
+                <div data-id="${hostel.id}" class="info information_2 hide">
+                    <h1 class="font-bold uppercase text-2xl text-white mb-5">lake chad</h1>
+                    <button data-id="${hostel.id}"
+                        class="view-hostel rounded-[20px] p-2 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">
+                        View
+                    </button>
+                </div>
+            </div>
+            <div  class="w-full mx-auto relative overflow-hidden truncate rounded-[5px] dash-list-2">
+                <img src="../images/bourse-building-philadelphia.jpg" class="image h-full rounded-[5px] w-full" data-id="${hostel.id}">
+                <div data-id="${hostel.id}" class="info information_2 hide">
+                    <h1 class="font-bold uppercase text-2xl text-white mb-5">lake chad</h1>
+                    <button data-id="${hostel.id}"
+                        class="view-hostel rounded-[20px] p-2 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">
+                        View
+                    </button>
+                </div>
+            </div>
+            <div  class="w-full mx-auto relative overflow-hidden truncate rounded-[5px] dash-list-2">
+                <img src="../images/bourse-building-philadelphia.jpg" class="image h-full rounded-[5px] w-full" data-id="${hostel.id}">
+                <div data-id="${hostel.id}" class="info information_2 hide">
+                    <h1 class="font-bold uppercase text-2xl text-white mb-5">lake chad</h1>
+                    <button data-id="${hostel.id}"
+                        class="view-hostel rounded-[20px] p-2 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">
+                        View
+                    </button>
+                </div>
+            </div>
+            <div  class="w-full mx-auto relative overflow-hidden truncate rounded-[5px] dash-list-2">
+                <img src="../images/bourse-building-philadelphia.jpg" class="image h-full rounded-[5px] w-full" data-id="${hostel.id}">
+                <div data-id="${hostel.id}" class="info information_2 hide">
+                    <h1 class="font-bold uppercase text-2xl text-white mb-5">lake chad</h1>
+                    <button data-id="${hostel.id}"
+                        class="view-hostel rounded-[20px] p-2 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">
+                        View
+                    </button>
+                </div>
+            </div>
+            <div  class="w-full mx-auto relative overflow-hidden truncate rounded-[5px] dash-list-2">
+                <img src="../images/bourse-building-philadelphia.jpg" class="image h-full rounded-[5px] w-full" data-id="${hostel.id}">
+                <div data-id="${hostel.id}" class="info information_2 hide">
+                    <h1 class="font-bold uppercase text-2xl text-white mb-5">lake chad</h1>
+                    <button data-id="${hostel.id}"
+                        class="view-hostel rounded-[20px] p-2 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">
+                        View
+                    </button>
+                </div>
+            </div>
+             <div  class="w-full mx-auto relative overflow-hidden truncate rounded-[5px] dash-list-2">
+                <img src="../images/bourse-building-philadelphia.jpg" class="image h-full rounded-[5px] w-full" data-id="${hostel.id}">
+                <div data-id="${hostel.id}" class="info information_2 hide">
+                    <h1 class="font-bold uppercase text-2xl text-white mb-5">lake chad</h1>
+                    <button data-id="${hostel.id}"
+                        class="view-hostel rounded-[20px] p-2 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">
+                        View
+                    </button>
+                </div>
+            </div>
+             <div  class="w-full mx-auto relative overflow-hidden truncate rounded-[5px] dash-list-2">
+                <img src="../images/bourse-building-philadelphia.jpg" class="image h-full rounded-[5px] w-full" data-id="${hostel.id}">
+                <div data-id="${hostel.id}" class="info information_2 hide">
+                    <h1 class="font-bold uppercase text-2xl text-white mb-5">lake chad</h1>
+                    <button data-id="${hostel.id}"
+                        class="view-hostel rounded-[20px] p-2 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">
+                        View
+                    </button>
+                </div>
+            </div>
+             <div  class="w-full mx-auto relative overflow-hidden truncate rounded-[5px] dash-list-2">
+                <img src="../images/bourse-building-philadelphia.jpg" class="image h-full rounded-[5px] w-full" data-id="${hostel.id}">
+                <div data-id="${hostel.id}" class="info information_2 hide">
+                    <h1 class="font-bold uppercase text-2xl text-white mb-5">lake chad</h1>
+                    <button data-id="${hostel.id}"
+                        class="view-hostel rounded-[20px] p-2 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">
+                        View
+                    </button>
+                </div>
+            </div>
 
-         <div class="w-[80%] mx-auto mt-15 h-120 truncate overflow-auto ">
-          <div class="grid grid-cols-2 gap-5">
-            <div class="w-full mx-auto h-100 relative overflow-hidden truncate rounded-[30px]">
-                <img id="image" src="../images/bourse-building-philadelphia.jpg" alt="" class="h-full rounded-[30px]">
-                <div  id="info" class="information hide">
-                  <h1 class="font-bold uppercase text-3xl text-white mb-5">black volta</h1>
-                  <button id="view-hostel" class="rounded-[20px] p-3 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">View</button>
+             <div  class="w-full mx-auto relative overflow-hidden truncate rounded-[5px] dash-list-2">
+                <img src="../images/bourse-building-philadelphia.jpg" class="image h-full rounded-[5px] w-full" data-id="${hostel.id}">
+                <div data-id="${hostel.id}" class="info information_2 hide">
+                    <h1 class="font-bold uppercase text-2xl text-white mb-5">lake chad</h1>
+                    <button data-id="${hostel.id}"
+                        class="view-hostel rounded-[20px] p-2 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">
+                        View
+                    </button>
                 </div>
             </div>
-            <div class="w-full mx-auto h-100 relative overflow-hidden truncate rounded-[30px]">
-                <img id="image-2" src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt="" class="h-full rounded-[30px]">
-                <div  id="info-2" class="information hide">
-                  <h1 class="font-bold uppercase text-3xl text-white mb-5">black volta</h1>
-                  <button class="rounded-[20px] p-3 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">View</button>
+             <div  class="w-full mx-auto relative overflow-hidden truncate rounded-[5px] dash-list-2">
+                <img src="../images/bourse-building-philadelphia.jpg" class="image h-full rounded-[5px] w-full" data-id="${hostel.id}">
+                <div data-id="${hostel.id}" class="info information_2 hide">
+                    <h1 class="font-bold uppercase text-2xl text-white mb-5">lake chad</h1>
+                    <button data-id="${hostel.id}"
+                        class="view-hostel rounded-[20px] p-2 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">
+                        View
+                    </button>
                 </div>
             </div>
-            <div class="w-full mx-auto h-100 relative overflow-hidden truncate rounded-[30px]">
-                <img id="image-3" src="../images/london-united-kingdom-may-27-2019-tall-skyscraper-buildings-inside-huge-london-city-london-is-one-famous-city-world.jpg" alt="" class="h-full rounded-[30px]">
-                <div id="info-3" class="information hide">
-                  <h1 class="font-bold uppercase text-3xl text-white mb-5">black volta</h1>
-                  <button class="rounded-[20px] p-3 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">View</button>
+
+             <div  class="w-full mx-auto relative overflow-hidden truncate rounded-[5px] dash-list-2">
+                <img src="../images/bourse-building-philadelphia.jpg" class="image h-full rounded-[5px] w-full" data-id="${hostel.id}">
+                <div data-id="${hostel.id}" class="info information_2 hide">
+                    <h1 class="font-bold uppercase text-2xl text-white mb-5">lake chad</h1>
+                    <button data-id="${hostel.id}"
+                        class="view-hostel rounded-[20px] p-2 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">
+                        View
+                    </button>
                 </div>
             </div>
-            <div class="w-full mx-auto h-100 relative overflow-hidden truncate rounded-[30px]">
-                <img id="image-4" src="../images/bourse-building-philadelphia.jpg" alt="" class="h-full rounded-[30px]">
-                <div id="info-4" class="information hide">
-                  <h1 class="font-bold uppercase text-3xl text-white mb-5">black volta</h1>
-                  <button class="rounded-[20px] p-3 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">View</button>
+             <div  class="w-full mx-auto relative overflow-hidden truncate rounded-[5px] dash-list-2">
+                <img src="../images/bourse-building-philadelphia.jpg" class="image h-full rounded-[5px] w-full" data-id="${hostel.id}">
+                <div data-id="${hostel.id}" class="info information_2 hide">
+                    <h1 class="font-bold uppercase text-2xl text-white mb-5">lake chad</h1>
+                    <button data-id="${hostel.id}"
+                        class="view-hostel rounded-[20px] p-2 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">
+                        View
+                    </button>
                 </div>
             </div>
+             <div  class="w-full mx-auto relative overflow-hidden truncate rounded-[5px] dash-list-2">
+                <img src="../images/bourse-building-philadelphia.jpg" class="image h-full rounded-[5px] w-full" data-id="${hostel.id}">
+                <div data-id="${hostel.id}" class="info information_2 hide">
+                    <h1 class="font-bold uppercase text-2xl text-white mb-5">lake chad</h1>
+                    <button data-id="${hostel.id}"
+                        class="view-hostel rounded-[20px] p-2 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">
+                        View
+                    </button>
+                </div>
+            </div>
+             <div  class="w-full mx-auto relative overflow-hidden truncate rounded-[5px] dash-list-2">
+                <img src="../images/bourse-building-philadelphia.jpg" class="image h-full rounded-[5px] w-full" data-id="${hostel.id}">
+                <div data-id="${hostel.id}" class="info information_2 hide">
+                    <h1 class="font-bold uppercase text-2xl text-white mb-5">lake chad</h1>
+                    <button data-id="${hostel.id}"
+                        class="view-hostel rounded-[20px] p-2 w-25 font-bold uppercase text-white hover:text-black bg-blue-600 hover:bg-white">
+                        View
+                    </button>
+                </div>
+            </div>
+
           </div>
+
           <div id="hostel-detail" class="hostel-details pt-[150px] hide">
             <img id="cancel" class="cancel w-7 h-7" src="../images/cancel.png" alt="">
              <div class="w-[80%] mx-auto shadow-lg bg-white rounded-[10px] p-5">

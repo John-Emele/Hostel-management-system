@@ -14,6 +14,25 @@ const room_image = document.getElementById("room-image");
 const room_container = document.getElementById("roomcontainer");
 const room_cancel = document.getElementById("room-cancel");
 const loading_image = document.getElementById("loading-image");
+const side_menu = document.getElementById("side-menu");
+const side_menu_btn = document.getElementById("side-menu-btn");
+
+side_menu_btn.addEventListener("click", () => {
+   if (side_menu.classList.contains("hide")) {
+      side_menu.classList.remove("menu-exit");
+      side_menu.classList.add("menu-entrance");
+      setTimeout(() => {
+         side_menu.classList.remove("hide");
+      }, 250);
+   }
+   else {
+      side_menu.classList.remove("menu-entrance");
+      side_menu.classList.add("menu-exit");
+      setTimeout(() => {
+         side_menu.classList.add("hide");
+      }, 250);
+   }
+});
 
 add_btn.addEventListener("click", ()=> {
   room_students.classList.add("hide");

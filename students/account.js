@@ -14,7 +14,7 @@ async function initapp(){
 initapp();
 
 const edit_cancel = document.getElementById("edit-cancel");
-const edit = document.getElementById("edit-container");
+const edit_student = document.getElementById("edit-container");
 const edit_cancel_guardian = document.getElementById("edit-cancel-guardian");
 const edit_guardian = document.getElementById("edit-container-guardian");
 const main_container = document.getElementById("main-container");
@@ -61,17 +61,75 @@ const guard_lastname_error = document.getElementById("guard-lastname-error");
 const guard_email_error = document.getElementById("guard-email-error");
 const guard_phone_error = document.getElementById("guard-phone-error");
 const guard_address_error = document.getElementById("guard-address-error");
+////toggle//
+const student_toggle = document.getElementById("student-toggle");
+const guardian_toggle = document.getElementById("guardian-toggle");
+const student_information = document.getElementById("student-information");
+const guardian_information = document.getElementById("guardian-information");
+const toggle_background = document.getElementById("toggle-background");
+///side-menu///
+const side_menu = document.getElementById("side-menu");
+const side_menu_btn = document.getElementById("side-menu-btn");
 
+
+student_toggle.addEventListener("click", () => {
+   student_toggle.classList.remove("hover:bg-blue-600", "hover:text-white")
+   toggle_background.classList.remove("toggle");
+   toggle_background.classList.remove("toggle_1");
+   toggle_background.classList.add("toggle_2");
+   student_information.classList.remove("hidden");
+   // guardian_toggle.classList.remove("text-white font-bold bg-blue-700 rounded-[5px]")
+   setTimeout(()=>{
+      student_toggle.className = "p-1 text-sm text-white font-bold z-10";
+      guardian_toggle.className = "p-1 text-sm text-blue-600 z-1 font-bold hover:bg-blue-600 hover:rounded-[5px] hover:text-white";
+   }, 550)
+   guardian_information.classList.add("hidden");
+})
+guardian_toggle.addEventListener("click", () => {
+   guardian_toggle.classList.remove("hover:bg-blue-600", "hover:text-white")
+   toggle_background.classList.remove("toggle");
+   toggle_background.classList.remove("toggle_2");
+   toggle_background.classList.add("toggle_1");
+   guardian_information.classList.remove("hidden");
+   setTimeout( () => {
+      guardian_toggle.className = "p-1 text-sm text-white font-bold z-10";
+   student_toggle.className = "p-1 text-sm text-blue-600 z-1 font-bold hover:bg-blue-600 hover:rounded-[5px] hover:text-white";
+   }, 550)
+   student_information.classList.add("hidden");
+})
+
+side_menu_btn.addEventListener("click", () => {
+   if(side_menu.classList.contains("hide")){
+    side_menu.classList.remove("menu-exit");
+    side_menu.classList.add("menu-entrance");
+    setTimeout( () => {
+        side_menu.classList.remove("hide");
+    },250);
+   }
+   else{
+    side_menu.classList.remove("menu-entrance");
+    side_menu.classList.add("menu-exit");
+    setTimeout( () => {
+        side_menu.classList.add("hide");
+    },250);
+   }
+});
+
+
+student_edit_btn.addEventListener("click", () => {
+   edit_student.classList.remove("hide");
+   edit_student.classList.add("smmoth-exit");
+})
 
 
 function display(){
    student_edit_btn.addEventListener("click", ()=> {
-    edit.classList.remove("hide")
+    edit_student.classList.remove("hide")
     main_container.classList.add("opacity-40");
    })
 
    edit_cancel.addEventListener("click",() => {
-    edit.classList.add("hide");
+    edit_student.classList.add("hide");
     main_container.classList.remove("opacity-40");
    })
 
@@ -137,7 +195,7 @@ async function update_form(){
       stud_address_error.innerHTML = "";
    }
 
-   if(form_check == flase){
+   if(form_check == false){
       const {data:user_info, error:info_data} = await supabaseClient
       .from("student-info")
       .insert([{

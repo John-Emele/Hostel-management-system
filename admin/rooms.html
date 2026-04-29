@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../tailwindcss.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="flex justify-between items-center gap-5 relative">
+        <div class="w-[25%] mx-auto bg-blue-900 h-[100vh] pt-10">
+            <ul class="w-[90%] mx-auto">
+                <a href="dashbaord.html" class="">
+                    <li class="uppercase mb-5 p-2 dash-list ">
+                    <div class="flex items-center gap-5">
+                        <img src="../images/layout.png" alt="" class="w-5 h-5">
+                        <p class="text-white text-sm font-bold">Dashbaord</p>
+                    </div>
+                </li>
+                </a>
+                <a href="hostel.html">
+                    <li class="uppercase mb-5 p-2 dash-list" >
+                    <div class="flex items-center gap-5 " >
+                        <img src="../images/hotel.png" alt="" class="w-5 h-5">
+                        <p class="text-white text-sm font-bold">Hostels</p>
+                    </div>
+                </li>
+                <a href="rooms.html">
+                    <li class="uppercase bg-white mb-5 rounded-[5px] p-2" >
+                    <div class="flex items-center gap-5 " >
+                        <img src="../images/door (1).png" alt="" class="w-5 h-5">
+                        <p class="text-blue-900 text-sm font-bold">room</p>
+                    </div>
+                </li>
+                </a>
+                <a href="student.html">
+                    <li class="uppercase  mb-5 p-2 dash-list">
+                    <div class="flex items-center gap-5">
+                        <img src="../images/user.png" alt="" class="w-5 h-5">
+                        <p class="text-white text-sm font-bold">Students</p>
+                    </div>
+                </li>
+                </a>
+                <a href="supervisor.html">
+                    <li class="uppercase  mb-5 p-2 dash-list">
+                    <div class="flex items-center gap-5" >
+                        <img src="../images/user.png" alt="" class="h-5 w-5">
+                        <p class="text-white text-sm font-bold">Supervisors</p>
+                    </div>
+                </li>
+                </a>
+               <a href="transaction.html">
+                 <li class="uppercase  mb-35 p-2 dash-list">
+                    <div class="flex items-center gap-5" >
+                        <img src="../images/dollars.png" alt="" class="w-5 h-5">
+                        <p class="text-white text-sm font-bold">Transaction</p>
+                    </div>
+                </li>
+               </a>
+                <li class="uppercase mb-5 p-2 bg-red-700 hover:bg-red-600 rounded-[10px]">
+                        <p class="text-white text-sm font-bold text-center ">logout</p>
+                </li>
+            </ul>
+        </div>
+        <div class=" w-[75%] mx-auto h-[100vh]">
+            <div class="w-[95%] mx-auto mt-10 mb-5">
+            <h1 class="uppercase text-blue-900 font-bold text-xl mb-3">rooms</h1>
+            <p class="w-full bg-blue-100 p-2 rounded-[5px] text-lg text-white font-bold">Dashboard</p>
+           </div>
+
+            <div class="grid grid-cols-2 gap-5 w-[95%] mx-auto mb-10">
+              <div class="bg-purple-400 h-30 rounded-[5px] dash-list-2 shadow-lg">
+                <h1 class="text-center font-bold text-white text-3xl uppercase mt-2">Total rooms</h1>
+                <p class="text-center text-white text-4xl font-bold mt-5">30</p>
+              </div>
+              <div class="bg-teal-300 h-30 rounded-[5px] dash-list-2 shadow-lg">
+                <h1 class="text-center font-bold text-white text-3xl uppercase mt-2">room types</h1>
+                <p class="text-center text-white text-4xl font-bold mt-5">30</p>
+              </div>
+              <!-- <div class="bg-green-400 h-20 rounded-[5px] dash-list-2 shadow-lg">
+                <h1 class="text-center font-bold text-white text-lg uppercase">Total supervisors</h1>
+                <p class="text-center text-white text-xl font-bold mt-2">30</p>
+              </div>
+              <div class="bg-red-400 h-20 rounded-[5px] dash-list-2 shadow-lg">
+                <h1 class="text-center font-bold text-white text-lg uppercase"></h1>
+                <p class="text-center text-white text-2xl font-bold mt-2">30</p>
+              </div> -->
+           </div>
+
+           <div class="w-[95%] mx-auto h-60 truncate overflow-auto room-table">
+            <!-- <div class="flex justify-end">
+                <button class=" bg-green-500 py-2 px-5 rounded-[5px] text-white font-bold">Add</button>
+            </div> -->
+                    <table class="w-full ">
+                        <thead>
+                            <tr
+                                class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase font-bold container-header">
+                                <th class="py-1">room type</th>
+                                <th class="py-1">bed spaces</th>
+                                <th class="py-1">price</td>
+                                <th class="py-1"></th>
+                                <th class="py-1">
+                                    <div class="flex justify-end">
+                                <button id="add-btn" class=" bg-green-500 py-2 px-5 rounded-[5px] text-white font-bold">Add</button>
+                                </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase">
+                                <td class="py-1">3 beds</td>
+                                <td class="py-1">6 beds</td>
+                                <td class="py-1 text-green-600 font-bold">₦750,000.00</td>
+                                <td class="py-2">
+                                    <div class="flex  items-center gap-3 w-[50%] mx-auto ">
+                                        <button id="view-btn"
+                                            class="text-xs bg-blue-500 text-white px-5 py-2 rounded-[5px] uppercase font-bold">edit</button>
+                                        <button id="remove-btn"
+                                            class="bg-red-500 text-white text-xs px-5 py-2 rounded-[5px] uppercase font-bold">remove</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase">
+                                <td class="py-1">3 beds</td>
+                                <td class="py-1">6 beds</td>
+                                <td class="py-1 text-green-600 font-bold">₦750,000.00</td>
+                                <td class="py-2">
+                                    <div class="flex  items-center gap-3 w-[50%] mx-auto ">
+                                        <button id="view-btn"
+                                            class="text-xs bg-blue-500 text-white px-5 py-2 rounded-[5px] uppercase font-bold">edit</button>
+                                        <button id="remove-btn"
+                                            class="bg-red-500 text-white text-xs px-5 py-2 rounded-[5px] uppercase font-bold">remove</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase">
+                                <td class="py-1">3 beds</td>
+                                <td class="py-1">6 beds</td>
+                                <td class="py-1 text-green-600 font-bold">₦750,000.00</td>
+                                <td class="py-2">
+                                    <div class="flex  items-center gap-3 w-[50%] mx-auto ">
+                                        <button id="view-btn"
+                                            class="text-xs bg-blue-500 text-white px-5 py-2 rounded-[5px] uppercase font-bold">edit</button>
+                                        <button id="remove-btn"
+                                            class="bg-red-500 text-white text-xs px-5 py-2 rounded-[5px] uppercase font-bold">remove</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase">
+                                <td class="py-1">3 beds</td>
+                                <td class="py-1">6 beds</td>
+                                <td class="py-1 text-green-600 font-bold">₦750,000.00</td>
+                                <td class="py-2">
+                                    <div class="flex  items-center gap-3 w-[50%] mx-auto ">
+                                        <button id="view-btn"
+                                            class="text-xs bg-blue-500 text-white px-5 py-2 rounded-[5px] uppercase font-bold">edit</button>
+                                        <button id="remove-btn"
+                                            class="bg-red-500 text-white text-xs px-5 py-2 rounded-[5px] uppercase font-bold">remove</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase">
+                                <td class="py-1">3 beds</td>
+                                <td class="py-1">6 beds</td>
+                                <td class="py-1 text-green-600 font-bold">₦750,000.00</td>
+                                <td class="py-2">
+                                    <div class="flex  items-center gap-3 w-[50%] mx-auto ">
+                                        <button id="view-btn"
+                                            class="text-xs bg-blue-500 text-white px-5 py-2 rounded-[5px] uppercase font-bold">edit</button>
+                                        <button id="remove-btn"
+                                            class="bg-red-500 text-white text-xs px-5 py-2 rounded-[5px] uppercase font-bold">remove</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase">
+                                <td class="py-1">3 beds</td>
+                                <td class="py-1">6 beds</td>
+                                <td class="py-1 text-green-600 font-bold">₦750,000.00</td>
+                                <td class="py-2">
+                                    <div class="flex  items-center gap-3 w-[50%] mx-auto ">
+                                        <button id="view-btn"
+                                            class="text-xs bg-blue-500 text-white px-5 py-2 rounded-[5px] uppercase font-bold">edit</button>
+                                        <button id="remove-btn"
+                                            class="bg-red-500 text-white text-xs px-5 py-2 rounded-[5px] uppercase font-bold">remove</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        <div id="create_hostel" class="form-group create-hostel bg-white hide">
+            <img id="cancel-btn" src="../images/cross.png" alt="" class="w-10 h-10 cancel">
+            <form action="" class="w-[80%] mx-auto pb-5 pt-5 ">
+            <p class="text-center text-xl text-blue-500 uppercase  mt-5 mb-15 font-bold">room information</p>
+            <div class="edit-group mb-5">
+                <input type="text" id="room-type"
+                    class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required>
+                <label class="text-blue-800 edit-label">room type</label>
+                <p id="room-type-error" class="error text-light text-xs text-red-400 ms-3"></p>
+            </div>
+            <div class="edit-group mb-5">
+                <input type="text" id="room-spaces"
+                    class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required>
+                <label class="text-blue-800">bed spaces</label>
+                <p id="room-spaces-error" class="error text-light text-xs text-red-400 ms-3"></p>
+            </div>
+            <div class="edit-group mb-5">
+                <input type="text" id="room-price"
+                    class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required>
+                <label class="text-blue-800">price</label>
+                <p id="room-price-error" class="error text-light text-xs text-red-400 ms-3"></p>
+            </div>
+            <div class="edit-group mb-5">
+                <select name="" id="room-status" class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4 text-blue-800" required>
+                    <option value=""></option>
+                    <option value="available">available</option>
+                    <option value="unavailable">unavailable</option>
+                    <option value="maintenace">maintenace</option>
+                </select>
+                <!-- <input type="text" id="stud-phone"
+                    class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required> -->
+                <label class="text-blue-800 edit-label">status</label>
+                <p id="room-status-error" class="error text-light text-xs text-red-400 ms-3"></p>
+            </div>
+            <div class="w-[50%] mx-auto mt-5 h-10">
+                <button id="add-room-btn" type="button"
+                    class="w-full text-xl font-bold text-white bg-blue-500 h-full rounded-[10px] uppercase hover:bg-blue-700">add
+                </button>
+
+            </div>
+        </form>
+        </div>
+        </div>
+
+       <!-- edit -->
+        <div id="edit-container" class="hide absolute right-0 top-0 bottom-0 left-0  z-11111 edit_background pt-15 shadow-lg">
+            <img id="edit-cancel-btn" src="../images/cancel.png" alt="" class="w-10 h-10 cancel">
+               <form action="" class="form-group w-[60%] mx-auto  bg-white px-10 py-10 rounded-[10px]">
+            <p class="text-center text-xl text-blue-500 uppercase   mb-10 font-bold">room information</p>
+            <div class="edit-group mb-5">
+                <input type="text" id="edit-type"
+                    class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required>
+                <label class="text-blue-800 edit-label">room type</label>
+                <p id="edit-type-error" class="error text-light text-xs text-red-400 ms-3"></p>
+            </div>
+            <div class="edit-group mb-5">
+                <input type="text" id="edit-spaces"
+                    class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required>
+                <label class="text-blue-800">bed spaces</label>
+                <p id="edit-spaces-error" class="error text-light text-xs text-red-400 ms-3"></p>
+            </div>
+            <div class="edit-group mb-5">
+                <input type="text" id="edit-price"
+                    class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required>
+                <label class="text-blue-800">price</label>
+                <p id="edit-price-error" class="error text-light text-xs text-red-400 ms-3"></p>
+            </div>
+            <div class="edit-group mb-5">
+                <select name="" id="edit-status" class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4 text-blue-800" required>
+                    <option value=""></option>
+                    <option value="">available</option>
+                    <option value="">unavailable</option>
+                    <option value="">maintenace</option>
+                </select>
+                <!-- <input type="text" id="stud-phone"
+                    class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required> -->
+                <label class="text-blue-800 edit-label">status</label>
+                <p id="edit-status-error" class="error text-light text-xs text-red-400 ms-3"></p>
+            </div>
+            <div class="w-[50%] mx-auto mt-5 mb-10 h-10">
+                <button id="add-hostel-btn"
+                    class="w-full text-xl font-bold text-white bg-blue-500 h-full rounded-[10px] uppercase hover:bg-blue-700">add
+                </button>
+            </div>
+        </form>
+        </div>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../supabase.js"></script>
+<script src="rooms.js"></script>
+</html>

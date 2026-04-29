@@ -19,6 +19,7 @@ padding-bottom: 3px;
 position: relative;
 padding-bottom: 3px;
 }
+
 .swap-reason{
     position: relative;
 padding-bottom: 3px;
@@ -68,11 +69,11 @@ padding-bottom: 3px;
   background-color: white;
 }
 
+
 .swap-reason input:focus,
-.swap-reason input:valid
+.swap-reason input:valid,
 .swap-reason select:focus,
 .swap-reason select:valid,
-
 .form-group input:focus,
 .form-group input:valid{
     border-color: #0000ff;
@@ -151,6 +152,27 @@ padding-bottom: 3px;
     top: 10px;
 }
 
+.cancel-2{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.successful{
+   position: absolute;
+   top: 10px;
+   right: 30px;
+   left: 30px;
+   animation: pop .9s ease ;
+}
+
+.successful-2{
+   position: absolute;
+   top: 10px;
+   right: 30px;
+   left: 30px;
+   animation: pop_return .3s ease ;
+}
 
 
 .header{
@@ -205,6 +227,8 @@ position: absolute;
  position: relative;
 }
 
+.edit-group select:focus + label,
+.edit-group select:valid + label,
 .edit-group textarea:focus + label,
 .edit-group textarea:valid + label,
 .edit-group input:focus + label,
@@ -218,11 +242,20 @@ position: absolute;
     font-size: 10px;
 }
 
+.edit-group select:focus,
+.edit-group select:valid,
 .edit-group textarea:focus,
-.edit-group textarea:valid
+.edit-group textarea:valid,
 .edit-group input:focus,
 .edit-group input:valid{
     border-color: blue;
+}
+
+.edit-group select option{
+    background-color: rgb(3, 3, 111);
+    color: white;
+    font-weight: 600;
+    outline: none;
 }
 
 .add-img{
@@ -248,13 +281,38 @@ position: absolute;
     text-align: center;
     background-color: rgb(0, 0, 255, .14); 
     border-radius: 30px;
-    padding-top: 30%;
+    padding-top: 20%;
     transition: .3s ease-in-out;
+}
+
+.information_2{
+    position: absolute;
+    top:0;
+    bottom: 0%;
+    right:0;
+    left: 0;
+    text-align: center;
+    background-color: rgb(0, 0, 255, .14); 
+    border-radius: 5px;
+    padding-top: 25%;
+    transition: .3s ease-in-out;
+}
+
+.hostels::-webkit-scrollbar{
+    display: none;
 }
 
 .image_shake{
     /* animation: image_shaker .8s ease-in-out  ; */
     transform: scale(1.05);
+    transition: .8s ease;
+    /* transition: .8s ease-out; */
+    
+}
+
+.image_shake_2{
+    /* animation: image_shaker .8s ease-in-out  ; */
+    transform: scale(1.03);
     transition: .8s ease;
     /* transition: .8s ease-out; */
     
@@ -355,9 +413,25 @@ position: absolute;
 
 .room-number{
     position: absolute;
-    top: 70px;
+    top: 110px;
     bottom: 20px;
-    left: 60px;
+    left: 90px;
+    right:20px;
+}
+
+.room-number-2{
+    position: absolute;
+    top: 60px;
+    bottom: 20px;
+    left: 50px;
+    right:20px;
+}
+
+.room-number-3{
+    position: absolute;
+    top: 80px;
+    bottom: 20px;
+    left: 90px;
     right:20px;
 }
 
@@ -411,11 +485,282 @@ position: absolute;
     z-index: 1111111;
 }
 
+.caution::-webkit-scrollbar{
+    display: none;
+}
+
 
 .delete-function{
  animation: spin 2s ease  infinite;
 }
 
+.table-container::-webkit-scrollbar{
+   display: none;
+}
+
+.pop-out{
+    position: absolute;
+    top: 0;
+    right: 65px;
+    z-index: 1111111;
+    background: white;
+    cursor: pointer;
+}
+
+.student-more-container{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: linear-gradient(to right, rgb(0, 0, 255, .350), rgb(0, 0, 255, .352));
+    /* opacity: .7; */
+}
+
+.info-image{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    top: 35px;
+    border-radius: 10px;
+}
+
+.smooth{
+    animation: drop .3s ease-in-out  1 ;
+    /* transition: 3s ease-in-out; */
+}
+
+.smooth-return{
+    animation: return .3s ease-in-out  1 ;
+    /* transition: 3s ease-in-out; */
+}
+
+.smooth-entry{
+    animation: enter .3s ease-in-out  1 ;
+}
+.smooth-leave{
+    animation: leave .3s ease-in-out  1 ;
+}
+
+.smooth-exit{
+    animation: fall .3s ease-in-out  1 ;
+    /* transition: 3s ease-in-out; */
+}
+.smooth-exit::-webkit-scrollbar{
+    display: none;
+}
+
+.dash-list:hover{
+  transform: scale(1.05, 1.3);
+  transition: .3s ease;
+}
+
+.dash-list-2:hover{
+  transform: scale(1.02);
+  transition: .3s ease;
+}
+
+.create-hostel{
+  position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 40%;
+    right: 10px;
+    z-index: 111111;
+}
+
+.create-hostel label{
+    position: absolute;
+  left:10px;
+  top: 11px;
+  font-weight: 400;
+  transition: 0.2s ease;
+  pointer-events: none;
+  padding: 0px 5px;
+  /* padding-bottom: px; */
+  text-transform: uppercase;
+  font-size: 13px;
+  /* background-image: linear-gradient(to right, rgb(0, 0, 255, .32), rgb(0, 0, 255, .32)); */
+  background-color: white;
+}
+
+.form-input{
+  padding: 12px 10px ;
+  /* border:1px solid #fbe0c0; */
+  border-radius: 6px;
+  outline: none;
+  color: blue;
+  background-color: transparent;
+  width: 100%;
+}
+
+.upload-label{
+ width: 90%;
+ margin: auto;
+ height: 200px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+.upload-label i{
+  font-size: 80px;
+}
+
+.top-menu{
+    position: fixed;
+    top: 30px;
+    right: 20px;
+}
+
+.top-menu-hostel{
+    position: fixed;
+    top: 0;
+    background-color: white;
+}
+
+.back-left{
+    position: fixed;
+    top: 30px;
+    left: 15px;
+}
+
+.toggle{
+    position: absolute;
+    left: 5px;
+}
+
+.toggle_1{
+    position: absolute;
+    right: 5px;
+    animation: shift 1s ease 1 ;
+    width: 72px;
+}
+
+.toggle_2{
+    position: absolute;
+    left: 5px;
+    animation: shift_2 1s ease 1 ;
+    width: 65px;
+}
+
+.toggle_3{
+    position: absolute;
+    right: 5px;
+    animation: shift 1s ease 1 ;
+    /* width: 72px; */
+}
+
+.toggle_4{
+    position: absolute;
+    left: 5px;
+    animation: shift_2 1s ease 1 ;
+    /* width: 65px; */
+}
+
+.toggle_5{
+    position: absolute;
+    left: 5px;
+    animation: shift_3 1s ease 1 ;
+    /* width: 65px; */
+}
+
+.dropdown{
+   cursor: pointer;
+}
+
+.edit-fill-header{
+    position: sticky;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+}
+
+.edit-fill::-webkit-scrollbar{
+ display: none;
+}
+
+.side-menu{
+     position: fixed;
+     /* top: 0; */
+}
+
+.menu-entrance{
+    animation: entrance .3s ease  1;
+}
+
+.menu-exit{
+    animation: exit .3s ease  1;
+}
+
+.edit_background{
+    background-image: linear-gradient(to right, rgb(56, 56, 173, .45), rgb(41, 41, 159, .45));
+}
+
+.room-table::-webkit-scrollbar{
+    display: none;
+}
+
+.hostel-display::-webkit-scrollbar{
+  display: none;
+}
+
+.create-hostel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom:0
+}
+
+/* animation */
+@keyframes entrance{
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes exit{
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+
+@keyframes shift{
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes shift_2{
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes shift_3{
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
 
 @keyframes spin{
     from{
@@ -423,5 +768,68 @@ position: absolute;
     }
     to{
         transform: rotate(360deg);
+    }
+}
+
+@keyframes drop{
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes pop{
+    from{
+        transform: translateY(0%);
+    }
+    to{
+        transform: translateY(5%);
+    }
+}
+
+@keyframes pop_return{
+    from{
+        transform: translateY(5%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+@keyframes return{
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(100%);
+    }
+}
+
+@keyframes fall{
+    from{
+        transform: translateY(0%);
+    }
+    to{
+        transform: translateY(100%);
+    }
+}
+
+@keyframes enter{
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+@keyframes leave{
+    from{
+        transform: translateY(0%);
+    }
+    to{
+        transform: translateY(-100%);
     }
 }

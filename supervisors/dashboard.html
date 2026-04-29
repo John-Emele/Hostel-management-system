@@ -10,104 +10,191 @@
 </head>
 
 <body class="bg-[#f1f1f1]">
+    <!-- side menu -->
+    <div id="side-menu" class="hide w-[70%]  bg-blue-600 rounded-e-[20px] lg:px-3 md:px-0  h-[100vh] side-menu z-111111">
+        <ul class="w mx-auto  py-10 ">
+            <a href="dashboard.html" class="">
+                <div class="flex gap-3 items-center mb-6 px-3 bg-blue-400  py-1 ps-3">
+                    <img src="../images/layout (1).png" alt="" class="w-6 h-6">
+                    <p class=" text-white font-bold text-sm uppercase mt-1">dashboard</p>
+                </div>
+            </a>
+            <a href="student.html" class="">
+                <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400   hover:py-1 hover:ps-3 ">
+                    <img src="../images/students.png" alt="" class="w-7 h-7">
+                    <p class=" text-white font-bold text-sm uppercase mt-1">student</p>
+                </div>
+            </a>
+            <a href="room.html" class="">
+                <div
+                    class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
+                    <img src="../images/bed.png" alt="" class="w-7 h-7">
+                    <p class="text-white font-bold text-sm uppercase mt-1">room</p>
+                </div>
+            </a>
+            <a href="request.html">
+                <div
+                    class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
+                    <img src="../images/interview.png" alt="" class="w-7 h-7">
+                    <p class="text-white font-bold text-sm uppercase">request</p>
+                </div>
+            </a>
+            <a href="complaint.html">
+                <div
+                    class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
+                    <img src="../images/complain.png" alt="" class="w-7 h-7">
+                    <p class="text-white font-bold text-sm uppercase">complaint</p>
+                </div>
+            </a>
+            <a href="" class="">
+                <div class="flex gap-3 items-center px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
+                    <img src="../images/do-not-disturb.png" alt="" class="w-7 h-7">
+                    <p class=" text-white font-bold text-sm uppercase">Theme</p>
+                </div>
+            </a>
+        </ul>
+    </div>
     <div id="main-container" class="flex items-center justify-between ">
-        <div class="bg-blue-600 w-[25%] mx-auto">
-            <ul class="w-full h-[100vh] mt-15 px-4  ">
+        <div class="bg-blue-600 lg:w-[25%] md:w-[7%] mx-auto hidden md:block">
+            <ul class="w-full h-[100vh] mt-15 lg:px-4  ">
                 <a href="dashboard.html">
-                    <div class="flex items-center gap-4 bg-white p-3 rounded-[10px] mb-5">
-                        <img src="../images/layout (1).png" alt="" class="w-7 h-7">
-                        <li class="font-bold text-sm uppercase text-blue-600 ">Dashboard</li>
+                    <div class="lg:flex items-center gap-4 bg-white p-3 lg:rounded-[10px] mb-5 md:ps-4 lg:ps-2">
+                        <img src="../images/layout (1).png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+                        <li class="font-bold text-sm uppercase text-blue-600  md:hidden lg:block">Dashboard</li>
                     </div>
                 </a>
                 <a href="student.html">
-                    <div class="flex items-center gap-4 p-3 mb-5">
-                        <img src="../images/students.png" alt="" class="w-7 h-7">
-                        <li class="font-bold text-sm uppercase text-white ">Students</li>
+                    <div
+                        class="lg:flex items-center gap-4 p-3 mb-5 hover:bg-blue-300 lg:hover:rounded-[10px] md:ps-4  lg:ps-2">
+                        <img src="../images/students.png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+                        <li class="font-bold text-sm uppercase text-white md:hidden lg:block">Students</li>
                     </div>
                 </a>
                 <a href="room.html">
-                    <div class="flex items-center gap-4 p-3 mb-5">
-                        <img src="../images/door.png" alt="" class="w-7 h-7">
-                        <li class="font-bold text-sm uppercase text-white ">Rooms</li>
+                    <div
+                        class="lg:flex items-center gap-4 p-3 mb-5 hover:bg-blue-300 lg:hover:rounded-[10px] md:ps-4  lg:ps-2">
+                        <img src="../images/door.png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+                        <li class="font-bold text-sm uppercase text-white md:hidden lg:block">Rooms</li>
                     </div>
                 </a>
                 <a href="request.html">
-                    <div class="flex items-center gap-4 p-3 mb-5">
-                        <img src="../images/interview.png" alt="" class="w-7 h-7">
-                        <li class="font-bold text-sm uppercase text-white ">Request</li>
+                    <div
+                        class="lg:flex items-center gap-4 p-3 mb-5 hover:bg-blue-300 lg:hover:rounded-[10px] md:ps-4  lg:ps-2">
+                        <img src="../images/interview.png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+                        <li class="font-bold text-sm uppercase text-white md:hidden lg:block">Request</li>
                     </div>
                 </a>
                 <a href="complaint.html">
-                    <div class="flex items-center gap-4 p-3 mb-45">
-                        <img src="../images/complain.png" alt="" class="w-7 h-7">
-                        <li class="font-bold text-sm uppercase text-white">Complaints</li>
+                    <div
+                        class="lg:flex items-center gap-4 p-3 mb-5 hover:bg-blue-300 lg:hover:rounded-[10px] md:ps-4  lg:ps-2">
+                        <img src="../images/complain.png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+                        <li class="font-bold text-sm uppercase text-white md:hidden lg:block">Complaints</li>
                     </div>
                 </a>
 
                 <a href="">
-                    <div class="bg-red-500 p-3 rounded-[10px]">
+                    <div id="log-out-btn" class="bg-red-500 p-3 rounded-[10px]">
                         <li class="font-bold text-white uppercase text-xs text-center">log out</li>
                     </div>
 
                 </a>
             </ul>
         </div>
-        <div class="w-[75%] mx-auto h-[100vh] ">
-            <div class="flex justify-between items-center supervisor-header border-b border-b-solid border-b-blue-600 pb-1 w-[95%] mx-auto mb-5">
-                <h1 class="text-xl uppercase font-light text-blue-600 ">welcome Mr.Maleek</h1>
+        <div class="md:w-[93%] lg:w-[75] w-[95%] mx-auto h-[100vh] pt-5 ">
+            <div
+                class="flex justify-between items-center supervisor-header border-b border-b-solid border-b-blue-600 pb-1 w-[95%] mx-auto mb-5">
+                <h1 class="lg:text-xl  text-sm md:text-lg uppercase font-light text-blue-600 ">welcome Mr.Maleek</h1>
                 <ul class="flex items-center gap-3">
                     <div class="relative">
-                        <img id="notification-btn" src="../images/notification (1).png" alt="" class="w-7 h-7">
-                        <div class="notification w-5 h-5 rounded-full bg-white text-center text-xs text-blue-600 font-bold pt-[2px]">10</div>
+                        <img id="notification-btn" src="../images/notification (1).png" alt=""
+                            class="lg:w-7 lg:h-7 w-6 h-6">
+                        <div
+                            class="notification w-5 h-5 rounded-full bg-white text-center text-xs text-blue-600 font-bold pt-[2px]">
+                            10</div>
                     </div>
                     <div class="relative">
-                        <img src="../images/email.png" alt="" class="w-7 h-7">
-                        <div  class="notification w-5 h-5 rounded-full bg-white text-center text-xs text-blue-600 font-bold pt-[2px]">10</div>
+                        <img src="../images/email.png" alt="" class="lg:w-7 lg:h-7 h-6 w-6">
+                        <div
+                            class="notification w-5 h-5 rounded-full bg-white text-center text-xs text-blue-600 font-bold pt-[2px]">
+                            10</div>
                     </div>
+                    <img id="side-menu-btn" src="../images/widget.png" alt="" class="md:hidden w-6 h-6">
                 </ul>
             </div>
-            <div class="grid grid-cols-4 w-[95%] mx-auto h-30 gap-5">
-                 <div class="bg-blue-800 rounded-[10px] relative">
-                    <div class="flex items-center gap-3 w-[90%] mx-auto mt-5">
-                        <img src="../images/multiple-users-silhouette.png" alt="" class="w-7 h-7">
-                        <h1 class="text-sm uppercase text-white font-bold">total students</h1>
+             <!-- toggle -->
+                <div class="mx-auto w-[95%] flex justify-end  lg:hidden mb-2">
+                    <div class="flex bg-blue-100 rounded-[10px] p-1 gap-5 relative">
+                        <p id="toggle-background" class="toggle bg-blue-800 p-1 w-16 h-6 rounded-[5px]"></p>
+                        <p id="student-toggle" class="p-1 text-xs text-white z-1 font-bold">Student</p>
+                        <div class="flex gap-1 relative">
+                            <p id="room-toggle"
+                            class="p-1 text-xs text-blue-800 z-1 font-bold hover:bg-blue-800 hover:rounded-[5px] hover:text-white">
+                            Rooms</p>
+                            <span id="drop-down" class="dropdown">&blacktriangledown;</span>
+                             <div id="dropdown-menu" class="hide shadow-lg absolute mt-5 z-100 bg-white w-15">
+                                <p id="total-room-btn" class="text-blue-800 hover:text-white hover:bg-blue-800 border-t-1 border-t-solid border-t-blue-800 text-sm hover:font-bold px-1">Total</p>
+                                <p id="occupied-room-btn" class="text-blue-800 hover:text-white hover:bg-blue-800 border-t-1 border-t-solid border-t-blue-800 text-sm hover:font-bold px-1">Occupied</p>
+                                <p id="available-room-btn" class="text-blue-800 hover:text-white hover:bg-blue-800 border-t-1 border-t-solid border-t-blue-800 text-sm hover:font-bold px-1">Available</p>
+                            </div>
+                        </div>
+                           
                     </div>
-                    <p class="text-white text-center text-4xl font-bold mt-2">30</p>
-                    <img src="../images/students.png" alt="" class="filler-image w-10 h-10">
                 </div>
-                <div class="bg-blue-800 rounded-[10px] relative">
-                    <div class="flex items-center gap-3 w-[90%] mx-auto mt-5">
-                        <img src="../images/door.png" alt="" class="w-7 h-7">
-                        <h1 class="text-sm uppercase text-white font-bold">total rooms</h1>
+            <div class="grid md:grid-cols-4 grid-cols-1 w-[95%] mx-auto md:h-20 lg:h-30 gap-4 lg:mb-5 h-25">
+                <div id="total-student" class="bg-blue-800 rounded-[10px] relative">
+                    <div class="flex items-center gap-3 md:w-[90%] w-[75%] mx-auto lg:mt-5 md:mt-2 mt-1">
+                        <img src="../images/multiple-users-silhouette.png" alt="" class="lg:w-7 lg:h-7 md:w-4 md:h-4 h-10 w-10">
+                        <h1 class="lg:text-sm md:text-xs text-xl uppercase text-white font-bold">total students</h1>
                     </div>
-                    <p class="text-white text-center text-4xl font-bold mt-2">30</p>
-                    <img src="../images/bed.png" alt="" class="filler-image h-10 w-10">
+                    <p class="text-white text-center lg:text-4xl md:text-3xl text-5xl font-bold md:mt-2 mt-1">30</p>
+                    <img src="../images/students.png" alt="" class="filler-image lg:w-10 lg:h-10 md:w-7 md:h-7 w-12 h-12">
                 </div>
-                 <div class="bg-blue-800 rounded-[10px] relative">
-                    <div class="flex items-center gap-3 w-[90%] mx-auto mt-5">
-                        <img src="../images/bed.png" alt="" class="w-7 h-7">
-                        <h1 class="text-sm uppercase text-white font-bold">occupied rooms</h1>
+                <div id="total-room" class="bg-blue-800 rounded-[10px] relative hidden md:block">
+                    <div class="flex items-center gap-3 md:w-[90%] w-[75%] mx-auto lg:mt-5 md:mt-2 mt-1">
+                        <img src="../images/door.png" alt="" class="lg:w-7 lg:h-7 md:w-4 md:h-4 h-10 w-10">
+                        <h1 class="lg:text-sm md:text-xs text-xl uppercase text-white font-bold">total rooms</h1>
                     </div>
-                    <p class="text-white text-center text-4xl font-bold mt-2">30</p>
-                    <img src="../images/hotel.png" alt="" class="filler-image w-10 h-10">
+                    <p class="text-white text-center lg:text-4xl md:text-3xl text-5xl font-bold md:mt-2 mt-1">30</p>
+                    <img src="../images/bed.png" alt="" class="filler-image lg:w-10 lg:h-10 md:w-7 md:h-7 w-12 h-12">
                 </div>
-                <div class="bg-blue-800 rounded-[10px] relative">
-                    <div class="flex items-center gap-3 w-[90%] mx-auto mt-5">
-                        <img src="../images/bed.png" alt="" class="w-7 h-7">
-                        <h1 class="text-sm uppercase text-white font-bold">Available rooms</h1>
+                <div id="occupied-room" class="bg-blue-800 rounded-[10px] relative hidden md:block">
+                    <div class="flex items-center gap-3 md:w-[90%] w-[75%] mx-auto lg:mt-5 md:mt-2 mt-1">
+                        <img src="../images/bed.png" alt="" class="lg:w-7 lg:h-7 md:w-4 md:h-4 h-10 w-10">
+                        <h1 class="lg:text-sm md:text-xs text-xl uppercase text-white font-bold">occupied rooms</h1>
                     </div>
-                    <p class="text-white text-center text-4xl font-bold mt-2">30</p>
-                    <img src="../images/bed.png" alt="" class="filler-image w-10 h-10">
+                    <p class="text-white text-center lg:text-4xl md:text-3xl text-5xl font-bold md:mt-2 mt-1">30</p>
+                    <img src="../images/hotel.png" alt="" class="filler-image lg:w-10 lg:h-10 md:w-7 md:h-7 w-12 h-12">
+                </div>
+                <div id="available-room" class="bg-blue-800 rounded-[10px] relative hidden md:block">
+                    <div class="flex items-center gap-3 md:w-[90%] w-[75%] mx-auto lg:mt-5 md:mt-2 mt-1">
+                        <img src="../images/bed.png" alt="" class="lg:w-7 lg:h-7 md:w-4 md:h-4 h-10 w-10">
+                        <h1 class="lg:text-sm md:text-xs text-xl uppercase text-white font-bold">Available rooms</h1>
+                    </div>
+                    <p class="text-white text-center lg:text-4xl md:text-3xl text-5xl font-bold md:mt-2 mt-1">30</p>
+                    <img src="../images/bed.png" alt="" class="filler-image lg:w-10 lg:h-10 md:w-7 md:h-7 w-12 h-12">
                 </div>
             </div>
-
-            <div class="flex items-center gap-5 w-[95%] mx-auto">
-                <div class="table-container bg-white pb-4 px-4 w-[95%] mx-auto shadow-lg rounded-[5px] mt-5 h-100 truncate overflow-auto relative">
-                <div class="container-header flex justify-between items-center gap-7 pt-5">
-                    <h1 class="text-xl uppercase text-blue-800 font-bold mb-3">Room management</h1>
-                    <button class="p-2 uppercase font-bold text-white bg-blue-800 hover:bg-blue-700 rounded-[10px] mb-3">manage room</button>
+            <!-- toggle -->
+            <div class="mx-auto w-[95%] flex justify-end  md:hidden mb-2 mt-10">
+                    <div class="flex bg-blue-100 rounded-[10px] p-1 gap-5 relative">
+                        <p id="action-toggle-background" class="toggle bg-blue-800 p-1 w-30 h-6 rounded-[5px]"></p>
+                        <p id="management-toggle" class="p-1 text-xs text-white z-1 font-bold">Room Management</p>
+                        <p id="request-toggle"
+                            class="p-1 text-xs text-blue-800 z-1 font-bold hover:bg-blue-800 hover:rounded-[5px] hover:text-white">
+                            Pending Request</p>
+                    </div>
                 </div>
-                <table class="border-solid border-1 border-blue-500 w-full relative">
+            <div class="lg:flex lg:items-center gap-5 w-[95%] mx-auto">
+                <div id="management-section"
+                    class="table-container bg-white pb-4 px-4 lg:w-[95%] w-full mx-auto shadow-lg rounded-[5px] mt-5 md:mt-5 md:h-80 lg:h-110 truncate overflow-auto relative">
+                    <div class="container-header flex justify-between items-center gap-7 pt-5">
+                        <h1 class="lg:text-xl md:text-lg text-sm  uppercase text-blue-800 font-bold mb-3">Room
+                            management</h1>
+                        <button
+                            class="p-2 uppercase font-bold text-white md:text-sm lg:text-lg  text-xs bg-blue-800 hover:bg-blue-700 rounded-[10px] mb-3">manage
+                            room</button>
+                    </div>
+                    <table class="border-solid border-1 border-blue-500 w-full relative">
                         <thead>
                             <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 bg-blue-100 h-10 text-center">
                                 <th class="uppercase text-blue-800 text-sm">room</th>
@@ -117,52 +204,61 @@
                         </thead>
                         <tbody>
                             <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 h-10 text-center">
-                                <td class="uppercase text-blue-800 text-xs font-bold">room 008</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">3 beds</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">2/3</td>
+                                <td class=" text-blue-800 text-xs font-bold">Room 008</td>
+                                <td class=" text-blue-800 text-xs font-bold">3 Beds</td>
+                                <td class=" text-blue-800 text-xs font-bold">2/3</td>
                             </tr>
                             <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 h-10 text-center">
-                                <td class="uppercase text-blue-800 text-xs font-bold">room 008</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">3 beds</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">2/3</td>
+                                <td class=" text-blue-800 text-xs font-bold">Room 008</td>
+                                <td class=" text-blue-800 text-xs font-bold">3 Beds</td>
+                                <td class=" text-blue-800 text-xs font-bold">2/3</td>
                             </tr>
                             <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 h-10 text-center">
-                                <td class="uppercase text-blue-800 text-xs font-bold">room 008</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">3 beds</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">2/3</td>
+                                <td class=" text-blue-800 text-xs font-bold">Room 008</td>
+                                <td class=" text-blue-800 text-xs font-bold">3 Beds</td>
+                                <td class=" text-blue-800 text-xs font-bold">2/3</td>
                             </tr>
                             <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 h-10 text-center">
-                                <td class="uppercase text-blue-800 text-xs font-bold">room 008</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">3 beds</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">2/3</td>
+                                <td class=" text-blue-800 text-xs font-bold">Room 008</td>
+                                <td class=" text-blue-800 text-xs font-bold">3 Beds</td>
+                                <td class=" text-blue-800 text-xs font-bold">2/3</td>
                             </tr>
                             <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 h-10 text-center">
-                                <td class="uppercase text-blue-800 text-xs font-bold">room 008</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">3 beds</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">2/3</td>
+                                <td class=" text-blue-800 text-xs font-bold">Room 008</td>
+                                <td class=" text-blue-800 text-xs font-bold">3 Beds</td>
+                                <td class=" text-blue-800 text-xs font-bold">2/3</td>
                             </tr>
                             <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 h-10 text-center">
-                                <td class="uppercase text-blue-800 text-xs font-bold">room 008</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">3 beds</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">2/3</td>
+                                <td class=" text-blue-800 text-xs font-bold">Room 008</td>
+                                <td class=" text-blue-800 text-xs font-bold">3 Beds</td>
+                                <td class=" text-blue-800 text-xs font-bold">2/3</td>
                             </tr>
                             <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 h-10 text-center">
-                                <td class="uppercase text-blue-800 text-xs font-bold">room 008</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">3 beds</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">2/3</td>
+                                <td class=" text-blue-800 text-xs font-bold">Room 008</td>
+                                <td class=" text-blue-800 text-xs font-bold">3 Beds</td>
+                                <td class=" text-blue-800 text-xs font-bold">2/3</td>
                             </tr>
                             <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 h-10 text-center">
-                                <td class="uppercase text-blue-800 text-xs font-bold">room 008</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">3 beds</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">2/3</td>
+                                <td class=" text-blue-800 text-xs font-bold">Room 008</td>
+                                <td class=" text-blue-800 text-xs font-bold">3 Beds</td>
+                                <td class=" text-blue-800 text-xs font-bold">2/3</td>
                             </tr>
+                            <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 h-10 text-center">
+                                <td class=" text-blue-800 text-xs font-bold">Room 008</td>
+                                <td class=" text-blue-800 text-xs font-bold">3 Beds</td>
+                                <td class=" text-blue-800 text-xs font-bold">2/3</td>
+                            </tr>
+
                         </tbody>
                     </table>
-            </div>
+                </div>
 
-            <div class="table-container bg-white pb-4 px-4 w-[95%] mx-auto shadow-lg rounded-[5px] mt-5 h-100 truncate overflow-auto relative">
-                <h1 class="container-header text-2xl uppercase text-blue-800 font-bold pt-4 mb-5 bg-white">pending Requests</h1>
-                <table class="border-solid border-1 border-blue-500 w-full">
+                <div id="request-section"
+                    class="table-container bg-white pb-4 px-4 lg:w-[95%] w-full mx-auto shadow-lg rounded-[5px] mt-5 md:mt-5 lg:h-110 md:h-80 truncate overflow-auto relative hidden md:block">
+                    <h1
+                        class="container-header lg:text-2xl md:text-lg text-sm uppercase text-blue-800 font-bold pt-4 mb-5 bg-white">
+                        pending Requests</h1>
+                    <table class="border-solid border-1 border-blue-500 w-full">
                         <thead>
                             <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 bg-blue-100 h-10 text-center">
                                 <th class="uppercase text-blue-800 text-sm">student id</th>
@@ -172,291 +268,335 @@
                         </thead>
                         <tbody>
                             <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 h-10 text-center">
-                                <td class="uppercase text-blue-800 text-xs font-bold">24212011</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">room swap</td>
-                                <td class="py-1"><button class="uppercase text-white text-sm font-bold bg-blue-800 p-3 rounded-[10px] hover:bg-blue-700 ">view</button></td>
+                                <td class=" text-blue-800 text-xs font-bold">24212011</td>
+                                <td class="text-blue-800 text-xs font-bold">Room Swap</td>
+                                <td class="py-1"><button
+                                        class=" text-white text-sm font-bold bg-blue-800 p-3 rounded-[10px] hover:bg-blue-700 ">View</button>
+                                </td>
                             </tr>
                             <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 h-10 text-center">
-                                <td class="uppercase text-blue-800 text-xs font-bold">24212011</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">room swap</td>
-                                <td class="py-1"><button class="uppercase text-white text-sm font-bold bg-blue-800 p-3 rounded-[10px] hover:bg-blue-700 ">view</button></td>
+                                <td class=" text-blue-800 text-xs font-bold">24212011</td>
+                                <td class="text-blue-800 text-xs font-bold">Room Swap</td>
+                                <td class="py-1"><button
+                                        class=" text-white text-sm font-bold bg-blue-800 p-3 rounded-[10px] hover:bg-blue-700 ">View</button>
+                                </td>
                             </tr>
                             <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 h-10 text-center">
-                                <td class="uppercase text-blue-800 text-xs font-bold">24212011</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">room swap</td>
-                                <td class="py-1"><button class="uppercase text-white text-sm font-bold bg-blue-800 p-3 rounded-[10px] hover:bg-blue-700 ">view</button></td>
+                                <td class=" text-blue-800 text-xs font-bold">24212011</td>
+                                <td class="text-blue-800 text-xs font-bold">Room Swap</td>
+                                <td class="py-1"><button
+                                        class=" text-white text-sm font-bold bg-blue-800 p-3 rounded-[10px] hover:bg-blue-700 ">View</button>
+                                </td>
                             </tr>
                             <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 h-10 text-center">
-                                <td class="uppercase text-blue-800 text-xs font-bold">24212011</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">room swap</td>
-                                <td class="py-1"><button class="uppercase text-white text-sm font-bold bg-blue-800 p-3 rounded-[10px] hover:bg-blue-700 ">view</button></td>
+                                <td class=" text-blue-800 text-xs font-bold">24212011</td>
+                                <td class="text-blue-800 text-xs font-bold">Room Swap</td>
+                                <td class="py-1"><button
+                                        class=" text-white text-sm font-bold bg-blue-800 p-3 rounded-[10px] hover:bg-blue-700 ">View</button>
+                                </td>
                             </tr>
                             <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 h-10 text-center">
-                                <td class="uppercase text-blue-800 text-xs font-bold">24212011</td>
-                                <td class="uppercase text-blue-800 text-xs font-bold">room swap</td>
-                                <td class="py-1"><button class="uppercase text-white text-sm font-bold bg-blue-800 p-3 rounded-[10px] hover:bg-blue-700 ">view</button></td>
+                                <td class=" text-blue-800 text-xs font-bold">24212011</td>
+                                <td class="text-blue-800 text-xs font-bold">Room Swap</td>
+                                <td class="py-1"><button
+                                        class=" text-white text-sm font-bold bg-blue-800 p-3 rounded-[10px] hover:bg-blue-700 ">View</button>
+                                </td>
+                            </tr>
+                            <tr class="border-b-1 border-b-solid border-b-blue-500 py-1 h-10 text-center">
+                                <td class=" text-blue-800 text-xs font-bold">24212011</td>
+                                <td class="text-blue-800 text-xs font-bold">Room Swap</td>
+                                <td class="py-1"><button
+                                        class=" text-white text-sm font-bold bg-blue-800 p-3 rounded-[10px] hover:bg-blue-700 ">View</button>
+                                </td>
                             </tr>
 
                         </tbody>
                     </table>
-            </div>
+                </div>
             </div>
         </div>
     </div>
     <!-- notification -->
-     <div id="notification-box" class="hide notification-container bg-blue-800 overflow-auto truncate">
-                            
-                             <div class="notification-header bg-blue-800 py-2">
-                                <div class="flex justify-between items-center w-[95%] mx-auto">
-                                    <h1 class="ms-5 font-bold text-lg text-white mb-3">Notification</h1>
-                                <img id="notification-cancel" class="w-7 h-7 mt-[-5px]" src="../images/cancel.png" alt="" >
-                                </div>
-                             <div class="grid grid-cols-3 justify-between  mb-3 w-[95%] mx-auto gap-5 text-center text-white font-bold">
-                                <p class="bg-blue-400 p-2 uppercase text-sm rounded-[10px]">all</p>
-                                <p class="bg-blue-400 p-2 uppercase text-sm rounded-[10px]">request</p>
-                                <p class="bg-blue-400 p-2 uppercase text-sm rounded-[10px]">checkout</p>
-                             </div>
-                             </div>
-                            <div>
-                                <div class="w-[95%] mx-auto mb-5">
-                                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
-                                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt="" class="object-center w-15 h-15 rounded-full">
-                                <div class="  w-[90%] mx-auto">
-                                    <div class=" mx-auto flex gap-5 items-center">
-                                    <p class="text-blue-800 text-lg font-bold">242120111</p>
-                                    <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
-                                    <button class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
-                                    </div>
-                                    <div>
-                                        <p class="text-lg text-black">Requested room change</p>
-                                        <div class="date-container mt-1">
-                                            <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                                <div class="w-[95%] mx-auto mb-5">
-                                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
-                                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt="" class="object-center w-15 h-15 rounded-full">
-                                <div class="  w-[90%] mx-auto">
-                                    <div class=" mx-auto flex gap-5 items-center">
-                                    <p class="text-blue-800 text-lg font-bold">242120111</p>
-                                    <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
-                                    <button class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
-                                    </div>
-                                    <div>
-                                        <p class="text-lg text-black">Requested room change</p>
-                                        <div class="date-container mt-1">
-                                            <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                                <div class="w-[95%] mx-auto mb-5">
-                                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
-                                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt="" class="object-center w-15 h-15 rounded-full">
-                                <div class="  w-[90%] mx-auto">
-                                    <div class=" mx-auto flex gap-5 items-center">
-                                    <p class="text-blue-800 text-lg font-bold">242120111</p>
-                                    <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
-                                    <button class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
-                                    </div>
-                                    <div>
-                                        <p class="text-lg text-black">Requested room change</p>
-                                        <div class="date-container mt-1">
-                                            <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                                <div class="w-[95%] mx-auto mb-5">
-                                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
-                                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt="" class="object-center w-15 h-15 rounded-full">
-                                <div class="  w-[90%] mx-auto">
-                                    <div class=" mx-auto flex gap-5 items-center">
-                                    <p class="text-blue-800 text-lg font-bold">242120111</p>
-                                    <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
-                                    <button class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
-                                    </div>
-                                    <div>
-                                        <p class="text-lg text-black">Requested room change</p>
-                                        <div class="date-container mt-1">
-                                            <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                                <div class="w-[95%] mx-auto mb-5">
-                                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
-                                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt="" class="object-center w-15 h-15 rounded-full">
-                                <div class="  w-[90%] mx-auto">
-                                    <div class=" mx-auto flex gap-5 items-center">
-                                    <p class="text-blue-800 text-lg font-bold">242120111</p>
-                                    <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
-                                    <button class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
-                                    </div>
-                                    <div>
-                                        <p class="text-lg text-black">Requested room change</p>
-                                        <div class="date-container mt-1">
-                                            <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                                <div class="w-[95%] mx-auto mb-5">
-                                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
-                                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt="" class="object-center w-15 h-15 rounded-full">
-                                <div class="  w-[90%] mx-auto">
-                                    <div class=" mx-auto flex gap-5 items-center">
-                                    <p class="text-blue-800 text-lg font-bold">242120111</p>
-                                    <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
-                                    <button class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
-                                    </div>
-                                    <div>
-                                        <p class="text-lg text-black">Requested room change</p>
-                                        <div class="date-container mt-1">
-                                            <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                                <div class="w-[95%] mx-auto mb-5">
-                                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
-                                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt="" class="object-center w-15 h-15 rounded-full">
-                                <div class="  w-[90%] mx-auto">
-                                    <div class=" mx-auto flex gap-5 items-center">
-                                    <p class="text-blue-800 text-lg font-bold">242120111</p>
-                                    <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
-                                    <button class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
-                                    </div>
-                                    <div>
-                                        <p class="text-lg text-black">Requested room change</p>
-                                        <div class="date-container mt-1">
-                                            <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                                <div class="w-[95%] mx-auto mb-5">
-                                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
-                                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt="" class="object-center w-15 h-15 rounded-full">
-                                <div class="  w-[90%] mx-auto">
-                                    <div class=" mx-auto flex gap-5 items-center">
-                                    <p class="text-blue-800 text-lg font-bold">242120111</p>
-                                    <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
-                                    <button class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
-                                    </div>
-                                    <div>
-                                        <p class="text-lg text-black">Requested room change</p>
-                                        <div class="date-container mt-1">
-                                            <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                                <div class="w-[95%] mx-auto mb-5">
-                                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
-                                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt="" class="object-center w-15 h-15 rounded-full">
-                                <div class="  w-[90%] mx-auto">
-                                    <div class=" mx-auto flex gap-5 items-center">
-                                    <p class="text-blue-800 text-lg font-bold">242120111</p>
-                                    <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
-                                    <button class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
-                                    </div>
-                                    <div>
-                                        <p class="text-lg text-black">Requested room change</p>
-                                        <div class="date-container mt-1">
-                                            <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                                <div class="w-[95%] mx-auto mb-5">
-                                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
-                                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt="" class="object-center w-15 h-15 rounded-full">
-                                <div class="  w-[90%] mx-auto">
-                                    <div class=" mx-auto flex gap-5 items-center">
-                                    <p class="text-blue-800 text-lg font-bold">242120111</p>
-                                    <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
-                                    <button class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
-                                    </div>
-                                    <div>
-                                        <p class="text-lg text-black">Requested room change</p>
-                                        <div class="date-container mt-1">
-                                            <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                                <div class="w-[95%] mx-auto mb-5">
-                                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
-                                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt="" class="object-center w-15 h-15 rounded-full">
-                                <div class="  w-[90%] mx-auto">
-                                    <div class=" mx-auto flex gap-5 items-center">
-                                    <p class="text-blue-800 text-lg font-bold">242120111</p>
-                                    <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
-                                    <button class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
-                                    </div>
-                                    <div>
-                                        <p class="text-lg text-black">Requested room change</p>
-                                        <div class="date-container mt-1">
-                                            <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                                <div class="w-[95%] mx-auto mb-5">
-                                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
-                                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt="" class="object-center w-15 h-15 rounded-full">
-                                <div class="  w-[90%] mx-auto">
-                                    <div class=" mx-auto flex gap-5 items-center">
-                                    <p class="text-blue-800 text-lg font-bold">242120111</p>
-                                    <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
-                                    <button class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
-                                    </div>
-                                    <div>
-                                        <p class="text-lg text-black">Requested room change</p>
-                                        <div class="date-container mt-1">
-                                            <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                                <div class="w-[95%] mx-auto mb-5">
-                                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
-                                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt="" class="object-center w-15 h-15 rounded-full">
-                                <div class="  w-[90%] mx-auto">
-                                    <div class=" mx-auto flex gap-5 items-center">
-                                    <p class="text-blue-800 text-lg font-bold">242120111</p>
-                                    <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
-                                    <button class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
-                                    </div>
-                                    <div>
-                                        <p class="text-lg text-black">Requested room change</p>
-                                        <div class="date-container mt-1">
-                                            <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                            </div>
-                            
+    <div id="notification-box" class="hide notification-container bg-blue-800 overflow-auto truncate">
+
+        <div class="notification-header bg-blue-800 py-2">
+            <div class="flex justify-between items-center w-[95%] mx-auto">
+                <h1 class="ms-5 font-bold text-lg text-white mb-3">Notification</h1>
+                <img id="notification-cancel" class="w-7 h-7 mt-[-5px]" src="../images/cancel.png" alt="">
+            </div>
+            <div class="grid grid-cols-3 justify-between  mb-3 w-[95%] mx-auto gap-5 text-center text-white font-bold">
+                <p class="bg-blue-400 p-2 uppercase text-sm rounded-[10px]">all</p>
+                <p class="bg-blue-400 p-2 uppercase text-sm rounded-[10px]">request</p>
+                <p class="bg-blue-400 p-2 uppercase text-sm rounded-[10px]">checkout</p>
+            </div>
+        </div>
+        <div>
+            <div class="w-[95%] mx-auto mb-5">
+                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
+                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt=""
+                        class="object-center w-15 h-15 rounded-full">
+                    <div class="  w-[90%] mx-auto">
+                        <div class=" mx-auto flex gap-5 items-center">
+                            <p class="text-blue-800 text-lg font-bold">242120111</p>
+                            <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
+                            <button
+                                class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
                         </div>
+                        <div>
+                            <p class="text-lg text-black">Requested room change</p>
+                            <div class="date-container mt-1">
+                                <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[95%] mx-auto mb-5">
+                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
+                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt=""
+                        class="object-center w-15 h-15 rounded-full">
+                    <div class="  w-[90%] mx-auto">
+                        <div class=" mx-auto flex gap-5 items-center">
+                            <p class="text-blue-800 text-lg font-bold">242120111</p>
+                            <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
+                            <button
+                                class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
+                        </div>
+                        <div>
+                            <p class="text-lg text-black">Requested room change</p>
+                            <div class="date-container mt-1">
+                                <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[95%] mx-auto mb-5">
+                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
+                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt=""
+                        class="object-center w-15 h-15 rounded-full">
+                    <div class="  w-[90%] mx-auto">
+                        <div class=" mx-auto flex gap-5 items-center">
+                            <p class="text-blue-800 text-lg font-bold">242120111</p>
+                            <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
+                            <button
+                                class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
+                        </div>
+                        <div>
+                            <p class="text-lg text-black">Requested room change</p>
+                            <div class="date-container mt-1">
+                                <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[95%] mx-auto mb-5">
+                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
+                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt=""
+                        class="object-center w-15 h-15 rounded-full">
+                    <div class="  w-[90%] mx-auto">
+                        <div class=" mx-auto flex gap-5 items-center">
+                            <p class="text-blue-800 text-lg font-bold">242120111</p>
+                            <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
+                            <button
+                                class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
+                        </div>
+                        <div>
+                            <p class="text-lg text-black">Requested room change</p>
+                            <div class="date-container mt-1">
+                                <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[95%] mx-auto mb-5">
+                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
+                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt=""
+                        class="object-center w-15 h-15 rounded-full">
+                    <div class="  w-[90%] mx-auto">
+                        <div class=" mx-auto flex gap-5 items-center">
+                            <p class="text-blue-800 text-lg font-bold">242120111</p>
+                            <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
+                            <button
+                                class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
+                        </div>
+                        <div>
+                            <p class="text-lg text-black">Requested room change</p>
+                            <div class="date-container mt-1">
+                                <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[95%] mx-auto mb-5">
+                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
+                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt=""
+                        class="object-center w-15 h-15 rounded-full">
+                    <div class="  w-[90%] mx-auto">
+                        <div class=" mx-auto flex gap-5 items-center">
+                            <p class="text-blue-800 text-lg font-bold">242120111</p>
+                            <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
+                            <button
+                                class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
+                        </div>
+                        <div>
+                            <p class="text-lg text-black">Requested room change</p>
+                            <div class="date-container mt-1">
+                                <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[95%] mx-auto mb-5">
+                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
+                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt=""
+                        class="object-center w-15 h-15 rounded-full">
+                    <div class="  w-[90%] mx-auto">
+                        <div class=" mx-auto flex gap-5 items-center">
+                            <p class="text-blue-800 text-lg font-bold">242120111</p>
+                            <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
+                            <button
+                                class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
+                        </div>
+                        <div>
+                            <p class="text-lg text-black">Requested room change</p>
+                            <div class="date-container mt-1">
+                                <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[95%] mx-auto mb-5">
+                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
+                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt=""
+                        class="object-center w-15 h-15 rounded-full">
+                    <div class="  w-[90%] mx-auto">
+                        <div class=" mx-auto flex gap-5 items-center">
+                            <p class="text-blue-800 text-lg font-bold">242120111</p>
+                            <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
+                            <button
+                                class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
+                        </div>
+                        <div>
+                            <p class="text-lg text-black">Requested room change</p>
+                            <div class="date-container mt-1">
+                                <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[95%] mx-auto mb-5">
+                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
+                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt=""
+                        class="object-center w-15 h-15 rounded-full">
+                    <div class="  w-[90%] mx-auto">
+                        <div class=" mx-auto flex gap-5 items-center">
+                            <p class="text-blue-800 text-lg font-bold">242120111</p>
+                            <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
+                            <button
+                                class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
+                        </div>
+                        <div>
+                            <p class="text-lg text-black">Requested room change</p>
+                            <div class="date-container mt-1">
+                                <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[95%] mx-auto mb-5">
+                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
+                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt=""
+                        class="object-center w-15 h-15 rounded-full">
+                    <div class="  w-[90%] mx-auto">
+                        <div class=" mx-auto flex gap-5 items-center">
+                            <p class="text-blue-800 text-lg font-bold">242120111</p>
+                            <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
+                            <button
+                                class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
+                        </div>
+                        <div>
+                            <p class="text-lg text-black">Requested room change</p>
+                            <div class="date-container mt-1">
+                                <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[95%] mx-auto mb-5">
+                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
+                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt=""
+                        class="object-center w-15 h-15 rounded-full">
+                    <div class="  w-[90%] mx-auto">
+                        <div class=" mx-auto flex gap-5 items-center">
+                            <p class="text-blue-800 text-lg font-bold">242120111</p>
+                            <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
+                            <button
+                                class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
+                        </div>
+                        <div>
+                            <p class="text-lg text-black">Requested room change</p>
+                            <div class="date-container mt-1">
+                                <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[95%] mx-auto mb-5">
+                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
+                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt=""
+                        class="object-center w-15 h-15 rounded-full">
+                    <div class="  w-[90%] mx-auto">
+                        <div class=" mx-auto flex gap-5 items-center">
+                            <p class="text-blue-800 text-lg font-bold">242120111</p>
+                            <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
+                            <button
+                                class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
+                        </div>
+                        <div>
+                            <p class="text-lg text-black">Requested room change</p>
+                            <div class="date-container mt-1">
+                                <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="w-[95%] mx-auto mb-5">
+                <div class="shadow-lg bg-white rounded-[20px] h-20 p-2 relative flex items-center gap-7">
+                    <img src="../images/hotel-building-ho-chi-minh-vietnam.jpg" alt=""
+                        class="object-center w-15 h-15 rounded-full">
+                    <div class="  w-[90%] mx-auto">
+                        <div class=" mx-auto flex gap-5 items-center">
+                            <p class="text-blue-800 text-lg font-bold">242120111</p>
+                            <p class="text-blue-500 text-sm mt-1 font-light uppercase me-18">room 008</p>
+                            <button
+                                class=" bg-blue-800 text-white text-sm px-5 py-1 hover:bg-blue-700 rounded-[10px] font-bold">View</button>
+                        </div>
+                        <div>
+                            <p class="text-lg text-black">Requested room change</p>
+                            <div class="date-container mt-1">
+                                <p class=" text-blue-500 text-xs"><span>2h ago</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="../supabase.js"></script>
 <script src="dashboard.js"></script>
+
 </html>

@@ -33,68 +33,88 @@ function display(){
 // display();
 
 
-const image_box =  document.getElementById("image");
-const image_box_2 =  document.getElementById("image-2");
-const image_box_3 =  document.getElementById("image-3");
-const image_box_4 =  document.getElementById("image-4");
-const info_box = document.getElementById("info");
-const info_box_2 = document.getElementById("info-2");
-const info_box_3 = document.getElementById("info-3");
-const info_box_4 = document.getElementById("info-4");
+// const image_box =  document.getElementById("image");
+// const image_box_2 =  document.getElementById("image-2");
+// const image_box_3 =  document.getElementById("image-3");
+// const image_box_4 =  document.getElementById("image-4");
+// const info_box = document.getElementById("info");
+// const info_box_2 = document.getElementById("info-2");
+// const info_box_3 = document.getElementById("info-3");
+// const info_box_4 = document.getElementById("info-4");
 
 
-image_box.addEventListener("mouseenter", () => {
-    info_box.classList.remove("hide");
-    image_box.classList.add("image_shake");
-})
+// image_box.addEventListener("mouseenter", () => {
+//     info_box.classList.remove("hide");
+//     image_box.classList.add("image_shake");
+// })
 
-info_box.addEventListener("mouseleave", () => {
-    info_box.classList.add("hide");
-    image_box.classList.remove("image_shake");
-})
+// info_box.addEventListener("mouseleave", () => {
+//     info_box.classList.add("hide");
+//     image_box.classList.remove("image_shake");
+// })
 
-image_box_2.addEventListener("mouseenter", () => {
-    info_box_2.classList.remove("hide");
-    image_box_2.classList.add("image_shake");
-})
+// image_box_2.addEventListener("mouseenter", () => {
+//     info_box_2.classList.remove("hide");
+//     image_box_2.classList.add("image_shake");
+// })
 
-info_box_2.addEventListener("mouseleave", () => {
-    info_box_2.classList.add("hide");
-    image_box_2.classList.remove("image_shake");
-})
+// info_box_2.addEventListener("mouseleave", () => {
+//     info_box_2.classList.add("hide");
+//     image_box_2.classList.remove("image_shake");
+// })
 
-image_box_3.addEventListener("mouseenter", () => {
-    info_box_3.classList.remove("hide");
-    image_box_3.classList.add("image_shake");
-})
+// image_box_3.addEventListener("mouseenter", () => {
+//     info_box_3.classList.remove("hide");
+//     image_box_3.classList.add("image_shake");
+// })
 
-info_box_3.addEventListener("mouseleave", () => {
-    info_box_3.classList.add("hide");
-    image_box_3.classList.remove("image_shake");
-})
+// info_box_3.addEventListener("mouseleave", () => {
+//     info_box_3.classList.add("hide");
+//     image_box_3.classList.remove("image_shake");
+// })
 
-image_box_4.addEventListener("mouseenter", () => {
-    info_box_4.classList.remove("hide");
-    image_box_4.classList.add("image_shake");
-})
+// image_box_4.addEventListener("mouseenter", () => {
+//     info_box_4.classList.remove("hide");
+//     image_box_4.classList.add("image_shake");
+// })
 
-info_box_4.addEventListener("mouseleave", () => {
-    info_box_4.classList.add("hide");
-    image_box_4.classList.remove("image_shake");
-})
+// info_box_4.addEventListener("mouseleave", () => {
+//     info_box_4.classList.add("hide");
+//     image_box_4.classList.remove("image_shake");
+// })
 
 // image_box.add("mouseleave", () => {
 //     info_box.classList.add("hide");
 // })
 
-const view_hostel = document.getElementById("view-hostel");
-const hostel_details = document.getElementById("hostel-detail");
-const cancel_btn = document.getElementById("cancel")
+// const view_hostel = document.getElementById("view-hostel");
+// const hostel_details = document.getElementById("hostel-detail");
+// const cancel_btn = document.getElementById("cancel")
 
-view_hostel.addEventListener("click", () => {
-    hostel_details.classList.remove("hide");
-})
+// view_hostel.addEventListener("click", () => {
+//     hostel_details.classList.remove("hide");
+// })
 
-cancel.addEventListener("click", () => {
-    hostel_details.classList.add("hide");
-})
+// cancel.addEventListener("click", () => {
+//     hostel_details.classList.add("hide");
+// })
+
+const side_menu = document.getElementById("side-menu");
+const side_menu_btn = document.getElementById("side-menu-btn");
+
+side_menu_btn.addEventListener("click", () => {
+   if(side_menu.classList.contains("hide")){
+    side_menu.classList.remove("menu-exit");
+    side_menu.classList.add("menu-entrance");
+    setTimeout( () => {
+        side_menu.classList.remove("hide");
+    },250);
+   }
+   else{
+    side_menu.classList.remove("menu-entrance");
+    side_menu.classList.add("menu-exit");
+    setTimeout( () => {
+        side_menu.classList.add("hide");
+    },250);
+   }
+});

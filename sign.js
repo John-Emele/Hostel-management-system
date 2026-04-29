@@ -71,7 +71,7 @@ async function sign_up() {
         sign_btn.disabled = false;
         sign_btn.textContent = "Sign Up";
     }
-    window.location = "students/login.html"
+    window.location = "login.html"
 }
 sign_btn.addEventListener("click", async () => {
     await sign_up();

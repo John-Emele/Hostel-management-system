@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../tailwindcss.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="flex justify-between items-center gap-5">
+        <div class="w-[25%] mx-auto bg-blue-900 h-[100vh] pt-10">
+            <ul class="w-[90%] mx-auto">
+                <a href="dashbaord.html" class="">
+                    <li class="uppercase  bg-white mb-5 rounded-[5px] p-2 ">
+                    <div class="flex items-center gap-5">
+                        <img src="../images/layout (1).png" alt="" class="w-5 h-5">
+                        <p class="text-blue-900 text-sm font-bold">Dashbaord</p>
+                    </div>
+                </li>
+                </a>
+                <a href="hostel.html">
+                    <li class="uppercase mb-5 p-2 dash-list" >
+                    <div class="flex items-center gap-5 " >
+                        <img src="../images/hotel.png" alt="" class="w-5 h-5">
+                        <p class="text-white text-sm font-bold">Hostels</p>
+                    </div>
+                </li>
+                </a>
+                 <a href="rooms.html">
+                    <li class="uppercase dash-list mb-5  p-2" >
+                    <div class="flex items-center gap-5 " >
+                        <img src="../images/door.png" alt="" class="w-5 h-5">
+                        <p class="text-white text-sm font-bold">room</p>
+                    </div>
+                </li>
+                </a>
+                <a href="student.html">
+                    <li class="uppercase  mb-5 p-2 dash-list">
+                    <div class="flex items-center gap-5">
+                        <img src="../images/user.png" alt="" class="w-5 h-5">
+                        <p class="text-white text-sm font-bold">Students</p>
+                    </div>
+                </li>
+                </a>
+                <a href="supervisor.html">
+                    <li class="uppercase  mb-5 p-2 dash-list">
+                    <div class="flex items-center gap-5" >
+                        <img src="../images/user.png" alt="" class="h-5 w-5">
+                        <p class="text-white text-sm font-bold">Supervisors</p>
+                    </div>
+                </li>
+                </a>
+               <a href="transaction.html">
+                 <li class="uppercase  mb-50 p-2 dash-list">
+                    <div class="flex items-center gap-5" >
+                        <img src="../images/dollars.png" alt="" class="w-5 h-5">
+                        <p class="text-white text-sm font-bold">Transaction</p>
+                    </div>
+                </li>
+               </a>
+                <li class="uppercase mb-5 p-2 bg-red-700 hover:bg-red-600 rounded-[10px]">
+                        <p class="text-white text-sm font-bold text-center ">logout</p>
+                </li>
+            </ul>
+        </div>
+        <div class=" w-[75%] mx-auto h-[100vh]">
+           <div class="w-[95%] mx-auto mt-5 mb-5">
+            <h1 class="uppercase text-blue-900 font-bold text-xl mb-3">dashboard</h1>
+            <p class="w-full bg-blue-100 p-2 rounded-[5px] text-lg text-white font-bold">Dashboard</p>
+           </div>
+
+           <div class="grid grid-cols-4 gap-5 w-[95%] mx-auto mb-10">
+              <div class="bg-purple-400 h-20 rounded-[5px] dash-list-2 shadow-lg">
+                <h1 class="text-center font-bold text-white text-lg uppercase">Total hostels</h1>
+                <p class="text-center text-white text-2xl font-bold mt-2">30</p>
+              </div>
+              <div class="bg-yellow-300 h-20 rounded-[5px] dash-list-2 shadow-lg">
+                <h1 class="text-center font-bold text-white text-lg uppercase">Total students</h1>
+                <p class="text-center text-white text-2xl font-bold mt-2">30</p>
+              </div>
+              <div class="bg-green-400 h-20 rounded-[5px] dash-list-2 shadow-lg">
+                <h1 class="text-center font-bold text-white text-lg uppercase">Total supervisors</h1>
+                <p class="text-center text-white text-xl font-bold mt-2">30</p>
+              </div>
+              <div class="bg-red-400 h-20 rounded-[5px] dash-list-2 shadow-lg">
+                <h1 class="text-center font-bold text-white text-lg uppercase">Total users</h1>
+                <p class="text-center text-white text-2xl font-bold mt-2">30</p>
+              </div>
+           </div>
+            <div class="w-[95%] mx-auto flex justify-end relative">
+                <div class="flex ">
+                    <ul id="pop-sort" class=" mx-auto shadow-lg pop-out hide">
+                        <li class="text-center text-xs  text-blue-900 border-b-1 border-solid border-blue-900 py-2 px-3 hover:bg-blue-900 hover:text-white font-bold">Student</li>
+                        <li class="text-center text-xs  text-blue-900 border-b-1 border-solid border-blue-900 py-2 px-3 hover:bg-blue-900 hover:text-white font-bold">Supervisor</li>
+                        <li class="text-center text-xs  text-blue-900 border-b-1 border-solid border-blue-900 py-2 px-3 hover:bg-blue-900 hover:text-white font-bold">Head Supervisor</li>
+                    </ul>
+                    <p id="filter-role" class="px-3 py-1 uppercase text-xs mb-3  text-blue-900 rounded-[5px] font-bold hover:bg-[#f2f2f2]">filter</p>
+                </div>
+            </div>
+            <div class="border-solid border-blue-900 w-[95%] mx-auto px-4 overflow-auto max-h-70 truncate table-container">
+            <table class="w-full">
+                <thead>
+                    <tr class="supervisor-header">
+                        <th class="uppercase text-center text-blue-900 font-bold text-sm py-2">s/n</th>
+                        <th class="uppercase text-center text-blue-900 font-bold text-sm py-2">id</th>
+                        <th class="uppercase text-center text-blue-900 font-bold text-sm py-2">name</th>
+                        <th class="uppercase text-center text-blue-900 font-bold text-sm py-2">role</th>
+                        <th class="uppercase text-center text-blue-900 font-bold text-sm py-2">actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900 bg-[#f2f2f2]">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900 bg-[#f2f2f2]">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="border-t border-t-1 border-t-solid border-t-blue-900">
+                        <td class="uppercase text-center text-blue-900 font-bold text-sm py-2">1</td>
+                        <td class="uppercase text-center text-blue-500 font-bold text-sm py-2">242120111</td>
+                        <td class="text-center text-blue-900 font-bold text-sm py-2">John Emele</td>
+                        <td class="uppercase text-center text-black font-bold text-xs py-2">student</td>
+                        <td class="py-2">
+                            <div class="flex gap-2 items-center w-[30%] mx-auto">
+                                <!-- <img src="" alt=""> -->
+                                <p class="text-center text-xs">✍️</p>
+                                <p class="text-center text-xs">🗑️</p>
+                                <!-- <img src="" alt=""> -->
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        </div>
+
+       
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../supabase.js"></script>
+<script type="module" src="dashboard.js"></script>
+</html>
