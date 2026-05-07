@@ -6,6 +6,7 @@ const login_btn = document.getElementById("login-btn");
 let form_check = false;
 
 async function login() {
+    let next_page;
 
     if (login_email.value === "" || login_password.value === "") {
         form_check = true;
@@ -33,31 +34,51 @@ async function login() {
             alert(error.message);
             return;
         }
-    console.log(data.user.id);
+        console.log(data.user.id);
 
-     const {data:profile_user, error:profile_error} = await supabaseClient
-     .from('profile')
-     .select('*')
-     .eq("id", data.user.id)
+        const { data: profile_user, error: profile_error } = await supabaseClient
+            .from('profile')
+            .select('*')
+            .eq("id", data.user.id)
+            .single()
 
-     console.log(profile_user);
+        console.log(profile_user);
 
-     if(profile_error){
-        console.log(profile_error);
-     }
+        if (profile_error) {
+            console.log(profile_error);
+        }
 
+        const role = profile_user.role;
+        console.log(role);
+
+        if (role == "student") {
+            next_page = "students/profile.html"
+        }
+        else if (role == "supervisor") {
+            next_page = "supervisors/dashboard.html";
+        }
+        else if (role == "admin") {
+            next_page = "admin/dashbaord.html";
+        }
+        else {
+            alert("Access Denied");
+            return;
+        }
+
+        alert("login succesfull")
+
+        login_btn.disabled = false;
+        login_btn.textContent = "login";
+
+        window.location = next_page;
 
     }
     catch (err) {
         console.log(err);
         alert("something went wrong, please try again");
-        return
+        return;
     }
-    finally {
-        login_btn.disabled = false;
-        login_btn.textContent = "login";
-    }
-    // window.location = "dashboard.html"
+
 }
 
 login_btn.addEventListener("click", async (e) => {

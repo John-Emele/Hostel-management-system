@@ -1,14 +1,14 @@
 console.log("Dashboard JS loaded");
 
-window.addEventListener("DOMContentLoaded", async () => {
-  const { data, error } = await supabaseClient.auth.getSession();
+async function protectPage() {
+  const { data } = await supabaseClient.auth.getSession();
 
   if (!data.session) {
-    window.location.href = "../login.html";
+    window.location.href = "/login.html";
   }
 
-  console.log("User:", data.session?.user);
-});
+  return data.session?.user;
+}
 
 window.addEventListener("DOMContentLoaded", async () => {
   const user = await protectPage(supabase);

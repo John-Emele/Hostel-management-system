@@ -1,119 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <script src="../tailwindcss.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Supervisor Dashboard</title>
+  <script src="../tailwindcss.min.js"></script>
+  <link rel="stylesheet" href="../style.css">
 </head>
-<body class="bg-gray-100">
 
-  <div class="flex h-screen">
+<body>
 
-    <!-- Sidebar -->
-    <div class="w-64 bg-blue-900 text-white flex flex-col">
-      <div class="p-6 text-2xl font-bold border-b border-blue-700">
-        Supervisor
-      </div>
+  <!-- side menu -->
+  <div id="side-menu" class="hide w-[70%]  bg-blue-600 rounded-e-[20px] lg:px-3 md:px-0  h-[100vh] side-menu z-111111">
+    <ul class="w mx-auto  py-10 ">
+      <a href="dashboard.html" class="">
+        <div class="flex gap-3 items-center mb-6 px-3 bg-blue-400  py-1 ps-3">
+          <img src="../images/layout (1).png" alt="" class="w-6 h-6">
+          <p class=" text-white font-bold text-sm uppercase mt-1">dashboard</p>
+        </div>
+      </a>
+      <a href="student.html" class="">
+        <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400   hover:py-1 hover:ps-3 ">
+          <img src="../images/students.png" alt="" class="w-7 h-7">
+          <p class=" text-white font-bold text-sm uppercase mt-1">student</p>
+        </div>
+      </a>
+      <a href="room.html" class="">
+        <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
+          <img src="../images/bed.png" alt="" class="w-7 h-7">
+          <p class="text-white font-bold text-sm uppercase mt-1">room</p>
+        </div>
+      </a>
+      <a href="request.html">
+        <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
+          <img src="../images/interview.png" alt="" class="w-7 h-7">
+          <p class="text-white font-bold text-sm uppercase">request</p>
+        </div>
+      </a>
+      <a href="complaint.html">
+        <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
+          <img src="../images/complain.png" alt="" class="w-7 h-7">
+          <p class="text-white font-bold text-sm uppercase">complaint</p>
+        </div>
+      </a>
+      <a href="" class="">
+        <div class="flex gap-3 items-center px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
+          <img src="../images/do-not-disturb.png" alt="" class="w-7 h-7">
+          <p class=" text-white font-bold text-sm uppercase">Theme</p>
+        </div>
+      </a>
+    </ul>
+  </div>
 
-      <nav class="flex-1 p-4 space-y-3">
-        <a href="#" class="block p-3 rounded-lg bg-blue-700">Dashboard</a>
-        <a href="room.html" class="block p-3 rounded-lg hover:bg-blue-700">Students</a>
-        <a href="theme.html" class="block p-3 rounded-lg hover:bg-blue-700">Rooms</a>
-        <a href="request.html" class="block p-3 rounded-lg hover:bg-blue-700">Requests</a>
-      </nav>
+  <div class="flex h-screen items-center">
 
-      <div class="p-4 border-t border-blue-700">
-        <button class="w-full bg-red-500 hover:bg-red-600 p-2 rounded-lg">
-          Logout
-        </button>
-      </div>
+    <div class="bg-blue-600 lg:w-[25%] md:w-[7%] mx-auto hidden md:block">
+      <ul class="w-full h-[100vh] mt-15 lg:px-4  ">
+        <a href="dashboard.html">
+          <div class="lg:flex items-center gap-4 hover:bg-blue-300 p-3 lg:hover:rounded-[10px] mb-5 md:ps-4 lg:ps-2">
+            <img src="../images/layout.png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+            <li class="font-bold text-sm uppercase text-white  md:hidden lg:block">Dashboard</li>
+          </div>
+        </a>
+        <a href="profile.html">
+          <div class="lg:flex items-center gap-4 bg-white p-3 lg:rounded-[10px] mb-5 md:ps-4 lg:ps-2">
+            <img src="../images/user (2).png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+            <li class="font-bold text-sm uppercase text-blue-600  md:hidden lg:block">profile</li>
+          </div>
+        </a>
+        <a href="student.html">
+          <div class="lg:flex items-center gap-4 p-3 mb-5 hover:bg-blue-300 lg:hover:rounded-[10px] md:ps-4  lg:ps-2">
+            <img src="../images/students.png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+            <li class="font-bold text-sm uppercase text-white md:hidden lg:block">Students</li>
+          </div>
+        </a>
+        <a href="room.html">
+          <div class="lg:flex items-center gap-4 p-3 mb-5 hover:bg-blue-300 lg:hover:rounded-[10px] md:ps-4  lg:ps-2">
+            <img src="../images/door.png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+            <li class="font-bold text-sm uppercase text-white md:hidden lg:block">Rooms</li>
+          </div>
+        </a>
+        <a href="request.html">
+          <div class="lg:flex items-center gap-4 p-3 mb-5 hover:bg-blue-300 lg:hover:rounded-[10px] md:ps-4  lg:ps-2">
+            <img src="../images/interview.png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+            <li class="font-bold text-sm uppercase text-white md:hidden lg:block">Request</li>
+          </div>
+        </a>
+        <a href="complaint.html">
+          <div class="lg:flex items-center gap-4 p-3 mb-5 hover:bg-blue-300 lg:hover:rounded-[10px] md:ps-4  lg:ps-2">
+            <img src="../images/complain.png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+            <li class="font-bold text-sm uppercase text-white md:hidden lg:block">Complaints</li>
+          </div>
+        </a>
+
+        <a href="">
+          <div id="log-out-btn" class="bg-red-500 p-3 rounded-[10px]">
+            <li class="font-bold text-white uppercase text-xs text-center">log out</li>
+          </div>
+
+        </a>
+      </ul>
     </div>
 
     <!-- Main Content -->
-    <div class="flex-1 p-6 overflow-y-auto">
-
-      <!-- Header -->
-      <h1 class="text-2xl font-bold mb-6">Welcome, Supervisor 👋</h1>
-
-      <!-- Stats -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-        <div class="bg-white p-5 rounded-xl shadow">
-          <p class="text-gray-500">Total Students</p>
-          <h2 class="text-2xl font-bold">120</h2>
-        </div>
-
-        <div class="bg-white p-5 rounded-xl shadow">
-          <p class="text-gray-500">Total Rooms</p>
-          <h2 class="text-2xl font-bold">80</h2>
-        </div>
-
-        <div class="bg-white p-5 rounded-xl shadow">
-          <p class="text-gray-500">Available Rooms</p>
-          <h2 class="text-2xl font-bold">15</h2>
-        </div>
+    <div class="md:w-[93%] lg:w-[75] w-[95%] mx-auto h-[100vh] pt-5 ">
+      <div id="info-form" class="hide infoForm w-[60%] mx-auto mt-20">
+        <h1 class="text-blue-800 uppercase font-bold text-center mb-5 text-xl">profile</h1>
+        <form action="" class="">
+          <div class="edit-group mb-5">
+            <input type="text" id="supervisor-firstname"
+              class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required>
+            <label class="text-blue-800 edit-label ">firstname</label>
+            <p id="supervisor-firstname-error" class="error text-light text-xs text-red-400 ms-3"></p>
+          </div>
+          <div class="edit-group mb-5">
+            <input type="text" id="supervisor-lastname"
+              class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required>
+            <label class="text-blue-800">lastname</label>
+            <p id="supervisor-lastname-error" class="error text-light text-xs text-red-400 ms-3">
+            </p>
+          </div>
+          <div class="edit-group mb-5">
+            <select name="" id="supervisor-gender"
+              class="outline-none ps-2 text-blue-900  w-full mx-auto border-2 border-solid border-blue-800 h-10 rounded-[10px]"
+              required>
+              <option value=""></option>
+              <option value="Male" class="bg-white text-blue-900">Male</option>
+              <option value="Female">Female</option>
+            </select>
+            <label class="text-blue-800 edit-label">gender</label>
+            <p id="supervisor-gender-error" class="error text-light text-xs text-red-400 ms-3">
+            </p>
+          </div>
+          <div class="edit-group mb-5">
+            <input type="email" id="supervisor-email"
+              class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required>
+            <label class="text-blue-800">email</label>
+            <p id="supervisor-email-error" class="error text-light text-xs text-red-400 ms-3">
+            </p>
+          </div>
+          <!-- <div class="edit-group mb-5">
+            <input type="text" id="edit_stud-id"
+              class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required>
+            <label class="text-blue-800 edit-label">student-id</label>
+            <p id="edit_stud-id-error" class="error text-light text-xs text-red-400 ms-3"></p>
+          </div> -->
+          <div class="edit-group mb-5">
+            <input type="text" id="supervisor-phone"
+              class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required>
+            <label class="text-blue-800 edit-label">Phone</label>
+            <p id="supervisor-phone-error" class="error text-light text-xs text-red-400 ms-3">
+            </p>
+          </div>
+          <div class="w-[50%] mx-auto mt-5 h-10">
+            <button id="supervisor-submit-btn" type="button"
+              class="w-full text-xl font-bold text-white bg-blue-500 h-full rounded-[10px] uppercase hover:bg-blue-700 mb-5">submit
+            </button>
+          </div>
+        </form>
       </div>
 
-      <!-- Students Table -->
-      <div class="bg-white p-6 rounded-xl shadow mb-6">
-        <h2 class="text-xl font-semibold mb-4">Students</h2>
 
-        <table class="w-full text-left">
-          <thead>
-            <tr class="border-b">
-              <th class="py-2">Student ID</th>
-              <th>Name</th>
-              <th>Room</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b">
-              <td class="py-2">CKC001</td>
-              <td>John Doe</td>
-              <td>A12</td>
-              <td>
-                <button class="bg-blue-500 text-white px-3 py-1 rounded">
-                  Assign
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+      <div id="account-info"
+        class="supervisor-info w-[80%] mx-auto bg-gray-100 rounded-[10px] mt-20 p-10 shadow-lg shadow-blue-200">
+        <p class="font-bold uppercase text-[17px] mb-5 text-blue-900">FirstName: <span id="sup-firstname"
+            class="text-sm font-medium"></span>
+        </p>
+        <p class="font-bold uppercase text-[17px] mb-5 text-blue-900">LastName: <span class="
+                        text-sm font-medium" id="sup-lastname"></span>
+        </p>
+        <p class="font-bold uppercase text-[17px] mb-5 text-blue-900">gender: <span class="
+                        text-sm font-medium" id="sup-gender"></span>
+        </p>
+        <p class="font-bold uppercase text-[17px] mb-5 text-blue-900">Email: <span id="sup-email"
+            class="text-sm font-medium"></span></p>
+        <p class="font-bold uppercase text-[17px] mb-5 text-blue-900">Phone: <span id="sup-phone"
+            class="text-sm font-medium"></span></p>
+        <p class="font-bold uppercase text-[17px] mb-5 text-blue-900">ID: <span id="sup-id"
+            class="text-sm font-bold text-blue-500"></span></p>
+        <button id="sup-edit-btn"
+          class="p-3 bg-blue-600 uppercase text-white hover:bg-blue-700 text-center rounded-[10px] mt-15 font-bold w-[90%] mx-auto">
+          edit</button>
       </div>
 
-      <!-- Requests -->
-      <div class="bg-white p-6 rounded-xl shadow">
-        <h2 class="text-xl font-semibold mb-4">Requests</h2>
+       <div id="edit-form" class="hide infoForm w-[60%] mx-auto mt-20">
+          <h1 class="text-blue-800 uppercase font-bold">profile</h1>
+          <form action="" class="">
+            <div class="edit-group mb-5">
+              <input type="text" id="sup-update-firstname"
+                class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required>
+              <label class="text-blue-800 edit-label ">firstname</label>
+              <p id="sup-update-firstname-error" class="error text-light text-xs text-red-400 ms-3"></p>
+            </div>
+            <div class="edit-group mb-5">
+              <input type="text" id="sup-update-lastname"
+                class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required>
+              <label class="text-blue-800">lastname</label>
+              <p id="sup-update-lastname-error" class="error text-light text-xs text-red-400 ms-3">
+              </p>
+            </div>
+            <div class="edit-group mb-5">
+              <select name="" id="sup-update-gender"
+                class="outline-none ps-2 text-blue-900  w-full mx-auto border-2 border-solid border-blue-800 h-10 rounded-[10px]"
+                required>
+                <option value=""></option>
+                <option value="Male" class="bg-white text-blue-900">Male</option>
+                <option value="Female">Female</option>
+              </select>
+              <label class="text-blue-800 edit-label">gender</label>
+              <p id="sup-update-gender-error" class="error text-light text-xs text-red-400 ms-3">
+              </p>
+            </div>
+            <div class="edit-group mb-5">
+              <input type="email" id="sup-update-email"
+                class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required>
+              <label class="text-blue-800">email</label>
+              <p id="sup-update-email-error" class="error text-light text-xs text-red-400 ms-3">
+              </p>
+            </div>
+            <div class="edit-group mb-5">
+              <input type="text" id="sup-update-phone"
+                class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4" required>
+              <label class="text-blue-800 edit-label">Phone</label>
+              <p id="sup-update-phone-error" class="error text-light text-xs text-red-400 ms-3">
+              </p>
+            </div>
+            <div class="w-[90%] flex mx-auto mt-5 h-10 gap-5">
+              <button id="sup-cancel-btn"
+                class="w-[50%] mx-auto text-xl font-bold text-white bg-red-500 h-full rounded-[10px] uppercase hover:bg-red-700 mb-5">cancel
+              </button>
+              <button id="sup-update-btn" type="button"
+                class="w-[50%] mx-auto text-xl font-bold text-white bg-blue-500 h-full rounded-[10px] uppercase hover:bg-blue-700 mb-5">Update
+              </button>
+            </div>
+          </form>
+        </div>
+    </div>
 
-        <table class="w-full text-left">
-          <thead>
-            <tr class="border-b">
-              <th class="py-2">Student ID</th>
-              <th>Request</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b">
-              <td class="py-2">CKC002</td>
-              <td>Room Change</td>
-              <td class="space-x-2">
-                <button class="bg-green-500 text-white px-3 py-1 rounded">
-                  Approve
-                </button>
-                <button class="bg-red-500 text-white px-3 py-1 rounded">
-                  Deny
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
+ <!-- successfull -->
+    <div id="successful-message" class="successful py-5 w-[27%] mx-auto bg-white rounded-[50px] shadow-xl hide">
+        <p id="successful-text" class=" text-lg font-bold text-center"></p>
     </div>
 
   </div>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../supabase.js"></script>
+<script src="profile.js"></script>
+
 </html>

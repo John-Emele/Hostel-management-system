@@ -19,20 +19,13 @@ async function sign_up() {
             password_error.innerHTML = "Field must not be empty";
             form_check = true;
         }
-        else if (sign_password.value.length < 6) {
-            console.log(sign_password.value.length)
-            password_error.innerHTML = "Must be atleast 6 characters";
-            form_check= true;
-        }
         else {
             password_error.innerHTML = "";
             form_check = false;
         }
-        if(form_check == true){
-            return;
-        }
 
         if (form_check == false) {
+
             sign_btn.disabled = true;
             sign_btn.textContent = "Signing up...";
 
@@ -57,7 +50,7 @@ async function sign_up() {
                 .insert([{
                     id: user.id,
                     user_email: user.email,
-                    role: "student"
+                    role: "admin"
                 }]);
 
             if (student_error) {
@@ -78,7 +71,7 @@ async function sign_up() {
         sign_btn.disabled = false;
         sign_btn.textContent = "Sign Up";
     }
-    window.location = "login.html"
+    window.location = "../login.html"
 }
 sign_btn.addEventListener("click", async () => {
     await sign_up();

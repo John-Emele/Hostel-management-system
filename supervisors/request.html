@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,11 @@
     <script src="../tailwindcss.min.js"></script>
     <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
-       <!-- side menu -->
-    <div id="side-menu" class="hide w-[70%]  bg-blue-600 rounded-e-[20px] lg:px-3 md:px-0  h-[100vh] side-menu z-111111">
+    <!-- side menu -->
+    <div id="side-menu"
+        class="hide w-[70%]  bg-blue-600 rounded-e-[20px] lg:px-3 md:px-0  h-[100vh] side-menu z-111111">
         <ul class="w mx-auto  py-10 ">
             <a href="dashboard.html" class="">
                 <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:py-1 hover:ps-3">
@@ -24,15 +27,13 @@
                 </div>
             </a>
             <a href="room.html" class="">
-                <div
-                    class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400 hover:py-1 hover:ps-3">
+                <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400 hover:py-1 hover:ps-3">
                     <img src="../images/door.png" alt="" class="w-7 h-7">
                     <p class="text-white font-bold text-sm uppercase mt-1">room</p>
                 </div>
             </a>
             <a href="request.html">
-                <div
-                    class="flex gap-3 items-center mb-6 px-3 bg-blue-400  text-center py-1 ps-3">
+                <div class="flex gap-3 items-center mb-6 px-3 bg-blue-400  text-center py-1 ps-3">
                     <img src="../images/interview.png" alt="" class="w-7 h-7">
                     <p class="text-white font-bold text-sm uppercase">request</p>
                 </div>
@@ -52,13 +53,20 @@
             </a>
         </ul>
     </div>
-     <div id="main-container" class="flex items-center justify-between ">
+    <div id="main-container" class="flex items-center justify-between ">
         <div class="bg-blue-600 lg:w-[25%] md:w-[7%] hidden md:block mx-auto">
             <ul class="w-full h-[100vh] mt-15 lg:px-4  ">
                 <a href="dashboard.html">
                     <div class="flex items-center gap-4  p-3  mb-5 hover:bg-blue-400 md:ps-3 lg:ps-2">
                         <img src="../images/layout.png" alt="" class="lg:w-7 lg:h-7 md:w-6 md:h-6">
                         <li class="font-bold text-sm uppercase text-white hidden lg:block">Dashboard</li>
+                    </div>
+                </a>
+                <a href="profile.html">
+                    <div
+                        class="lg:flex items-center gap-4 hover:bg-blue-300 p-3 lg:hover:rounded-[10px] mb-5 md:ps-4 lg:ps-2">
+                        <img src="../images/user.png" alt="" class="lg:w-7 lg:h-7 w-5 h-5">
+                        <li class="font-bold text-sm uppercase text-white  md:hidden lg:block">profile</li>
                     </div>
                 </a>
                 <a href="student.html">
@@ -95,18 +103,20 @@
             </ul>
         </div>
         <div class="lg:w-[75%] md:w-[93%] w-full mx-auto h-[100vh] ">
-            <div class="w-[95%] mx-auto" >
+            <div class="w-[95%] mx-auto">
                 <div class="flex justify-between items-center pt-10 md:pt-0 w-[95%] md:w-full mx-auto">
                     <h1 class="text-blue-800 text-xl uppercase md:ms-5 font-bold">Request</h1>
-                <img id="side-menu-btn" src="../images/widget.png" alt="" class="md:hidden w-6 h-6">
+                    <img id="side-menu-btn" src="../images/widget.png" alt="" class="md:hidden w-6 h-6">
                 </div>
                 <table class="w-full mt-5">
                     <thead>
-                        <tr class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase font-bold">
-                        <th class="py-1 md:text-lg text-sm">Student Id</td>
-                        <th class="py-1 md:text-lg text-sm">room</td>
-                        <th class="py-1 md:text-lg text-sm">type</td>
-                        <th class="py-1 md:text-lg text-sm"></td>
+                        <tr
+                            class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase font-bold">
+                            <th class="py-1 md:text-lg text-sm">Student Id</td>
+                            <th class="py-1 md:text-lg text-sm">room</td>
+                            <th class="py-1 md:text-lg text-sm">type</td>
+                            <th class="py-1 md:text-lg text-sm">
+                                </td>
                         </tr>
                     </thead>
                     <tbody>
@@ -116,14 +126,23 @@
                             <td class="py-1">Room Change</td>
                             <td class="py-2">
                                 <div class="flex  items-center gap-3 relative">
-                                    <button id="view-btn" class="text-sm bg-blue-500 text-white px-5 py-2 rounded-[5px] hidden md:block hover:bg-blue-700 font-bold">View</button>
-                                    <button id="accept-btn" class="text-sm bg-green-500 text-white px-5 py-2 rounded-[5px] hidden md:block hover:bg-green-700 font-bold">Accept</button>
-                                    <button id="reject-btn" class="bg-red-500 text-white text-sm px-5 py-2 rounded-[5px] hidden md:block hover:bg-red-700 font-bold">Reject</button>
-                                    <button id="action-btn" class="bg-blue-500 text-white text-sm px-5 py-2 rounded-[5px] md:hidden hover:bg-blue-700">Action</button>
+                                    <button id="view-btn"
+                                        class="text-sm bg-blue-500 text-white px-5 py-2 rounded-[5px] hidden md:block hover:bg-blue-700 font-bold">View</button>
+                                    <button id="accept-btn"
+                                        class="text-sm bg-green-500 text-white px-5 py-2 rounded-[5px] hidden md:block hover:bg-green-700 font-bold">Accept</button>
+                                    <button id="reject-btn"
+                                        class="bg-red-500 text-white text-sm px-5 py-2 rounded-[5px] hidden md:block hover:bg-red-700 font-bold">Reject</button>
+                                    <button id="action-btn"
+                                        class="bg-blue-500 text-white text-sm px-5 py-2 rounded-[5px] md:hidden hover:bg-blue-700">Action</button>
                                     <div id="action-option" class="hide absolute bg-white shadow-xl top-11 w-20">
-                                        <p id="action-view-btn" class="hover:font-bold hover:text-white hover:bg-blue-800 border-b-solid border-b-1 border-b-blue-800">View</p>
-                                        <p id="action-accept-btn" class="hover:font-bold hover:text-white hover:bg-green-600  border-b-1 border-b-solid border-b-blue-800">Accept</p>
-                                        <p id="action-reject-btn" class="hover:font-bold hover:text-white hover:bg-red-500">Reject</p>
+                                        <p id="action-view-btn"
+                                            class="hover:font-bold hover:text-white hover:bg-blue-800 border-b-solid border-b-1 border-b-blue-800">
+                                            View</p>
+                                        <p id="action-accept-btn"
+                                            class="hover:font-bold hover:text-white hover:bg-green-600  border-b-1 border-b-solid border-b-blue-800">
+                                            Accept</p>
+                                        <p id="action-reject-btn"
+                                            class="hover:font-bold hover:text-white hover:bg-red-500">Reject</p>
                                     </div>
                                 </div>
                             </td>
@@ -135,4 +154,5 @@
     </div>
 </body>
 <script src="request.js"></script>
+
 </html>

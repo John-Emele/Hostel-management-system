@@ -69,6 +69,9 @@ padding-bottom: 3px;
   background-color: white;
 }
 
+.infoForm::-webkit-scrollbar{
+    display: none;
+}
 
 .swap-reason input:focus,
 .swap-reason input:valid,
@@ -134,7 +137,7 @@ padding-bottom: 3px;
 
 .blur-background{
     background-image: linear-gradient(to right, rgb(0, 0, 255, .32), rgb(0, 0, 255, .32));
-    opacity: .7;
+    opacity: .5;
 }
 
 .reason{
@@ -208,6 +211,20 @@ padding-bottom: 3px;
     background-image: linear-gradient(to right, rgb(0, 0, 255, .32), rgb(0, 0, 255, .32));
 }
 
+.infoForm label{
+  position: absolute;
+  left:10px;
+  top: 11px;
+  font-weight: 400;
+  transition: 0.2s ease;
+  pointer-events: none;
+  padding: 0px 5px;
+  /* padding-bottom: px; */
+  text-transform: uppercase;
+  font-size: 13px;
+  /* background-image: linear-gradient(to right, rgb(0, 0, 255, .32), rgb(0, 0, 255, .32)); */
+  background-color: white;
+}
 .edit label{
 position: absolute;
   left:10px;
@@ -260,16 +277,14 @@ position: absolute;
 
 .add-img{
     position: absolute;
-    right: 77px;
-    top: -29px;
+    left: 12px;
+    bottom: -5px;
 }
 
 .plus-image{
     position: absolute;
-    right: 0;
-    left:15px;
-    top: -30px;
-    bottom: 0;
+    left: 12px;
+    bottom: -5px;
 }
 
 .information{
@@ -536,7 +551,7 @@ position: absolute;
 }
 
 .smooth-entry{
-    animation: enter .3s ease-in-out  1 ;
+    animation: enter .2s ease-in-out  1 ;
 }
 .smooth-leave{
     animation: leave .3s ease-in-out  1 ;
@@ -665,6 +680,9 @@ position: absolute;
     animation: shift_3 1s ease 1 ;
     /* width: 65px; */
 }
+/* .slider{
+
+} */
 
 .dropdown{
    cursor: pointer;
@@ -714,6 +732,8 @@ position: absolute;
     left: 0;
     bottom:0
 }
+
+
 
 /* animation */
 @keyframes entrance{
@@ -773,7 +793,7 @@ position: absolute;
 
 @keyframes drop{
     from{
-        transform: translateX(100%);
+        transform: translateX(-100%);
     }
     to{
         transform: translateX(0%);
@@ -803,7 +823,7 @@ position: absolute;
         transform: translateX(0%);
     }
     to{
-        transform: translateX(100%);
+        transform: translateX(-100%);
     }
 }
 
@@ -831,5 +851,30 @@ position: absolute;
     }
     to{
         transform: translateY(-100%);
+    }
+}
+
+@keyframes student{
+    from{
+        transform:translateX(0%);
+    }
+    to{
+        transform: translateX(50%);
+    }
+}
+@keyframes add{
+    from{
+        transform:translateX(50%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+@keyframes supervisor{
+    from{
+        transform:translateX(0%);
+    }
+    to{
+        transform: translateX(100%);
     }
 }

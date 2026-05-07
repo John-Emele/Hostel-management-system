@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../tailwindcss.min.js"></script>
+</head>
+<body>
+    <form action="" class="form-group w-[50%] mx-auto">
+        <div class="edit-group mt-5 ms-20">
+        <input id="my-input" type="text" class="outline-none border-2 border-solid border-blue-800 w-full h-10 rounded-[10px] ps-4 uppercase" required>
+        <label id="labels">hello</label>
+    </div>
+    </form>
+</body>
+<script>
+  const my_input = document.getElementById("my-input");
+  const labels = document.getElementById("labels");
+  my_input.addEventListener("mouseenter", () => {
+    labels.classList.add("hide");
+    my_input.value = "hello";
+  })
+</script>
+</html>

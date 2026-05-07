@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,65 +8,128 @@
     <script src="../tailwindcss.min.js"></script>
     <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
-    <div class="flex justify-between align-center">
-        <div class="w-[15%]">
-            <div class="w-full bg-blue-600 rounded-e-[20px] px-3">
+    <div class="flex  justify-between align-center">
+        <div id="side-menu"
+            class="hide w-[70%]  bg-blue-600 rounded-e-[20px] lg:px-3 md:px-0  h-[100vh] side-menu z-1000">
+            <ul class="w mx-auto  py-10 ">
+                <a href="profile.html" class="">
+                    <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:py-1 hover:ps-3">
+                        <img src="../images/user.png" alt="" class="w-6 h-6">
+                        <p class=" text-white font-bold text-sm uppercase mt-1">profile</p>
+                    </div>
+                </a>
+                <a href="Account.html" class="">
+                    <div class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400   hover:py-1 hover:ps-3 ">
+                        <img src="../images/info.png" alt="" class="w-7 h-7">
+                        <p class=" text-white font-bold text-sm uppercase mt-1">info</p>
+                    </div>
+                </a>
+                <a href="room.html" class="">
+                    <div
+                        class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
+                        <img src="../images/bed.png" alt="" class="w-7 h-7">
+                        <p class="text-white font-bold text-sm uppercase mt-1">room</p>
+                    </div>
+                </a>
+                <a href="book.html">
+                    <div
+                        class="flex gap-3 items-center mb-6 px-3 hover:bg-blue-400  hover:text-center hover:py-1 hover:ps-3">
+                        <img src="../images/booking.png" alt="" class="w-7 h-7">
+                        <p class="text-white font-bold text-sm uppercase">book</p>
+                    </div>
+                </a>
+                <a href="pay.html">
+                    <div class="flex gap-3 items-center mb-6 px-3 bg-blue-400  text-center py-1 ps-3">
+                        <img src="../images/dollars.png" alt="" class="w-7 h-7">
+                        <p class="text-white font-bold text-sm uppercase">top up</p>
+                    </div>
+                </a>
+            </ul>
+        </div>
+        <div class="md:w-[8%] lg:w-[15%]   mx-auto hidden md:block">
+            <div class="w-full bg-blue-600 rounded-e-[20px] lg:px-3 md:px-0 ">
                 <ul class="w mx-auto mt-25 py-10 ">
                     <a href="profile.html" class="">
-                        <div class="flex gap-4 mb-6 ">
+                        <div
+                            class="flex gap-4 mb-6 px-3 hover:bg-blue-400 lg:hover:rounded-[20px] md:hover:text-center hover:py-1 hover:ps-3">
                             <img src="../images/user.png" alt="" class="w-7 h-7">
-                            <p class="text-white font-bold text-sm uppercase mt-1">profile</p>
+                            <p class="md:hidden lg:block text-white font-bold text-sm uppercase mt-1">profile</p>
                         </div>
                     </a>
                     <a href="Account.html" class="">
-                        <div class="flex gap-4 mb-6 ">
+                        <div
+                            class="flex gap-4 mb-6 px-3 hover:bg-blue-400 lg:hover:rounded-[20px] md:hover:text-center hover:py-1 hover:ps-3">
                             <img src="../images/info.png" alt="" class="w-7 h-7">
-                            <p class="text-white font-bold text-sm uppercase mt-1">info</p>
+                            <p class="md:hidden lg:block text-white font-bold text-sm uppercase mt-1">info</p>
                         </div>
                     </a>
                     <a href="room.html" class="">
-                        <div class="flex gap-4 mb-6 ">
+                        <div
+                            class="flex gap-4 mb-6 px-3 hover:bg-blue-400 lg:hover:rounded-[20px] md:hover:text-center hover:py-1 hover:ps-3">
                             <img src="../images/bed.png" alt="" class="w-7 h-7">
-                            <p class="text-white font-bold text-sm uppercase mt-1">room</p>
+                            <p class="md:hidden lg:block text-white font-bold text-sm uppercase mt-1">room</p>
                         </div>
                     </a>
                     <a href="book.html">
-                        <div class="flex gap-4 mb-6 ">
+                        <div
+                            class="flex gap-4 mb-6 px-3 hover:bg-blue-400 lg:hover:rounded-[20px] md:hover:text-center hover:py-1 hover:ps-3">
                             <img src="../images/booking.png" alt="" class="w-7 h-7">
-                            <p class="text-white font-bold text-sm uppercase">book</p>
+                            <p class="md:hidden lg:block text-white font-bold text-sm uppercase">book</p>
                         </div>
                     </a>
                     <a href="pay.html">
-                        <div class="flex gap-4 mb-6 bg-blue-400 rounded-[20px] text-center py-1 ps-3">
+                        <div class="flex gap-4 mb-6 px-3 bg-blue-400 lg:rounded-[20px] md:text-center py-1 ps-3">
                             <img src="../images/dollars.png" alt="" class="w-7 h-7">
-                            <p class="text-white font-bold text-sm uppercase">top up</p>
-                        </div>
-                    </a>
-                    <a href="" class="">
-                        <div class="flex gap-4 ">
-                            <img src="../images/do-not-disturb.png" alt="" class="w-7 h-7">
-                            <p class="text-white font-bold text-sm uppercase">Theme</p>
+                            <p class="md:hidden lg:block text-white font-bold text-sm uppercase">top up</p>
                         </div>
                     </a>
                 </ul>
             </div>
             <!-- <div class=""></div> -->
         </div>
-        <div class="w-[70%] mx-auto mt-5">
-          <div>
-            <div>
-               <h1 class="text-center text-2xl uppercase">Student information</h1> 
-               <p class="font-bold uppercase text-sm">FirstName: <span>Ebube</span></p>
-               <p>LastName: <span>Ugwu</span></p>
-               <p>Phone: <span>08010045437</span></p>
-               <p>Student ID: <span>242130454</span></p>
+        <div class="md:w-[92%] lg:w-[85%] mx-auto mt-5 pt-40 ms-5 me-5">
+            <div class="top-menu-hostel flex justify-between w-[95%] mx-auto z-100 h-20 pt-5 md:hidden">
+                <h1 class="text-blue-800 text-xl font-bold   mx-auto ">Student Wallet</h1>
+                <img id="side-menu-btn" src="../images/widget.png" alt="" class="md:hidden w-8 h-8 ">
             </div>
 
+            <div class="shadow-lg shadow-blue-200 rounded-[10px] p-20">
+                <div class="flex flex-col gap-3 text-center">
+                    <h1 class="text-blue-800 uppercase  font-bold lg:text-3xl md:text-2xl text-lg">
+                        Available balance:
+                    </h1>
+                    <p id="bal-available" class="text-green-600 text-2xl font-bold">😂😂</p>
+                </div>
+                <div id="top-up" class="lg:w-[20%] md:w-[40%] w-[80%] mx-auto">
+                    <button id="top-btn"
+                        class="w-full mt-10 uppercase text-white text-lg font-bold rounded-[10px] bg-green-700 hover:bg-green-600 h-10">
+                        top up
+                    </button>
+                </div>
 
-            <div></div>
-          </div>
+                <div id="enter-amount" class="w-[60%] mx-auto hide">
+                    <!-- <h1 class="text-center text-blue-800 text-2xl">Enter Amount</h1> -->
+                    <input id="amount-input" type="text" placeholder="Enter Amount..."
+                        class="w-full h-10  mt-3 outline-none placeholder:text-lg placeholder:text-green-800 placeholder:font-light text-green-600 font-bold border-solid border-green-700 border-2 rounded-[10px] active:border-3 active:border-solid active:border-green-500 focus:border-3 focus:border-solid focus:border-green-500">
+                    <button id="enter-btn"
+                        class="w-full mt-5 uppercase text-white text-lg font-bold rounded-[10px] bg-green-700 hover:bg-green-600 h-10">
+                        enter
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
+    <div id="successful-message" class="successful py-5 w-[27%] mx-auto bg-white rounded-[50px] shadow-xl hide">
+        <p id="successful-text" class=" text-lg font-bold text-center"></p>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../supabase.js"></script>
+<script src="pay.js"></script>
+
 </html>
