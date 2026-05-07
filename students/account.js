@@ -3,6 +3,7 @@ let currentuser = null;
 const account_info = document.getElementById("account-info");
 const info_form = document.getElementById("info-form");
 const form_header = document.getElementById("form-header");
+const user_toggle = document.getElementById("user-toggle");
 
 
 
@@ -429,6 +430,7 @@ async function create_hostel_function(message, type = "success") {
 
       // info_form.classList.remove("hide");
       // form_header.classList.remove("hide");
+      user_toggle.classList.remove("hide");
       account_info.classList.remove("hide");
       studentinfo_container.classList.remove("hide");
       edit_stud_container.classList.add("hide");

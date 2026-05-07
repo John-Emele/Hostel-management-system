@@ -89,7 +89,8 @@ async function initUser() {
         const { data: stud, error: stud_error } = await supabaseClient
             .from('booked_students')
             .select()
-            .eq("id", data.id)
+            .eq("id", currentuser.id)
+            .maybeSingle()
 
         if (stud_error) {
             return;
@@ -97,7 +98,7 @@ async function initUser() {
         console.log(stud);
 
 
-        if (stud[0].status != "paid") {
+        if (stud == null) {
             level_submit_btn.disabled = false;
             student_level.disabled = false;
             level_submit_btn.classList.add("cursor-pointer");
@@ -106,14 +107,16 @@ async function initUser() {
                 e.preventDefault();
                 await book_room(all_hostels, currentuser.id, rooms);
             })
+            return;
         }
-        if(stud[0].status == "paid") {
+        else if(stud != null){
+          if(stud.status == "paid") {
             alert("you already have a room okpo🙄🙄");
             level_submit_btn.disabled = true;
             student_level.disabled = true;
             return;
+         }
         }
-
     }
 }
 
