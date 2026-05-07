@@ -129,19 +129,19 @@
             <div id="hostel-detail" class="hostel-details pt-[130px] hide z-100">
                 <img id="cancel" class="cancel w-9 h-9" src="../images/cross.png" alt="">
                 <h1 id="hostel-name" class="text-white uppercase text-xl text-center mb-10 font-bold"></h1>
-                <div class="w-[80%] mx-auto shadow-lg bg-white rounded-[10px] p-5">
+                <div class="md:w-[80%]  w-[90%] mx-auto shadow-lg bg-white rounded-[10px] p-5">
                     <table id="table-container" class="w-full h-50">
                         <thead>
                             <tr class="border-b border-b-solid border-b-blue-600">
-                                <td class="uppercase text-blue-500 uppercase text-sm text-center">room type</td>
-                                <td class="uppercase text-blue-500 uppercase text-sm text-center">bed spaces</td>
-                                <td class="uppercase text-blue-500 uppercase text-sm text-center">price</td>
-                                <td class="uppercase text-blue-500 uppercase text-sm text-center">status</td>
+                                <td class="uppercase text-blue-500 uppercase md:text-sm text-xs text-center font-bold">room type</td>
+                                <td class="uppercase text-blue-500 uppercase md:text-sm text-xs text-center font-bold">bed spaces</td>
+                                <td class="uppercase text-blue-500 uppercase md:text-sm text-xs text-center font-bold">price</td>
+                                <td class="uppercase text-blue-500 uppercase md:text-sm text-xs text-center font-bold">status</td>
                                 <td></td>
                             </tr>
                         </thead>
                         <tbody id="table-body" class="">
-                            <tr class="border-b border-b-solid border-b-blue-600">
+                            <!-- <tr class="border-b border-b-solid border-b-blue-600">
                                 <td class="uppercase text-blue-500 uppercase text-xs font-bold text-center">3 beds</td>
                                 <td class="uppercase text-blue-500 uppercase text-xs font-bold text-center">6</td>
                                 <td class="uppercase text-green-500 uppercase text-sm font-bold text-center">₦750,000
@@ -151,7 +151,7 @@
                                 <td class="p-2 text-center"><button
                                         class="bg-blue-600 font-bold text-white p-3 w-20 rounded-[10px] uppercase text-xs hover:bg-blue-500">book</button>
                                 </td>
-                            </tr>
+                            </tr> -->
                         </tbody>
                     </table>
                 </div>
@@ -160,7 +160,7 @@
     </div>
      <!-- successfull -->
     <div id="successful-message" class="successful py-5 w-[27%] mx-auto bg-white rounded-[50px] shadow-xl hide">
-        <p id="successful-text" class=" text-lg font-bold text-center"></p>
+        <p id="successful-text" class=" md:text-lg text-xs font-bold text-center"></p>
     </div>
     </div>
 

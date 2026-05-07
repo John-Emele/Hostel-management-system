@@ -167,6 +167,7 @@ padding-bottom: 3px;
    right: 30px;
    left: 30px;
    animation: pop .9s ease ;
+   z-index: 111111;
 }
 
 .successful-2{
@@ -175,6 +176,7 @@ padding-bottom: 3px;
    right: 30px;
    left: 30px;
    animation: pop_return .3s ease ;
+   z-index: 111111;
 }
 
 

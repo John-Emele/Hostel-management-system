@@ -213,7 +213,7 @@ async function book_room(hostels, student_id, h_rooms) {
 
     try {
         let delete_emote = `
-      <div class="w-[45%] mx-auto flex justify-between items-center">
+      <div class="w-[50%] mx-auto flex justify-between items-center">
         <p class="text-white text-lg">Submiting...</p> 
         <img id="loading-image" src="../images/loading (2).png" alt="" class="w-5 h-5 delete-function">
       </div>
@@ -243,7 +243,7 @@ async function book_room(hostels, student_id, h_rooms) {
             }
 
             create_hostel_function(
-                "updated successfully",
+                "submitted",
                 "success"
             );
             console.log(student);
@@ -444,13 +444,13 @@ async function hosteldetails(hostels, hostel_id, h_rooms, stud) {
         console.log(r_types);
         hostel += `
       <tr class="border-b border-b-solid border-b-blue-600">
-        <td class="uppercase text-blue-500 uppercase text-xs font-bold text-center">${r_types[0]}</td>
-        <td class="uppercase text-blue-500 uppercase text-xs font-bold text-center">${r_types[1]}</td>
-        <td class="uppercase text-green-500 uppercase text-sm font-bold text-center">${formatCurrency(hostel_room.price)}</td>
-        <td class="uppercase text-green-500 uppercase text-sm font-light text-center">${r_types[2]}</td>
+        <td class="uppercase text-blue-500 uppercase md:text-xs text-[10px] font-bold text-center">${r_types[0]}</td>
+        <td class="uppercase text-blue-500 uppercase md:text-xs text-[10px] font-bold text-center">${r_types[1]}</td>
+        <td class="uppercase text-green-500 uppercase md:text-sm text-[10px] font-bold text-center">${formatCurrency(hostel_room.price)}</td>
+        <td class="uppercase text-green-500 uppercase md:text-sm text-[10px] font-light text-center">${r_types[2]}</td>
         <td class="p-2 text-center">
         <button type="button" data-id="${hostel_id}" 
-            class="book-btn bg-blue-600 font-bold text-white p-3 w-20 rounded-[10px] uppercase text-xs hover:bg-blue-500">book
+            class="book-btn bg-blue-600 font-bold text-white p-3 md:w-20 w-15 rounded-[10px] uppercase text-xs hover:bg-blue-500">book
         </button>
         </td>
     </tr>
@@ -619,7 +619,7 @@ async function Allocate(btn, hostel, room_type, stud) {
 
             btn.disabled = false;
             create_hostel_function(
-                "updated successfully",
+                "room allocated",
                 "success"
             );
             sendAllocationEmail(stud);
