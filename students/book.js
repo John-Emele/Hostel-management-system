@@ -628,7 +628,7 @@ async function Allocate(btn, hostel, room_type, stud) {
                 "room allocated",
                 "success"
             );
-            // sendAllocationEmail(stud);
+            sendAllocationEmail(stud);
         }
         else {
             btn.disabled = false;
