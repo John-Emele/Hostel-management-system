@@ -410,6 +410,7 @@ async function Displayinfo(info_id) {
    guardian_address.innerHTML = data.guardian_address;
 }
 
+
 async function create_hostel_function(message, type = "success") {
    setTimeout(() => {
       success_message.classList.remove("hide", "successful", "successful-2");
@@ -637,8 +638,6 @@ async function updateStudent(student_id) {
       return;
    }
 }
-
-
 
 async function updateGuardian(guardian_id) {
    let form_check = false;

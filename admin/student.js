@@ -1,7 +1,7 @@
 let currentuser = null;
 
 let allStudents = [];
-
+let allb_k = [];
 async function initUser() {
     const { data: { session } } = await supabaseClient.auth.getSession();
     currentuser = session?.user || null;
@@ -22,6 +22,17 @@ async function initUser() {
     console.log(role.user_email);
 
     if (role.role == "admin") {
+        const { data: bk, error: bk_eror } = await supabaseClient
+            .from('booked_students')
+            .select('*')
+        //   .maybeSingle()
+        console.log(bk);
+
+        if (bk_eror) {
+            console.log(error)
+            return;
+        }
+
         const { data, error } = await supabaseClient
             .from('students')
             .select('*')
@@ -29,14 +40,16 @@ async function initUser() {
 
         // allStudents = data;
         console.log(data);
+
         if (error) {
             console.log(error)
             return;
         }
         else {
             allStudents = data;
-            display(allStudents);
-            searchForStudent(allStudents);
+            allb_k = bk;
+            display(allStudents, allb_k);
+            searchForStudent(allStudents, allb_k);
         }
     }
     else {
@@ -143,33 +156,45 @@ async function displayStudents() {
 }
 // displayStudents();
 
-function display(array) {
+function display(array, allb_k) {
     // 👉 normalize input
+    console.log(allb_k);
+    if (!Array.isArray(allb_k)) {
+        allb_k = [allb_k];
+    }
+
     if (!Array.isArray(array)) {
         array = [array];
     }
 
-    if (array.length === 0) {
+
+    if (allb_k.length === 0) {
         table_body.innerHTML = `<tr><td colspan="5">No results found</td></tr>`;
         return;
     }
     let student_details = "";
 
-    array.forEach((student, index) => {
+    allb_k.forEach((student, index) => {
         console.log(student);
+        let booked = array.find(s => s.id === student.id);
+        console.log(booked);
+        // let final =  ["booked.hostel_name", "booked_room_number"];
+        // if(booked = null || []){
+        //     final = ["Not registered", "not registered"];
+        // }
         student_details += `
          <tr data-id="${student.id}" class="student-row border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center">
                                 <td class="py-1 font-medium">${index + 1}</td>
-                                <td class="py-1 text-blue-600 font-bold">${student.student_id}</td>
-                                <td class="py-1 font-medium">${student.student_name}</td>
-                                <td class="py-1 font-medium">${student.hostel}</td>
+                                <td class="py-1 text-blue-600 font-bold">${booked.student_id}</td>
+                                <td class="py-1 font-medium">${booked.student_name}</td>
+                                <td class="py-1 font-medium">${student.hostel_name}</td>
                                 <td class="py-1 font-medium">${student.room_number}</td>
                                 <td class="py-2">
-                                    <div  class="flex  items-center gap-3 w-[50%] mx-auto ">
+                                    <div  class="flex  items-center gap-3 lg:w-[50%] w-[80%] mx-auto ">
                                         <button type="button" data-id="${student.id}"
-                                            class="view-btn text-xs bg-blue-500 text-white px-5 py-2 rounded-[5px] uppercase font-bold">view</button>
+                                            class="view-btn md:text-xs text-[12px] bg-blue-500 text-white lg:px-5 px-3 py-2 rounded-[5px] uppercase font-bold">view</button>
                                         <button data-id="${student.id}"  type="button"
-                                            class="remove-btn bg-red-500 text-white text-xs px-5 py-2 rounded-[5px] uppercase font-bold">remove</button>
+                                            class="remove-btn bg-red-500 text-[12px] text-white md:text-xs lg:px-5 px-3 py-2 rounded-[5px] uppercase font-bold">remove</button>
                                     </div>
                                 </td>
                             </tr>
@@ -182,35 +207,26 @@ function display(array) {
     const view_btn = document.querySelectorAll(".view-btn");
     const remove_btn = document.querySelectorAll(".remove-btn");
 
-    student_row.forEach(stud => {
-        const stud_id = stud.dataset.id;
+    view_btn.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+            const view_id = btn.dataset.id;
 
+            displayStudentDetails(array, view_id);
 
-        view_btn.forEach(btn => {
-            btn.addEventListener("click", (e) => {
-                e.preventDefault();
-                const view_id = btn.dataset.id;
-                console.log(view_id);
-                if (view_id == stud_id) {
-                    console.log(view_id);
-                    displayStudentDetails(array, view_id);
-                }
-                student_info.classList.add("smooth-entry");
-                student_info.classList.remove("smooth-leave");
-                setTimeout(() => {
-                    student_info.classList.remove("hide");
-                    // main_container.classList.add("blur-background")
-                }, 250);
-            })
+            student_info.classList.add("smooth-entry");
+            student_info.classList.remove("smooth-leave");
+            setTimeout(() => {
+                student_info.classList.remove("hide");
+                // main_container.classList.add("blur-background")
+            }, 250);
         })
+    })
 
-        remove_btn.forEach(btn => {
+     remove_btn.forEach(btn => {
             btn.addEventListener("click", () => {
                 const delete_id = btn.dataset.id;
-                if (delete_id == stud_id) {
                     console.log(delete_id);
-                    console.log(stud_id);
-                }
                 displayStudentDetails(array, delete_id);
                 caution_container.classList.remove("smooth-exit");
                 caution_container.classList.remove("smooth-return");
@@ -224,10 +240,7 @@ function display(array) {
                     deletestudent(delete_id);
                 })
             })
-
-
         })
-    })
 
 
 }
@@ -252,16 +265,6 @@ async function searchForStudent(student) {
         try {
             if (!search_check) {
                 query = student_search.value.trim().toLowerCase();
-
-                // const { data: student, error: student_error } = await supabaseClient
-                //     .from('students')
-                //     .select('*')
-
-                // if (student_error) {
-                //     console.log(student_error);
-                //     return;
-                // }
-
                 console.log(student);
 
                 const filtered = student.filter(stud => {
@@ -272,23 +275,6 @@ async function searchForStudent(student) {
                 });
 
                 await display(filtered);
-
-
-
-                // for (const result of filtered) {
-                //     // const { data, error } = await supabaseClient
-                //     //     .from('students')
-                //     //     .select()
-                //     //     .eq("student_name", result);
-
-                //     // if (error) {
-                //     //     console.log(error);
-                //     //     return;
-                //     // }
-
-                //     console.log(result);
-
-                // }
             }
         }
         catch (err) {

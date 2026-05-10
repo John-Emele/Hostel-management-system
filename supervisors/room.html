@@ -110,48 +110,22 @@
                     <img id="side-menu-btn" src="../images/widget.png" alt="" class="md:hidden w-6 h-6">
                 </div>
 
-                <div class="grid md:grid-cols-3 grid-cols-2 md:gap-5 md:w-[70%] w-full mx-auto mt-5">
-                    <div id="room-image" class="relative">
-                        <img src="../images/door (1).png" alt="" class="lg:w-50 lg:h-50 md:w-37 md:h-37 h-55 w-55">
-                        <p
-                            class="absolute md:top-22 md:left-19 lg:left-25 lg:top-30 left-25 top-35 font-bold lg:text-3xl md:text-2xl text-2xl text-white">
-                            001</p>
-                    </div>
-                    <div class="relative">
-                        <img src="../images/door (1).png" alt="" class="lg:w-50 lg:h-50 md:w-37 md:h-37 h-55 w-55">
-                        <p
-                            class="absolute md:top-22 md:left-19 lg:left-25 lg:top-30 left-25 top-35 font-bold lg:text-3xl md:text-2xl text-2xl text-white">
-                            002</p>
-                    </div>
-                    <div class="relative">
-                        <img src="../images/door (1).png" alt="" class="lg:w-50 lg:h-50 md:w-37 md:h-37 h-55 w-55">
-                        <p
-                            class="absolute md:top-22 md:left-19 lg:left-25 lg:top-30 left-25 top-35 font-bold lg:text-3xl md:text-2xl text-2xl text-white">
-                            003</p>
-                    </div>
-                    <div class="relative">
-                        <img src="../images/door (1).png" alt="" class="lg:w-50 lg:h-50 md:w-37 md:h-37 h-55 w-55">
-                        <p
-                            class="absolute md:top-22 md:left-19 lg:left-25 lg:top-30 left-25 top-35 font-bold lg:text-3xl md:text-2xl text-2xl text-white">
-                            004</p>
-                    </div>
-                    <div class="relative">
-                        <img src="../images/door (1).png" alt="" class="lg:w-50 lg:h-50 md:w-37 md:h-37 h-55 w-55">
-                        <p
-                            class="absolute md:top-22 md:left-19 lg:left-25 lg:top-30 left-25 top-35 font-bold lg:text-3xl md:text-2xl text-2xl text-white">
-                            005</p>
-                    </div>
+                <div id="room-box" class="grid md:grid-cols-3 grid-cols-2 md:gap-5 md:w-[70%] w-full mx-auto mt-5">
+                    
                 </div>
             </div>
         </div>
     </div>
-
     <!-- room-function -->
     <div id="roomcontainer" class="room-container shadow-lg hide">
         <div class="p-4">
-            <img id="room-cancel" src="../images/cancel(blue).png" alt="" class="cancel w-7  h-7">
+            <img id="room-cancel" src="../images/back-button.png" alt="" class=" w-7  h-7">
             <div class="flex justify-between items-center py-2 mt-5">
-                <h1 class="text-2xl font-bold text-blue-800 uppercase">students</h1>
+                <div class="flex w-[50%] mx-auto ">
+                    <h1 class="text-2xl font-bold text-blue-800 uppercase">room </h1>
+                    <h1 id="room-number" class="text-2xl font-bold text-blue-800 uppercase me-"></h1>
+                    <p id="room-type" class="text-2xl font-bold text-blue-800 uppercase"></p>
+                </div>
                 <div id="resident-actions" class="">
                     <button id="add-btn"
                         class="bg-green-500  text-sm px-5 py-2 rounded-[10px] text-white font-bold">Add</button>
@@ -170,7 +144,7 @@
                         <th class="py-1"></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="table-body">
                     <tr class="border-b-1 border-b-solid border-b-blue-800 text-center  text-blue-800">
                         <td class="text-sm py-2">1</td>
                         <td class="text-blue-500 text-sm font-bold py-2">242120111</td>
@@ -182,83 +156,7 @@
                                 class="bg-red-500  text-xs px-3 py-1 rounded-[10px] text-white font-bold hover:bg-red-600">Remove</button>
                         </td>
                     </tr>
-                    <tr class="bg-blue-200 border-b-1 border-b-solid border-b-blue-800 text-center  text-blue-800">
-                        <td class="text-sm py-2">2</td>
-                        <td class="text-blue-500 text-sm font-bold py-2">242120111</td>
-                        <td class="text-xs uppercase py-2">john emele</td>
-                        <td class=" text-sm py-2">003</td>
-                        <td class="text-green-600 text-light uppercase text-xs py-2">active</td>
-                        <td class="p-2">
-                            <button id="remove-btn"
-                                class="bg-red-500  text-xs px-3 py-1 rounded-[10px] text-white font-bold hover:bg-red-600">Remove</button>
-                        </td>
-                    </tr>
-                    <tr class="border-b-1 border-b-solid border-b-blue-800 text-center  text-blue-800">
-                        <td class="text-sm py-2">3</td>
-                        <td class="text-blue-500 text-sm font-bold py-2">242120111</td>
-                        <td class="text-xs uppercase py-2">john emele</td>
-                        <td class=" text-sm py-2">003</td>
-                        <td class="text-green-600 text-light uppercase text-xs py-2">active</td>
-                        <td class="p-2">
-                            <button id="remove-btn"
-                                class="bg-red-500  text-xs px-3 py-1 rounded-[10px] text-white font-bold hover:bg-red-600">Remove</button>
-                        </td>
-                    </tr>
-                    <tr class="bg-blue-200 border-b-1 border-b-solid border-b-blue-800 text-center  text-blue-800">
-                        <td class="text-sm py-2">4</td>
-                        <td class="text-blue-500 text-sm font-bold py-2">242120111</td>
-                        <td class="text-xs uppercase py-2">john emele</td>
-                        <td class=" text-sm py-2">003</td>
-                        <td class="text-green-600 text-light uppercase text-xs py-2">active</td>
-                        <td class="p-2">
-                            <button id="remove-btn"
-                                class="bg-red-500  text-xs px-3 py-1 rounded-[10px] text-white font-bold hover:bg-red-600">Remove</button>
-                        </td>
-                    </tr>
-                    <tr class="border-b-1 border-b-solid border-b-blue-800 text-center  text-blue-800">
-                        <td class="text-sm py-2">5</td>
-                        <td class="text-blue-500 text-sm font-bold py-2">242120111</td>
-                        <td class="text-xs uppercase py-2">john emele</td>
-                        <td class=" text-sm py-2">003</td>
-                        <td class="text-green-600 text-light uppercase text-xs py-2">active</td>
-                        <td class="p-2">
-                            <button id="remove-btn"
-                                class="bg-red-500  text-xs px-3 py-1 rounded-[10px] text-white font-bold hover:bg-red-600">Remove</button>
-                        </td>
-                    </tr>
-                    <tr class="bg-blue-200 border-b-1 border-b-solid border-b-blue-800 text-center  text-blue-800">
-                        <td class="text-sm py-2">6</td>
-                        <td class="text-blue-500 text-sm font-bold py-2">242120111</td>
-                        <td class="text-xs uppercase py-2">john emele</td>
-                        <td class=" text-sm py-2">003</td>
-                        <td class="text-green-600 text-light uppercase text-xs py-2">active</td>
-                        <td class="p-2">
-                            <button id="remove-btn"
-                                class="bg-red-500  text-xs px-3 py-1 rounded-[10px] text-white font-bold hover:bg-red-600">Remove</button>
-                        </td>
-                    </tr>
-                    <tr class="border-b-1 border-b-solid border-b-blue-800 text-center  text-blue-800">
-                        <td class="text-sm py-2">7</td>
-                        <td class="text-blue-500 text-sm font-bold py-2">242120111</td>
-                        <td class="text-xs uppercase py-2">john emele</td>
-                        <td class=" text-sm py-2">003</td>
-                        <td class="text-green-600 text-light uppercase text-xs py-2">active</td>
-                        <td class="p-2">
-                            <button id="remove-btn"
-                                class="bg-red-500  text-xs px-3 py-1 rounded-[10px] text-white font-bold hover:bg-red-600">Remove</button>
-                        </td>
-                    </tr>
-                    <tr class="bg-blue-200 border-b-1 border-b-solid border-b-blue-800 text-center  text-blue-800">
-                        <td class="text-sm py-2">8</td>
-                        <td class="text-blue-500 text-sm font-bold py-2">242120111</td>
-                        <td class="text-xs uppercase py-2">john emele</td>
-                        <td class=" text-sm py-2">003</td>
-                        <td class="text-green-600 text-light uppercase text-xs py-2">active</td>
-                        <td class="p-2">
-                            <button id="remove-btn"
-                                class="bg-red-500  text-xs px-3 py-1 rounded-[10px] text-white font-bold hover:bg-red-600">Remove</button>
-                        </td>
-                    </tr>
+                    
 
                 </tbody>
             </table>
@@ -285,7 +183,7 @@
     </div>
 
     <!-- caution -->
-    <div id="caution-container" class="caution hide">
+    <!-- <div id="caution-container" class="caution hide">
         <img id="caution-cancel" src="../images/cancel.png" alt="" class="w-7 h-7 cancel">
         <div class="w-[30%] mx-auto shadow-lg bg-white p-5 rounded-[10px]">
             <p class="text-blue-800 font-bold">are you sure you want delete <span
@@ -297,10 +195,15 @@
                     class="bg-red-500 p-3 rounded-[10px] w-[50%] mx-auto text-white hover:bg-red-600">Delete</button>
             </div>
         </div>
+    </div> -->
+     <!-- successfull -->
+    <div id="successful-message" class="successful py-5 w-[27%] mx-auto bg-white rounded-[50px] shadow-xl hide">
+        <p id="successful-text" class=" text-lg font-bold text-center"></p>
     </div>
 
     <!-- <img src="../images/loading (2).png" alt="" class="delete-function w-7 h-7"> -->
 </body>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../supabase.js"></script>
 <script src="room.js"></script>
-
 </html>

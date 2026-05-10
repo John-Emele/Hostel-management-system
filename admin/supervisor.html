@@ -61,7 +61,7 @@
                         </div>
                     </li>
                 </a>
-                <li class="uppercase mb-5 p-2 bg-red-700 hover:bg-red-600 rounded-[10px]">
+                <li class="uppercase  mb-5 p-2 bg-red-700 hover:bg-red-600 rounded-[10px]">
                     <p class="text-white text-sm font-bold text-center ">logout</p>
                 </li>
             </ul>
@@ -82,7 +82,8 @@
                 <div class="w-[95%] mx-auto">
                     <table id="table-container" class="w-full">
                         <thead>
-                            <tr class="border-b-1 border-b-solid border-b-blue-800  text-center uppercase font-bold text-blue-800">
+                            <tr
+                                class="border-b-1 border-b-solid border-b-blue-800  text-center uppercase font-bold text-blue-800">
                                 <th class="py-1">s/n</th>
                                 <th class="py-1">Id</th>
                                 <th class="py-1">Name</th>
@@ -96,6 +97,40 @@
                     </table>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- add hostel -->
+    <div id="assign-supervisor" class="create-hostel  pt-30 bg-white shadow-lg smooth hide">
+        <img id="assign-back-btn" src="../images/back-button.png" alt="" class="cancel-2 w-8 h-8 flex flex-start">
+        <h1 class="uppercase text-blue-900 text-lg font-bold text-center mt-[-5]">add hostel</h1>
+        <div class="w-[80%] mx-auto mt-5">
+            <form class="w-full">
+                <div class="edit-group mb-5">
+                    <select name="" id="hostel-name"
+                        class="outline-none ps-2 text-blue-900  w-full mx-auto border-2 border-solid border-blue-900 h-10 rounded-[10px]"
+                        required>
+                        <option value=""></option>
+                    </select>
+                    <label class="text-blue-900 edit-label">hostel-name</label>
+                    <p id="hostel-name-error" class="error text-light text-xs text-red-400 ms-3"></p>
+                </div>
+                <div class="edit-group mb-5 w-full mx-auto">
+                    <select name="" id="hostel-rooms"
+                        class="outline-none ps-2 text-blue-900  w-full mx-auto border-2 border-solid border-blue-900 h-10 rounded-[10px]"
+                        required>
+                        <!-- <option value=""></option>
+                        <option value="male" class="bg-white text-blue-900">male</option>
+                        <option value="female">Female</option> -->
+                    </select>
+                    <label class="font-bold text-blue-900 uppercase text-sm ms-1">rooms</label>
+                    <p id="hostel-rooms-error" class="error text-light text-xs text-red-400 ms-3"></p>
+                </div>
+                <div class="w-[90%] mx-auto mt-5">
+                    <button id="assign-supervisor-btn" type="button"
+                        class="font-bold text-white bg-blue-900 hover:bg-blue-800 shadow-lg text-sm px-6 py-3 w-full mx-auto mt-5 rounded-[5px] uppercase">submit</button>
+                </div>
+            </form>
         </div>
     </div>
 

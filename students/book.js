@@ -109,13 +109,13 @@ async function initUser() {
             })
             return;
         }
-        else if(stud != null){
-          if(stud.status == "paid") {
-            alert("you already have a room okpo🙄🙄");
-            level_submit_btn.disabled = true;
-            student_level.disabled = true;
-            return;
-         }
+        else if (stud != null) {
+            if (stud.status == "paid") {
+                alert("you already have a room okpo🙄🙄");
+                level_submit_btn.disabled = true;
+                student_level.disabled = true;
+                return;
+            }
         }
     }
 }
@@ -555,7 +555,11 @@ async function Allocate(btn, hostel, room_type, stud) {
             console.log(availableRoom);
             // 3. no room available
             if (!availableRoom) {
-                console.log("No available room");
+                // console.log("No available room");
+                create_hostel_function(
+                    "No available room",
+                    "error"
+                );
                 return;
             }
 
@@ -580,6 +584,8 @@ async function Allocate(btn, hostel, room_type, stud) {
                     session: full
                 }])
                 .select()
+
+            assignSupervisor(availableRoom, stud, hostel);
 
             function formatCurrency(amount) {
                 return new Intl.NumberFormat("en-NG", {
@@ -622,7 +628,7 @@ async function Allocate(btn, hostel, room_type, stud) {
                 "room allocated",
                 "success"
             );
-            sendAllocationEmail(stud);
+            // sendAllocationEmail(stud);
         }
         else {
             btn.disabled = false;
@@ -657,4 +663,76 @@ async function sendAllocationEmail(student) {
         .catch((error) => {
             console.log("Email error ❌", error);
         });
+}
+
+async function assignSupervisor(avail_rooms, stud, hostel) {
+
+    const { data: studs, error: stud_error } = await supabaseClient
+        .from('booked_students')
+        .select()
+        .eq("id", stud.id)
+
+    if (stud_error) {
+        console.log(stud_error);
+        return;
+    };
+
+    console.log(studs);
+
+    const { data, error } = await supabaseClient
+        .from('supervisor')
+        .select()
+        .eq('hostel', hostel.name)
+
+    if (error) {
+        console.log(error);
+        return;
+    }
+
+    console.log(data);
+
+    let room = [];
+    let name;
+    let name_id;
+    data.forEach(sr => {
+        console.log(avail_rooms);
+        room = sr.rooms;
+
+        const fr = room.split(",");
+        // console.log(fr);
+        fr.forEach(s => {
+            if (s == avail_rooms.room_number) {
+                // console.log(s);
+                // console.log(sr.name);
+                name = sr.name;
+                name_id = sr.id;
+            }
+        })
+
+    })
+
+    console.log(name, name_id)
+    const update = {
+        supervisor_name: name,
+        supervisor_id: name_id,
+    }
+
+    const { data: upstuds, error: upstud_error } = await supabaseClient
+        .from('booked_students')
+        .update(update)
+        .eq("id", stud.id)
+        .select()
+
+    if (upstud_error) {
+        console.log(stud_error);
+        return;
+    };
+
+    console.log(upstuds);
+
+    // rooms.forEach
+
+
+
+
 }

@@ -36,7 +36,7 @@ async function initUser() {
     else {
         account_info.classList.remove("hide");
         info_form.classList.add("hide");
-        displaysdetails(data);
+        displaysdetails(data.id);
         sup_update_btn.addEventListener("click", async (e) => {
             e.preventDefault();
             await editsupervisor(currentuser.id);
@@ -113,9 +113,18 @@ sup_edit_btn.addEventListener("click", async () => {
     edit_form.classList.remove("hide")
 })
 
-function displaysdetails(supervisor) {
-    console.log(supervisor);
+async function displaysdetails(Sup_id) {
 
+    const { data:supervisor, error: sup_error } = await supabaseClient
+        .from('supervisor')
+        .select()
+        .eq("id", Sup_id)
+        .single()
+
+
+    if (sup_error) {
+        console.log(sup_error);
+    }
     let names = supervisor.name.split(" ");
 
     sup_firstname.innerHTML = names[0];
@@ -207,7 +216,7 @@ async function createsupervisor() {
                     email: supervisor_email.value.trim(),
                     phone: supervisor_phone.value.trim(),
                 }])
-            // .select()
+                .select()
 
             if (error) {
                 console.log(error);
@@ -225,6 +234,7 @@ async function createsupervisor() {
                 "Submitted ✅",
                 "success"
             );
+            displaysdetails(data[0].id);
 
 
 
@@ -234,7 +244,7 @@ async function createsupervisor() {
         console.log(err);
         supervisor_submit_btn.disabled = false;
         create_hostel_function(
-            error.message || "Something went wrong",
+            err.message || "Something went wrong",
             "error"
         );
         return;
@@ -301,7 +311,7 @@ async function editsupervisor(sup_id) {
 
             supervisor_update_btn.disabled = true;
             supervisor_update_btn.innerHTML = add_emote;
-            
+
             const f_name = sup_update_firstname.value.trim().charAt(0).toUpperCase() + sup_update_firstname.value.trim().slice(1).toLowerCase();
             const l_name = sup_update_lastname.value.trim().charAt(0).toUpperCase() + sup_update_lastname.value.trim().slice(1).toLowerCase();
 
@@ -340,19 +350,20 @@ async function editsupervisor(sup_id) {
                 "Submitted ✅",
                 "success"
             );
+            displaysdetails(sup_id);
 
-            const { data: sup, error: sup_error } = await supabaseClient
-                .from('supervisor')
-                .select()
-                .eq("id", sup_id)
-                .single()
+            // const { data: sup, error: sup_error } = await supabaseClient
+            //     .from('supervisor')
+            //     .select()
+            //     .eq("id", sup_id)
+            //     .single()
 
 
-            if (sup_error) {
-                console.log(sup_error);
-            }
+            // if (sup_error) {
+            //     console.log(sup_error);
+            // }
 
-            displaysdetails(sup);
+            // displaysdetails(sup);
         }
     }
     catch (err) {

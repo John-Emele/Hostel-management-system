@@ -4,7 +4,7 @@ const hostel_details = document.getElementById("hostel-detail");
 const cancel_btn = document.getElementById("cancel");
 const cancel_hostel = document.getElementById("cancel-hostel");
 const caution_container = document.getElementById("caution-container");
-const add_hostel_btn = document.getElementById("add-hostel");
+const add_room_btn = document.getElementById("add-hostel");
 const add_room = document.getElementById("edit-container");
 const hostel_form_btn = document.getElementById("add-room-btn");
 const final_delete = document.getElementById("final-delete");
@@ -28,6 +28,7 @@ const hostel_image = document.getElementById("hostel-image");
 const hostel_gender = document.getElementById("hostel-gender");
 // const hostel_details = document.getElementById("hostel-detail");
 const hostel_container = document.getElementById("hostel-container");
+const Name = document.getElementById("Name");
 const hostel_body = document.getElementById("hostel-body");
 const room_type = document.getElementById("room-type");
 const room_status = document.getElementById("room-status");
@@ -50,15 +51,7 @@ cancel_btn.addEventListener("click", () => {
     }, 250)
 })
 
-add_hostel_btn.addEventListener("click", () => {
-    add_room.classList.remove("smooth-exit");
-    add_room.classList.remove("smooth-return");
-    add_room.classList.add("smooth");
-    add_room.classList.remove("hide");
-    setTimeout(() => {
-        main_container.classList.add("blur-background");
-    }, 250)
-})
+
 
 cancel_hostel.addEventListener("click", () => {
     add_room.classList.remove("smooth");
@@ -103,8 +96,6 @@ cancel_hostel.addEventListener("click", () => {
 //     main_container.classList.add("blur-background");
 // })
 
-
-
 caution_function_cancel.addEventListener("click", () => {
     caution_container.classList.remove("smooth");
     caution_container.classList.remove("smooth-exit");
@@ -116,26 +107,7 @@ caution_function_cancel.addEventListener("click", () => {
     main_container.classList.remove("blur-background");
 })
 
-// final_delete.addEventListener("click", () => {
-//     let delete_emote = `
-//       <div class="w-[80%] mx-auto flex justify-between items-center">
-//         <p class="text-white text-lg">Deleting...</p> 
-//         <img id="loading-image" src="../images/loading (2).png" alt="" class="w-5 h-5 delete-function">
-//       </div>
-//     `;
-//     final_delete.innerHTML = delete_emote;
-//     setTimeout(() => {
-//         caution_container.classList.remove("smooth");
-//         caution_container.classList.remove("smooth-return");
-//         caution_container.classList.add("smooth-exit");
-//         setTimeout(() => {
-//             caution_container.classList.add("hide");
-//         }, 300)
-//         main_container.classList.remove("blur-background");
-//         final_delete.innerHTML = "Delete";
-//     }, 3000)
 
-// })
 
 upload_btn.addEventListener("click", () => {
     hostel_image.click();
@@ -305,13 +277,18 @@ async function create_hostel_admin() {
         const image = await uploadImage(image_file);
         let final_name = hostel_name.value.trim().split(" ");
         console.log(final_name);
-        let first_half = final_name[0].charAt(0).toUpperCase() + final_name[0].slice(1).toLowerCase();
-        let second_half = final_name[1].charAt(0).toUpperCase() + final_name[1].slice(1).toLowerCase();
+        let name_h;
+        if (final_name.length == 2) {
+            let first_half = final_name[0].charAt(0).toUpperCase() + final_name[0].slice(1).toLowerCase();
+            let second_half = final_name[1].charAt(0).toUpperCase() + final_name[1].slice(1).toLowerCase();
+            name_h = first_half + " " + second_half;
+        }
+        name_h = final_name[0].charAt(0).toUpperCase() + final_name[0].slice(1).toLowerCase();
 
         const { data: hostel, error: hostel_error } = await supabaseClient
             .from("hostel")
             .insert([{
-                name: first_half + " " + second_half,
+                name: name_h,
                 image_url: image,
                 gender: hostel_gender.value.trim().charAt(0).toUpperCase() + hostel_gender.value.trim().slice(1).toLowerCase(),
             }]);
@@ -378,8 +355,8 @@ async function displayroomtype() {
 displayroomtype();
 
 async function addRooms(hostel_id) {
-    let new_room = [];
     let form_check = false;
+    console.log(hostel_id);
 
     if (room_type.value.trim() == "") {
         form_check = true;
@@ -408,29 +385,25 @@ async function addRooms(hostel_id) {
     }
 
     try {
-
-        const { data: hostel, error: hostel_error } = await supabaseClient
-            .from("hostel")
-            .select("room_types")
-            .eq("id", hostel_id)
-            .single();
-
-        if (hostel_error) {
-            return;
-        }
-
-        // console.log(Room_types);
-        // console.log(typeof Room_types);
-
-        // let update_info = [...Room_types, slots];
-
         if (!form_check) {
 
+            const { data: hostel, error: hostel_error } = await supabaseClient
+                .from("hostel")
+                .select()
+                .eq("id", hostel_id)
+                .single();
+
+            if (hostel_error) {
+                return;
+            }
+
+            console.log(hostel);
             const hostel_room = room_type.value.trim();
             const hostel_spaces = available_spaces.value.trim()
+            // let new_room = [];
 
-            new_room.push(hostel_room, hostel_spaces);
-            console.log(new_room);
+            // new_room.push(hostel_room, hostel_spaces);
+            // console.log(new_room);
 
             let add_emote = `
       <div class="w-[50%] mx-auto flex justify-between items-center">
@@ -449,15 +422,27 @@ async function addRooms(hostel_id) {
             const existingTypes = Room_types.map(item =>
                 item.split(":")[0].trim().toLowerCase()
             );
+            console.log(existingTypes);
 
             // 3. check for duplicate
             let type_check = false;
-            if (existingTypes.includes(room_type.value.trim().toLowerCase())) {
-                hostel_form_btn.disabled = false;
-                hostel_form_btn.innerHTML = "Add";
-                room_type_error.innerHTML = "Room type already exists ❌";
-                type_check = true;
-            }
+            existingTypes.forEach(ex_type => {
+                if (ex_type == room_type.value.trim()) {
+                    type_check = true;
+                    hostel_form_btn.disabled = false;
+                    hostel_form_btn.innerHTML = "Add";
+                    room_type_error.innerHTML = "Room_type already exist";
+                    return;
+                }
+                
+            })
+            // if (existingTypes.includes(room_type.value.trim().toLowerCase())) {
+            //     hostel_form_btn.disabled = false;
+            //     hostel_form_btn.innerHTML = "Add";
+            //     room_type_error.innerHTML = "Room type already exists ❌";
+            //     type_check = true;
+            //     return
+            // }
             if (type_check) {
                 return;
             }
@@ -480,8 +465,6 @@ async function addRooms(hostel_id) {
                     .eq("id", hostel_id)
                     .select()
 
-
-
                 if (error) {
                     console.log(error);
                     hostel_form_btn.disabled = false;
@@ -492,8 +475,6 @@ async function addRooms(hostel_id) {
                     return;
                 }
                 console.log(data);
-                createindividualroom(data, new_room)
-
                 hostel_form_btn.disabled = false;
                 // hosteldetails(hostel_id);
                 create_hostel_function(
@@ -501,6 +482,7 @@ async function addRooms(hostel_id) {
                     "success"
                 );
                 await hosteldetails(hostel_id);
+                createindividualroom(data, hostel_room, hostel_spaces)
             }
         }
     }
@@ -513,6 +495,186 @@ async function addRooms(hostel_id) {
         );
     }
 }
+
+// async function addRooms(hostel_id) {
+
+//     if (hostel_form_btn.disabled) return;
+
+//     let form_check = false;
+
+//     console.log(hostel_id);
+
+//     // ================= VALIDATION =================
+
+//     if (room_type.value.trim() === "") {
+//         form_check = true;
+//         room_type_error.innerHTML = "Select a room type";
+//     } else {
+//         room_type_error.innerHTML = "";
+//     }
+
+//     if (available_spaces.value.trim() === "") {
+//         form_check = true;
+//         available_spaces_error.innerHTML = "Enter available spaces";
+//     } else {
+//         available_spaces_error.innerHTML = "";
+//     }
+
+//     if (room_status.value.trim() === "") {
+//         form_check = true;
+//         room_status_error.innerHTML = "Select room status";
+//     } else {
+//         room_status_error.innerHTML = "";
+//     }
+
+//     if (form_check) return;
+
+//     try {
+
+//         // ================= LOADING UI =================
+
+//         if (!form_check) {
+//             let add_emote = `
+//         <div class="w-[50%] mx-auto flex justify-between items-center">
+//             <p class="text-white text-lg">Adding...</p> 
+//             <img src="../images/loading (2).png"
+//                 class="w-5 h-5 delete-function">
+//         </div>
+//         `;
+
+//             hostel_form_btn.disabled = true;
+//             hostel_form_btn.innerHTML = add_emote;
+
+//             // ================= GET HOSTEL =================
+
+//             const { data: hostel, error: hostel_error } = await supabaseClient
+//                 .from("hostel")
+//                 .select()
+//                 .eq("id", hostel_id)
+
+//             if (hostel_error) {
+//                 console.log(hostel_error);
+
+//                 hostel_form_btn.disabled = false;
+//                 hostel_form_btn.innerHTML = "Add";
+
+//                 create_hostel_function(
+//                     hostel_error.message,
+//                     "error"
+//                 );
+
+//                 return;
+//             }
+
+//             console.log("HOSTEL:", hostel);
+
+//             // ================= CLEAN VALUES =================
+
+//             const hostel_room = room_type.value.trim();
+//             const hostel_spaces = available_spaces.value.trim();
+//             const hostel_status = room_status.value.trim();
+
+//             // ================= CHECK EXISTING ROOM TYPES =================
+
+//             let Room_types = Array.isArray(hostel.room_types)
+//                 ? [...hostel.room_types]
+//                 : [];
+
+//             console.log(Room_types);
+
+//             const existingTypes = Room_types.map(item =>
+//                 item.split(":")[0].trim().toLowerCase()
+//             );
+
+//             // ================= DUPLICATE CHECK =================
+
+//             if (existingTypes.includes(hostel_room.toLowerCase())) {
+
+//                 hostel_form_btn.disabled = false;
+//                 hostel_form_btn.innerHTML = "Add";
+
+//                 room_type_error.innerHTML = "Room type already exists ❌";
+//                 return;
+//             }
+//             else {
+//                 const slots =
+//                     `${hostel_room}:${hostel_spaces}:${hostel_status}`;
+
+//                 // safer immutable update
+//                 const updatedRoomTypes = [...Room_types, slots];
+
+//                 console.log(updatedRoomTypes);
+
+//                 // ================= UPDATE HOSTEL =================
+
+//                 const { data, error } = await supabaseClient
+//                     .from("hostel")
+//                     .update({
+//                         room_types: updatedRoomTypes
+//                     })
+//                     .eq("id", hostel_id)
+//                     .select()
+//                     .single();
+
+//                 if (error) {
+
+//                     console.log(error);
+
+//                     hostel_form_btn.disabled = false;
+//                     hostel_form_btn.innerHTML = "Add";
+
+//                     create_hostel_function(
+//                         error.message || "Something went wrong",
+//                         "error"
+//                     );
+
+//                     return;
+//                 }
+
+//                 console.log("UPDATED HOSTEL:", data);
+
+//                 // ================= CREATE ACTUAL ROOM =================
+
+//                 const new_room = {
+//                     room_type: hostel_room,
+//                     no_of_rooms: hostel_spaces,
+//                 };
+
+//                 await createindividualroom(data, new_room);
+
+//                 // ================= SUCCESS =================
+
+//                 hostel_form_btn.disabled = false;
+//                 hostel_form_btn.innerHTML = "Add";
+
+//                 create_hostel_function(
+//                     "Room added successfully ✅",
+//                     "success"
+//                 );
+
+//                 await hosteldetails(hostel_id);
+
+//             }
+
+//             // ================= CREATE ROOM TYPE STRING =================
+
+
+//         }
+//     }
+
+//     catch (err) {
+
+//         console.log(err);
+
+//         hostel_form_btn.disabled = false;
+//         hostel_form_btn.innerHTML = "Add";
+
+//         create_hostel_function(
+//             err.message || "Something went wrong",
+//             "error"
+//         );
+//     }
+// }
 
 create_hostel_btn.addEventListener("click", async (e) => {
     e.preventDefault();
@@ -572,7 +734,7 @@ async function display_hostel() {
             info_box.forEach(info => {
                 const info_id = info.dataset.id;
                 if (image_id == info_id) {
-                    image.addEventListener("mouseenter", () => {
+                    image.addEventListener("mouseover", () => {
                         console.log(info_id);
                         console.log(image_id);
                         info.classList.remove("hide");
@@ -582,28 +744,39 @@ async function display_hostel() {
                         info.classList.add("hide");
                         image.classList.remove("image_shake");
                     })
-                    view_hostel.forEach(view_btn => {
-                        const view_btn_id = view_btn.dataset.id
-                        if (image_id && info_id == view_btn_id) {
-                            view_btn.addEventListener("click", () => {
-                                console.log(view_btn_id);
-                                hostel_details.classList.remove("smooth-exit");
-                                hostel_details.classList.add("smooth");
-                                hostel_details.classList.remove("smooth-return");
-                                setTimeout(() => {
-                                    hostel_details.classList.remove("hide");
-                                }, 250);
-                                hosteldetails(view_btn_id);
-                                hostel_form_btn.addEventListener("click", async (e) => {
-                                    e.preventDefault();
-                                    await addRooms(view_btn_id);
-                                })
-                            })
-                        }
-                    })
+
                 }
             })
         })
+        view_hostel.forEach(view_btn => {
+            const view_btn_id = view_btn.dataset.id
+            if (view_btn_id) {
+                view_btn.addEventListener("click", () => {
+                    console.log(view_btn_id);
+                    hostel_details.classList.remove("smooth-exit");
+                    hostel_details.classList.add("smooth");
+                    hostel_details.classList.remove("smooth-return");
+                    setTimeout(() => {
+                        hostel_details.classList.remove("hide");
+                    }, 250);
+                    hosteldetails(view_btn_id);
+                    add_room_btn.addEventListener("click", () => {
+                        add_room.classList.remove("smooth-exit");
+                        add_room.classList.remove("smooth-return");
+                        add_room.classList.add("smooth");
+                        add_room.classList.remove("hide");
+                        setTimeout(() => {
+                            main_container.classList.add("blur-background");
+                        }, 250)
+                    })
+                    hostel_form_btn.addEventListener("click", async (e) => {
+                        e.preventDefault();
+                        await addRooms(view_btn_id);
+                    })
+                })
+            }
+        })
+
     } catch (err) {
         console.log(err);
     }
@@ -761,11 +934,13 @@ async function hosteldetails(hostel_id) {
         ? data.room_types
         : [];
 
-    console.log(room_type);
+
 
     if (room_type == null) {
         return;
     }
+
+    console.log(room_type);
 
     const room_detail = room_type.map(item =>
         item.split(":")[0].trim()
@@ -808,6 +983,7 @@ async function hosteldetails(hostel_id) {
             status
         };
     });
+    Name.innerHTML = data.name;
 
     rooms.forEach(room => {
         const extra = roomMap[room.room_type] || {};
@@ -821,7 +997,7 @@ async function hosteldetails(hostel_id) {
         <td class="uppercase text-green-500 uppercase text-sm font-light text-center">${extra.space}</td>
         <td class="uppercase text-green-500 uppercase text-sm font-light text-center">${extra.status}</td>
         <td class="p-2 text-center">
-        <button data-type="${room.room_type}" type="button"
+        <button  data-type="${room.room_type}" type="button"
             class="delete-btn bg-red-600 font-bold text-white p-3 w-20 rounded-[10px] uppercase text-xs hover:bg-red-600">delete
             </button>
         </td>
@@ -901,10 +1077,11 @@ async function deleteRoom(hostel_id, room_type_to_delete) {
             return type !== room_type_to_delete;
         });
 
-        const { error: update_error } = await supabaseClient
+        const { data: update, error: update_error } = await supabaseClient
             .from("hostel")
             .update({ room_types: updated })
-            .eq("id", hostel_id);
+            .eq("id", hostel_id)
+            .select()
 
         if (update_error) {
             console.log(update_error);
@@ -927,6 +1104,7 @@ async function deleteRoom(hostel_id, room_type_to_delete) {
         );
         // 4. Refresh UI
         hosteldetails(hostel_id);
+        // deleteindividualroom(update, room_type_to_delete)
     }
     catch (err) {
         final_delete.disabled = false;
@@ -939,17 +1117,20 @@ async function deleteRoom(hostel_id, room_type_to_delete) {
     }
 }
 
-async function createindividualroom(hostel, Room_type) {
+async function createindividualroom(hostel, Room_type, no_of_rooms) {
 
     console.count("createindividualroom called");
 
     console.log(hostel);
     console.log(Room_type);
+    console.log(no_of_rooms);
     let room = [];
 
     const { data: r, error: r_error } = await supabaseClient
         .from('rooms')
-        .select('*')
+        .select()
+        .eq("room_type", Room_type)
+        .maybeSingle()
 
     if (r_error) {
         console.log(r_error);
@@ -958,12 +1139,17 @@ async function createindividualroom(hostel, Room_type) {
     console.log(r);
     allrooms = r;
 
-    const { data: existingRooms } = await supabaseClient
+    const { data: existingRooms, error: ex_error } = await supabaseClient
         .from("room")
         .select("room_number")
         .eq("hostel", hostel[0].name)
         .order("room_number", { ascending: true });
 
+
+    if (ex_error) {
+        console.assert.og(ex_error);
+        return;
+    }
 
     console.log(existingRooms);
     const lastRoom = existingRooms.at(-1);
@@ -978,7 +1164,7 @@ async function createindividualroom(hostel, Room_type) {
     let start = 1
 
     if (existingRooms.length > 0) {
-        const lastRoom = existingRooms.at(-1);
+        // const lastRoom = existingRooms.at(-1);
         start = Number(lastRoom.room_number) + 1;
     }
 
@@ -994,21 +1180,22 @@ async function createindividualroom(hostel, Room_type) {
 
     // for (const { type, count } of parsedTypes) {
 
-        const template = allrooms.find(r => r.room_type === Room_type[0]);
+    // const template = allrooms.find(r => r.room_type === Room_type[0]);
 
-        for (let i = 1; i <= Room_type[1]; i++) {
+    console.log(no_of_rooms);
+    for (let i = 1; i <= Number(no_of_rooms); i++) {
 
-            let roomNumber = String(start).padStart(3, "0");
+        let roomNumber = String(start).padStart(3, "0");
 
-            room.push({
-                hostel: hostel[0].name,
-                room_number: roomNumber,
-                room_type: Room_type[0],
-                bed_spaces: template.bed_spaces
-            });
+        room.push({
+            hostel: hostel[0].name,
+            room_number: roomNumber,
+            room_type: Room_type,
+            bed_spaces: allrooms.bed_spaces
+        });
 
-            start++;
-        }
+        start++;
+    }
 
     console.log(room);
 
@@ -1023,3 +1210,187 @@ async function createindividualroom(hostel, Room_type) {
     }
     console.log(data);
 }
+
+// async function deleteindividualroom(hostel, room_type) {
+
+//     console.count("deleteindividualroom called");
+
+//     console.log(hostel);
+//     console.log(room_type);
+//     let room = [];
+
+//     const { data: r, error: r_error } = await supabaseClient
+//         .from('rooms')
+//         .select('*')
+
+//     if (r_error) {
+//         console.log(r_error);
+//         return;
+//     }
+//     console.log(r);
+//     allrooms = r;
+
+//     const { data: existingRooms } = await supabaseClient
+//         .from("room")
+//         .select()
+//         .eq("hostel", hostel[0].name)
+//         .eq("room_type", room_type)
+//         .order("room_number", { ascending: true });
+
+
+//     console.log(existingRooms);
+//     // const lastRoom = existingRooms.at(-1);
+//     // console.log(lastRoom);
+
+
+//     if (existingRooms.length == 0) {
+//         return;
+//         // const lastRoom = existingRooms.at(-1);
+//         // start = Number(lastRoom.room_number) + 1;
+//     }
+//     // existingRooms.forEach(er => {
+//     //     if(er == hostel[0].room)
+//     // })
+
+//     // if (existingRooms.length > 0) {
+//     //     start = parseInt(existingRooms[0].room_number, 10) + 1;
+//     // }
+//     // console.log(start);
+
+//     // const parsedTypes = Room_type.map(rt => {
+//     //     const [type, count] = rt.split(":");
+//     //     return { type, count: Number(count) };
+//     // });
+
+//     // for (const { type, count } of parsedTypes) {
+
+//     // const template = allrooms.find(r => r.room_type === Room_type[0]);
+
+//     for (let i = 1; i <= Room_type[1]; i++) {
+
+//         // let roomNumber = String(start).padStart(3, "0");
+
+//         room.push({
+//             hostel: hostel[0].name,
+//             room_number: roomNumber,
+//             room_type: Room_type[0],
+//             bed_spaces: template.bed_spaces
+//         });
+
+//         start++;
+//     }
+
+//     console.log(room);
+
+//     const { data, error } = await supabaseClient
+//         .from('room')
+//         .insert(room)
+//         .select()
+
+//     if (error) {
+//         console.log(error);
+//         return;
+//     }
+//     console.log(data);
+// }
+
+// async function createindividualroom(hostel, Room_type) {
+
+//     console.count("createindividualroom called");
+
+//     console.log("HOSTEL:", hostel);
+//     console.log("ROOM TYPE:", Room_type);
+
+//     let room = [];
+
+//     // ================= GET ROOM TEMPLATES =================
+
+//     const { data: r, error: r_error } = await supabaseClient
+//         .from("rooms")
+//         .select()
+//         .eq("room_type", Room_type.room_type)
+
+//     if (r_error) {
+//         console.log(r_error);
+//         return;
+//     }
+
+//     console.log("ROOM TEMPLATES:", r);
+
+//     const allrooms = r;
+
+//     // ================= GET EXISTING ROOMS =================
+
+//     const { data: existingRooms, error: existing_error } =
+//         await supabaseClient
+//             .from("room")
+//             .select("room_number")
+//             .eq("hostel", hostel.name)
+//             .order("room_number", { ascending: true });
+
+//     if (existing_error) {
+//         console.log(existing_error);
+//         return;
+//     }
+
+//     console.log("EXISTING ROOMS:", existingRooms);
+
+//     // ================= DETERMINE STARTING NUMBER =================
+
+//     let start = 1;
+
+//     if (existingRooms.length > 0) {
+
+//         const lastRoom = existingRooms.at(-1);
+
+//         console.log("LAST ROOM:", lastRoom);
+
+//         start = Number(lastRoom.room_number) + 1;
+//     }
+
+//     console.log("START:", start);
+
+//     // ================= FIND ROOM TEMPLATE =================
+
+//     const template = allrooms[0].bed_spaces;
+//     // r => r.room_type === Room_type.room_type
+
+//     if (!template) {
+//         console.log("No matching room template found");
+//         return;
+//     }
+
+//     console.log("TEMPLATE:", template);
+
+//     // ================= CREATE NEW ROOMS =================
+
+//     for (let i = 0; i < Number(Room_type.no_of_rooms); i++) {
+
+//         let roomNumber = String(start).padStart(3, "0");
+
+//         room.push({
+//             hostel: hostel.name,
+//             room_number: roomNumber,
+//             room_type: Room_type.room_type,
+//             bed_spaces: template
+//         });
+
+//         start++;
+//     }
+
+//     console.log("NEW ROOMS:", room);
+
+//     // ================= INSERT INTO DATABASE =================
+
+//     const { data, error } = await supabaseClient
+//         .from("room")
+//         .insert(room)
+//         .select();
+
+//     if (error) {
+//         console.log(error);
+//         return;
+//     }
+
+//     console.log("INSERTED ROOMS:", data);
+// }

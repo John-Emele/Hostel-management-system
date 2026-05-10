@@ -114,22 +114,24 @@
                     <img id="side-menu-btn" src="../images/widget.png" alt="" class="md:hidden w-8 h-8">
                 </div>
                 <div class="border-2 border-solid border-blue-800  text-blue-800 ps-5  rounded-[10px] my-5">
-                    <input type="search" placeholder="search student..."
+                    <input id="search-student" type="search" placeholder="search student..."
                         class="md:w-full w-[90%] mx-auto outline-none placeholder:text-blue-800 md:placeholder:text-xl placeholder:text-lg h-10">
                 </div>
-                <table class="w-full">
+                <table id="table-container" class="w-full">
                     <thead>
                         <tr
                             class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center uppercase font-bold md:text-lg text-xs">
+                            <th class="py-1">S/N</td>
                             <th class="py-1">Student Id</td>
                             <th class="py-1">Name</td>
+                            <th class="py-1">hostel</td>
                             <th class="py-1">room</td>
                             <th class="py-1">
                                 </td>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr
+                    <tbody id="table-body">
+                        <!-- <tr
                             class="border-b-1 border-b-solid border-b-blue-800 text-blue-800 text-center text-sm md:text-lg">
                             <td class="py-1 text-blue-600 font-bold">242120111</td>
                             <td class="py-1">John Emele</td>
@@ -142,7 +144,7 @@
                                         class="bg-red-500 text-white md:text-sm text-xs md:px-5 md:py-2  px-3 py-1 rounded-[5px]">Remove</button>
                                 </div>
                             </td>
-                        </tr>
+                        </tr> -->
                     </tbody>
                 </table>
             </div>
@@ -152,39 +154,50 @@
         <img id="cancel-btn" src="../images/cancel.png" alt="" class="w-7 h-7 cancel">
         <div class="w-[90%] mx-auto mt-15">
             <div class="flex align-center gap-5 justify-between">
-                <div class="shadow-lg w-[50%] mx-auto p-4 rounded-[10px] bg-white">
+                <div class="shadow-lg w-[50%] mx-auto p-4 rounded-[10px] bg-white relative">
                     <h1 class="text-center text-2xl uppercase mb-10 font-bold text-blue-600">Student information</h1>
-                    <p class="font-bold uppercase text-sm mb-10">FirstName: <span id="student-firstname"
+                    <p class="font-bold uppercase text-blue-800  text-sm mb-10">FirstName: <span id="student-firstname"
                             class="text-sm font-light"></span></p>
-                    <p class="font-bold uppercase text-sm mb-10">LastName: <span class="
+                    <p class="font-bold uppercase text-blue-800  text-sm mb-10">LastName: <span class="
                         text-sm font-light" id="student-lastname"></span>
                     </p>
-                    <p class="font-bold uppercase text-sm mb-10">Email: <span id="student-email"
+                    <p class="font-bold uppercase text-blue-800  text-sm mb-10">Gender: <span class="
+                        text-sm font-light" id="student-gender"></span>
+                    </p>
+                    <p class="font-bold uppercase text-blue-800  text-sm mb-10">Email: <span id="student-email"
                             class="text-sm font-light"></span></p>
-                    <p class="font-bold uppercase text-sm mb-10">Phone: <span id="student-phone"
+                    <p class="font-bold uppercase text-blue-800  text-sm mb-10">Phone: <span id="student-phone"
                             class="text-sm font-light"></span></p>
-                    <p class="font-bold uppercase text-sm mb-10">Student ID: <span id="student-id"
+                    <p class="font-bold  uppercase text-blue-800  text-sm mb-10">Student ID: <span id="student-id"
                             class="text-sm font-bold text-blue-500"></span></p>
-                    <p class="font-bold uppercase text-sm mb-10">Address: <span class="text-sm font-light"
+                    <p class="font-bold uppercase text-blue-800  text-sm mb-10">Address: <span class="text-sm font-light"
                             id="student-address"></span></p>
+
+                    <div id="student-image" class="w-50 h-50 absolute right-10 top-20">
+                        <img src="../images/profile.png" alt=""
+                            class="w-full h-full object-center object-cover rounded-[10px] border-2 border-solid border-blue-900">
+                    </div>
                 </div>
                 <!-- guardian -->
                 <div class="shadow-lg w-[50%] mx-auto p-4 rounded-[10px] bg-white">
                     <h1 class="text-center text-2xl uppercase mb-10 font-bold text-blue-500">Guardian information</h1>
-                    <p class="font-bold uppercase text-sm mb-10">FirstName: <span id="guardian-firstname"
+                    <p class="font-bold uppercase text-blue-800 font-medium text-sm mb-10">FirstName: <span id="guardian-firstname"
                             class="text-sm font-light "></span></p>
-                    <p class="font-bold uppercase text-sm mb-10">LastName: <span class="text-sm font-light"
+                    <p class="font-bold uppercase text-blue-800 font-medium text-sm mb-10">LastName: <span class="text-sm font-light"
                             id="guardian-lastname"></span>
                     </p>
-                    <p class="font-bold uppercase text-sm mb-10">Email: <span class="text-sm font-light"
+                    <p class="font-bold uppercase text-blue-800 font-medium text-sm mb-10">Email: <span class="text-sm font-light"
                             id="guardian-email"></span></p>
-                    <p class="font-bold uppercase text-sm mb-10">Phone: <span class="text-sm font-light"
+                    <p class="font-bold uppercase text-blue-800 font-medium text-sm mb-10">Phone: <span class="text-sm font-light"
                             id="guardian-phone"></span></p>
-                    <p class="font-bold uppercase text-sm mb-10">Address: <span class="text-sm font-light"
+                    <p class="font-bold uppercase text-blue-800 font-medium text-sm mb-10">Address: <span class="text-sm font-light"
                             id="guardian-address"></span></p>
                 </div>
 
             </div>
+        </div>
+        <div id="successful-message" class="successful py-5 w-[27%] mx-auto bg-white rounded-[50px] shadow-xl hide">
+            <p id="successful-text" class=" text-lg font-bold text-center"></p>
         </div>
     </div>
 </body>

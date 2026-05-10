@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,27 +8,36 @@
     <script src="../tailwindcss.min.js"></script>
     <link rel="stylesheet" href="../style.css">
 </head>
+
 <body class="background">
     <div class="shadow-lg md:w-[60%] w-[90%] mx-auto h-100 pt-5  mt-20 bg-transparent rounded-[10px]">
         <p class="text-center text-2xl text-blue-300 uppercase font-bold">Login</p>
         <form action="" class="w-[90%] mx-auto py-10 ">
             <div class="form-group-2 mb-20">
-                <input id="login-email" type="email" class="outline-none border-2 border-solid border-blue-300 w-full h-10 rounded-[10px]" required>
+                <input id="login-email" type="email"
+                    class="outline-none border-2 border-solid border-blue-300 w-full h-10 rounded-[10px]" required>
                 <label class="text-blue-300">email</label>
                 <p id="email-error" class="error text-light text-xs text-red-400 ms-3"></p>
             </div>
             <div class="form-group-2">
-                <input id="login-password" type="password" class="outline-none border-2 border-solid border-blue-300 w-full h-10 rounded-[10px]" required>
+                <input id="login-password" type="password"
+                    class="outline-none border-2 border-solid border-blue-300 w-full h-10 rounded-[10px]" required>
                 <label class="text-blue-300">password</label>
                 <p id="password-error" class="error text-light text-xs text-red-400 ms-3"></p>
             </div>
             <div class="w-[50%] mx-auto mt-10 h-10">
-                <button id="login-btn"  type="button" class="w-full md:text-xl text-sm font-bold text-white bg-blue-400 h-full rounded-[10px] uppercase hover:bg-white hover:text-blue-300">login</button>
+                <button id="login-btn" type="button"
+                    class="w-full md:text-xl text-sm font-bold text-white bg-blue-400 h-full rounded-[10px] uppercase hover:bg-white hover:text-blue-300">login</button>
             </div>
         </form>
+    </div>
+    <!-- successfull -->
+    <div id="successful-message" class="successful py-5 w-[27%] mx-auto bg-white rounded-[50px] shadow-xl hide">
+        <p id="successful-text" class=" text-lg font-bold text-center"></p>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="../supabase.js"></script>
 <script src="login.js"></script>
+
 </html>
