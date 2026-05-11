@@ -449,27 +449,29 @@ async function hosteldetails(hostels, hostel_id, h_rooms, stud) {
         <td class="uppercase text-green-500 uppercase md:text-sm text-[10px] font-bold text-center">${formatCurrency(hostel_room.price)}</td>
         <td class="uppercase text-green-500 uppercase md:text-sm text-[10px] font-light text-center">${r_types[2]}</td>
         <td class="p-2 text-center">
-        <button type="button" data-id="${hostel_id}" 
+        <button type="button" data-type="${r_types[0]}" data-id="${hostel_id}" 
             class="book-btn bg-blue-600 font-bold text-white p-3 md:w-20 w-15 rounded-[10px] uppercase text-xs hover:bg-blue-500">book
         </button>
         </td>
     </tr>
     `;
         table_body.innerHTML = hostel;
+    })
+    const book_btn = document.querySelectorAll(".book-btn");
+    console.log(book_btn);
+    book_btn.forEach(btn => {
+        // let r_types = type.split(":").map(t => t.trim());
+        // console.log()
 
-        const book_btn = document.querySelectorAll(".book-btn");
+        btn.addEventListener("click", (e) => {
+            const btn_id = btn.dataset.id;
+            const btn_type = btn.dataset.type;
+            console.log(btn_id);
+            console.log(btn_type);
 
-        book_btn.forEach(btn => {
-            let r_types = type.split(":").map(t => t.trim());
-            console.log()
-
-            btn.addEventListener("click", (e) => {
-                const btn_id = btn.dataset.id;
-                console.log(btn_id);
-
-                e.preventDefault();
-                Allocate(btn, data, r_types[0], stud)
-            })
+            e.preventDefault();
+            Allocate(btn, data, btn_type, stud)
+            console.log(btn_type)
         })
     })
 
@@ -479,6 +481,9 @@ async function hosteldetails(hostels, hostel_id, h_rooms, stud) {
 
 async function Allocate(btn, hostel, room_type, stud) {
     console.log(stud.id);
+    console.log(room_type);
+    console.log(btn);
+    console.log(hostel);
 
     try {
         const { data: student, error: student_error } = await supabaseClient
@@ -550,7 +555,9 @@ async function Allocate(btn, hostel, room_type, stud) {
 
             const availableRoom = room.find(r =>
                 r.bed_spaces_occupied < r.bed_spaces
+
             );
+
 
             console.log(availableRoom);
             // 3. no room available
